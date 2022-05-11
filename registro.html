@@ -7,6 +7,33 @@
     <title>Document</title>
 </head>
 <body>
-    <p>register</p>
+    <p id="texto">register</p>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyC40Oh4sPupi4gFPpYV_GR-w85ACnW4HAo",
+          authDomain: "pokebook-dbc8c.firebaseapp.com",
+          projectId: "pokebook-dbc8c",
+          storageBucket: "pokebook-dbc8c.appspot.com",
+          messagingSenderId: "94431024453",
+          appId: "1:94431024453:web:7a9b42eabaafbd760e9a2c",
+          measurementId: "G-1QPM7DXVDK"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+      </script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+      <script src="scripts/server.js"></script>
 </body>
 </html>
