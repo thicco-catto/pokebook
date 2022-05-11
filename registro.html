@@ -11,37 +11,37 @@
 <div class="container">
   <div class="AreaRegistro">
     <body>
-      <p id="texto">register</p>
-      <h1 >Crear una Cuenta</h1>
+      
+      <h1>Crear una cuenta</h1>
       <form action="/my-handling-form-page" method="post">
-        <ul>
+        
          
            <p for="Email" class="normal">Email:</p>
-           <div class="center"><input type="email" id="Email" name="UserEmail" /></div>
+           <div class="center"><input type="email" id="Email" name="UserEmail" class="inputContainer" /></div>
          
          
           <p for="Nick" class="normal">Nick:</p>
-          <div class="center"><input type="text" id="Nick" name="UserNick" /></div>
+          <div class="center"><input type="text" id="Nick" name="UserNick" class="inputContainer"/></div>
          
            <p for="Password" class="normal">Contraseña:</p>
-           <div class="center"><input type="password" id="Password" name="Password" /></div>
+           <div class="center"><input type="password" id="Password" name="Password"class="inputContainer" /></div>
          
          
           <p for="PasswordConfirm" class="normal">Confirmar contraseña:</p>
-          <div class="center"><input type="password" id="PasswordConfirm" name="PasswordConfirm" /></div>
+          <div class="center"><input type="password" id="PasswordConfirm" name="PasswordConfirm" class="inputContainer" /></div>
         
         
           <p for ="Birthday" class="normal">Fecha de nacimiento:</p>
-          <div class="center"><input type="date" id="Birthday" name="Birthday" />
+          <div class="center"><input type="date" id="Birthday" name="Birthday"class="inputContainer" />
         
         
           
-          <p for ="Terms" class="normal"> <input type="radio" id="Terms" name="Terms" />Estoy de acuerdo con los términos y condiciones:</p>
+          <p for ="Terms" class="Terms"> <input type="radio" id="Terms" name="Terms" />Estoy de acuerdo con los términos y condiciones:</p>
         
         
-          <div class="center"></div><button type="button" class="normal" onclick="alert('Registro con exito')">Continuar</button></div>
+          <div class="center"><button type="submit" class="normal" onclick="alert('Registro con exito')">Continuar</button></div>
         
-  
+      </form>
   
       <script type="module">
           // Import the functions you need from the SDKs you need
