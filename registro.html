@@ -1,39 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href="css/StyleRegistro.css" rel="stylesheet"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <p id="texto">register</p>
+<div class="container">
+  <div class="AreaRegistro">
+    <body>
+      <p id="texto">register</p>
+      <h1 >Crear una Cuenta</h1>
+      <form action="/my-handling-form-page" method="post">
+        <ul>
+         
+           <p for="Email" class="normal">Email:</p>
+           <div class="center"><input type="email" id="Email" name="UserEmail" /></div>
+         
+         
+          <p for="Nick" class="normal">Nick:</p>
+          <div class="center"><input type="text" id="Nick" name="UserNick" /></div>
+         
+           <p for="Password" class="normal">Contraseña:</p>
+           <div class="center"><input type="password" id="Password" name="Password" /></div>
+         
+         
+          <p for="PasswordConfirm" class="normal">Confirmar contraseña:</p>
+          <div class="center"><input type="password" id="PasswordConfirm" name="PasswordConfirm" /></div>
+        
+        
+          <p for ="Birthday" class="normal">Fecha de nacimiento:</p>
+          <div class="center"><input type="date" id="Birthday" name="Birthday" />
+        
+        
+          
+          <p for ="Terms" class="normal"> <input type="radio" id="Terms" name="Terms" />Estoy de acuerdo con los términos y condiciones:</p>
+        
+        
+          <div class="center"></div><button type="button" class="normal" onclick="alert('Registro con exito')">Continuar</button></div>
+        
+  
+  
+      <script type="module">
+          // Import the functions you need from the SDKs you need
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+          import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
+          // TODO: Add SDKs for Firebase products that you want to use
+          // https://firebase.google.com/docs/web/setup#available-libraries
+        
+          // Your web app's Firebase configuration
+          // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+          const firebaseConfig = {
+            apiKey: "AIzaSyC40Oh4sPupi4gFPpYV_GR-w85ACnW4HAo",
+            authDomain: "pokebook-dbc8c.firebaseapp.com",
+            projectId: "pokebook-dbc8c",
+            storageBucket: "pokebook-dbc8c.appspot.com",
+            messagingSenderId: "94431024453",
+            appId: "1:94431024453:web:7a9b42eabaafbd760e9a2c",
+            measurementId: "G-1QPM7DXVDK"
+          };
+        
+          // Initialize Firebase
+          const app = initializeApp(firebaseConfig);
+          const analytics = getAnalytics(app);
+        </script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+        <script src="scripts/server.js"></script>
+  </body>
+  </div>
+  <div class="Header"></div>
+  <div class="Footer"></div>
+</div>
 
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyC40Oh4sPupi4gFPpYV_GR-w85ACnW4HAo",
-          authDomain: "pokebook-dbc8c.firebaseapp.com",
-          projectId: "pokebook-dbc8c",
-          storageBucket: "pokebook-dbc8c.appspot.com",
-          messagingSenderId: "94431024453",
-          appId: "1:94431024453:web:7a9b42eabaafbd760e9a2c",
-          measurementId: "G-1QPM7DXVDK"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-      </script>
-      <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-      <script src="scripts/server.js"></script>
-</body>
 </html>
