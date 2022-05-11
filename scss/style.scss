@@ -1,9 +1,10 @@
-$primary: #dc3545;
-$enable-rounded: false;
-$enable-gradients: true;
+$primary: #003566;
+$enable-rounded: true;
+$enable-gradients: false;
 $carousel-caption-color: #212529;
 $carousel-control-color: #212529;
 $carousel-indicator-active-bg: #212529;
+$navbar-dark-color: #003566;
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css");
