@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokebook</title>
+    <link rel="shortcut icon" href="favicon.png" />
+    <!-- NUEVO LINK AL CSS -->
+    <link href="css/style.css" rel="stylesheet"/>
+
+  <style>
+    body {
+      background-color: #001D3D;
+  }
+
+  h1, h2, h3, h4, h5, h6, p{
+      color: white;
+  }
+
+  .h7 {
+      font-size: 0.8rem;
+  }
+
+  .gedf-wrapper {
+      margin-top: 0.97rem;
+  }
+
+  @media (min-width: 992px) {
+      .gedf-main {
+          padding-left: 4rem;
+          padding-right: 4rem;
+      }
+      .gedf-card {
+          margin-bottom: 2.77rem;
+      }
+  }
+
+  /**Reset Bootstrap*/
+  .dropdown-toggle::after {
+      content: none;
+      display: none;
+  }
+  </style>
+
+
+</head>
+<body>
+  
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous">       
+
+<div class="container gedf-wrapper">
+<div class="row">
+    <div class="col-md-3">
+        <div class="card" style="background-color: #003566;">
+            <div class="card-body">
+                <a class="btn btn-outline-light " href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img alt="Brand" width="30" height="30" src="img/home.png"> Home
+                  </a> <br> <br>
+                <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img alt="Brand" width="30" height="30" src="img/conf.png"> Ajustes
+                  </a><br> <br>
+                <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img alt="Brand" width="30" height="30" src="img/perfil.png"> Perfil
+                  </a> <br> <br>
+                <a class="btn btn-warning" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" style='width:100%;' aria-haspopup="true" aria-expanded="false">
+                    <img alt="Brand" width="30" height="30" src="img/add (2).png"> Nuevo Post
+                  </a> <br> <br>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 gedf-main">
+
+        <!--- \\\\\\\Post-->
+        <div class="card gedf-card">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="mr-2">
+                            <img class="rounded-circle" width="45" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                        </div>
+                        <div class="ml-2">
+                            <div class="h5 m-0">@bootdey</div>
+                            <div class="h7 text-muted">Mark Lee Smith</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="dropdown">
+                            <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-ellipsis-h"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
+                                <div class="h6 dropdown-header">Configuration</div>
+                                <a class="dropdown-item" href="#">Save</a>
+                                <a class="dropdown-item" href="#">Hide</a>
+                                <a class="dropdown-item" href="#">Report</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>
+                <a class="card-link" href="#">
+                    <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur adip.</h5>
+                </a>
+
+                <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo recusandae nulla rem eos ipsa praesentium esse magnam nemo dolor
+                    sequi fuga quia quaerat cum, obcaecati hic, molestias minima iste voluptates.
+                </p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
+                <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+                <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+            </div>
+        </div>
+        <!-- Post /////-->
+
+
+        <!--- \\\\\\\Post-->
+        <div class="card gedf-card">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="mr-2">
+                            <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
+                        </div>
+                        <div class="ml-2">
+                            <div class="h5 m-0">@LeeCross</div>
+                            <div class="h7 text-muted">Miracles Lee Cross</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="dropdown">
+                            <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-ellipsis-h"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
+                                <div class="h6 dropdown-header">Configuration</div>
+                                <a class="dropdown-item" href="#">Save</a>
+                                <a class="dropdown-item" href="#">Hide</a>
+                                <a class="dropdown-item" href="#">Report</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> 10 min ago</div>
+                <a class="card-link" href="#">
+                    <h5 class="card-title"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit consectetur
+                        deserunt illo esse distinctio.</h5>
+                </a>
+
+                <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam omnis nihil, aliquam est, voluptates officiis iure soluta
+                    alias vel odit, placeat reiciendis ut libero! Quas aliquid natus cumque quae repellendus. Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Ipsa, excepturi. Doloremque, reprehenderit!
+                    Quos in maiores, soluta doloremque molestiae reiciendis libero expedita assumenda fuga quae.
+                    Consectetur id molestias itaque facere? Hic!
+                </p>
+                <div>
+                    <span class="badge badge-primary">JavaScript</span>
+                    <span class="badge badge-primary">Android</span>
+                    <span class="badge badge-primary">PHP</span>
+                    <span class="badge badge-primary">Node.js</span>
+                    <span class="badge badge-primary">Ruby</span>
+                    <span class="badge badge-primary">Paython</span>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
+                <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+                <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+            </div>
+        </div>
+        <!-- Post /////-->
+
+
+        <!--- \\\\\\\Post-->
+        <div class="card gedf-card">
+            <div class="card-header">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="mr-2">
+                            <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
+                        </div>
+                        <div class="ml-2">
+                            <div class="h5 m-0">@LeeCross</div>
+                            <div class="h7 text-muted">Miracles Lee Cross</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="dropdown">
+                            <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-ellipsis-h"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
+                                <div class="h6 dropdown-header">Configuration</div>
+                                <a class="dropdown-item" href="#">Save</a>
+                                <a class="dropdown-item" href="#">Hide</a>
+                                <a class="dropdown-item" href="#">Report</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i> Hace 40 min</div>
+                <a class="card-link" href="#">
+                    <h5 class="card-title">Totam non adipisci hic! Possimus ducimus amet, dolores illo ipsum quos
+                        cum.</h5>
+                </a>
+
+                <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam sunt fugit reprehenderit consectetur exercitationem odio,
+                    quam nobis? Officiis, similique, harum voluptate, facilis voluptas pariatur dolorum tempora sapiente
+                    eius maxime quaerat.
+                    <a href="https://mega.nz/#!1J01nRIb!lMZ4B_DR2UWi9SRQK5TTzU1PmQpDtbZkMZjAIbv97hU" target="_blank">https://mega.nz/#!1J01nRIb!lMZ4B_DR2UWi9SRQK5TTzU1PmQpDtbZkMZjAIbv97hU</a>
+                </p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
+                <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+                <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+            </div>
+        </div>
+        <!-- Post /////-->
+
+
+
+    </div>
+
+    <!-- NOTIFICACIONES -->
+    <div class="col-md-3">
+        <div class="card gedf-card" style="background-color: #003566;">
+            <div class="card-body">
+                <h5 class="card-title">Notificaciones</h5>
+                <p class="card-text">Juanito le ha dado like a tu ultimo post</p>
+                <p class="card-text">Ash le ha dado like a tu ultimo post</p>
+                <p class="card-text">Sergio le ha dado like a tu ultimo post</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- NUEVO ENLACE A LIBRERÍAS JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+
+</html>
