@@ -6,7 +6,7 @@ const firebaseConfig = {
     messagingSenderId: "94431024453",
     appId: "1:94431024453:web:7a9b42eabaafbd760e9a2c",
     measurementId: "G-1QPM7DXVDK"
-  };
+};
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -14,13 +14,13 @@ firebase.initializeApp(firebaseConfig);
 // Initialize Cloud Firestore and get a reference to the service
 const db = firebase.firestore();
 
-function GetUserById(id){
+function GetUserById(id) {
     return new Promise(resolve =>
-        db.collection("user").get().then((querySnapshot) => {
+        db.collection("users").get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
-                if(doc.data().userID === id){
+                if (doc.data().userID === id) {
                     console.log("hola");
-                    resolve(doc.data());
+                    resolve(doc);
                 }
             })
 
@@ -30,36 +30,58 @@ function GetUserById(id){
 }
 
 
-function GetMaxUserId(){
-    let maxId = 0;
+function GetNextUserId() {
     return new Promise(resolve =>
-        db.collection("user").get().then((querySnapshot) => {
+        db.collection("users").get().then((querySnapshot) => {
+            let maxId = 0;
             querySnapshot.forEach((doc) => {
-                if(doc.data().userID > maxId){
+                if (doc.data().userID > maxId) {
                     maxId = doc.data().userID;
                 }
-            })
-
-            resolve(maxId);
+            });
+            resolve(maxId + 1);
         })
     );
 }
 
-function AddNewUser(nick, password, email, dob){
-    return new Promise(resolve =>
-        db.collection("user").get().then((querySnapshot) => {querySnapshot.forEach((doc) => {if(doc.data().userID > maxId){maxId = doc.data().userID;}});resolve(maxId);})
-    );
+function CheckNickExists(nick){
+    return new Promise(resolve =>{
+        db.collection("users").get().then((querySnapshot) => {
+            let existsNick = false;
+            querySnapshot.forEach((doc) =>{
+                if(doc.data().nick === nick){
+                    existsNick = true;
+                }
+            });
+            resolve(existsNick);
+        });
+    })
 }
 
-function CheckUser(nick, pass){
+function AddUser(id, nick, password, email, dob) {
+    return new Promise(resolve =>{
+        db.collection("users").add(
+            {
+                userID: id,
+                nick: nick,
+                password: password,
+                email: email,
+                dob: dob
+            }
+        );
+    });
+}
+
+function CheckUserPass(nick, pass) {
     return new Promise(resolve =>
-        db.collection("user").get().then((querySnapshot) => {
+        db.collection("users").get().then((querySnapshot) => {
+            let correctUser = null
             querySnapshot.forEach((doc) => {
-                if(doc.data().nick === nick && doc.data().password === pass){
-                    resolve(true)
+                if (doc.data().nick === nick && doc.data().password === pass) {
+                    correctUser = doc;
                 }
             })
-            resolve(false)
+            resolve(correctUser);
         })
     );
 }
