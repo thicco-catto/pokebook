@@ -16,7 +16,7 @@
   <div class="AreaRegistro">
     <body>
       <h1>Crear una cuenta</h1>
-      <form action="/my-handling-form-page" method="post">
+      <form id="register-form" method="post">
         
          
            <p for="Email" class="normal">Email:</p>
@@ -39,14 +39,15 @@
         
         
           
-          <p for ="Terms" class="Terms"> <input type="radio" id="Terms" name="Terms" />Estoy de acuerdo con los términos y condiciones:</p>
+          <p for ="Terms" class="Terms"> <input type="radio" id="Terms" name="Terms" />Estoy de acuerdo con los <a href="download/Terminos y Condiciones.pdf" download="download/TerminosyCondiciones.pdf">términos y condiciones</a>.</p>
         
         
           <div class="center"><button type="submit" class="normal" onclick="alert('Registro con exito')">Continuar</button></div>
+         <p for="Already" class="small">¿Ya estás registrado?, pincha <a href="login.html">aquí</a>. </p>
         
       </form>
   
-      <script type="module">
+      <!-- <script type="module">
           // Import the functions you need from the SDKs you need
           import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
           import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
@@ -68,10 +69,11 @@
           // Initialize Firebase
           const app = initializeApp(firebaseConfig);
           const analytics = getAnalytics(app);
-        </script>
+        </script> -->
         <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
         <script src="scripts/server.js"></script>
+        <script src="scripts/register.js"></script>
   </body>
   </div>
   

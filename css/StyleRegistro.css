@@ -23,7 +23,14 @@
   
 
 
-
+p.small{
+  align-items: flex-end;
+  margin-left: 40%;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: small;
+}
 
   p.normal {
     align-items: center;
