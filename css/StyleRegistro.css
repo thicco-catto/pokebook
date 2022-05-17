@@ -72,4 +72,9 @@ body {
     width:60%;
     height:30px;
   }
+
+  .AreaLogin{
+    border-radius: 25px;
+    background-color: #001D3D;
+}
   
