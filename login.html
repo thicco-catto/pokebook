@@ -9,13 +9,19 @@
     </head>
 
     <body>
-        <h1>Crear una cuenta</h1>
+        <h1>Crear una cuent</h1>
 
-        <form id="login-form" method="post">
-            Nick: <input type="text" id="Nick" name="UserNick"><br>
-            Contraseña: <input type="password" id="Password" name="Password"><br>
-            <input type="submit" value="Continuar">
-        </form>
+        <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email:</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
+              <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
 
         <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
