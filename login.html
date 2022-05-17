@@ -9,19 +9,24 @@
     </head>
 
     <body>
-        <h1>Crear una cuenta</h1>
+        <h1>Iniciar sesión</h1>
+        <form id="register-form" method="post">
+          
+           
+             <p for="Email" class="normal">Email:</p>
+             <div class="center"><input type="email" id="Email" name="UserEmail" class="inputContainer" required/></div>
+                     
+             <p for="Password" class="normal">Contraseña:</p>
+             <div class="center"><input type="password" id="Password" name="Password"class="inputContainer" required/></div>          
+          
+             <br>
 
-        <form>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Email:</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Contraseña:</label>
-              <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+            <div class="center"><input type="submit" class="normal"  value = "Continuar"></div>
+
+
+           <p for="Already" class="small">¿Necesitas una cuenta? <a href="registro.html">Registrarse</a> </p>
+          
+        </form>
 
         <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
