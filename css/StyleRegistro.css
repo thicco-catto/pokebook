@@ -76,5 +76,27 @@ body {
   .AreaLogin{
     border-radius: 25px;
     background-color: #001D3D;
+    margin: auto;
+    width: 40%;
+    margin-top: 10%;
+    height: 400px;
 }
-  
+
+.camposFormulario{
+  padding: 5%;
+}
+
+p.smallText{
+  align-items: flex-end;
+  margin-left: 55%;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: small;
+}
+
+.link{
+  color: blue;
+}
+
+
