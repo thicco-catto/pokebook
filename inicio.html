@@ -49,20 +49,69 @@
     background-color: rgba(0, 0, 0, 0.03);
     }
 
+    .new-card {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #003566;
+        background-clip: border-box;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 0.25rem;
+    }
+
+    .boton-subir {
+        position: fixed;
+        right: 3%;
+        bottom: 10px;
+        background-color: #ffffff;
+        padding: 10px;
+        display: none;
+        opacity: 0.7;
+        border-radius: 0.25rem;
+      }
+      
+      .boton-subir a {
+        font-size: 24px;
+        color: #fff;
+      }
   </style>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(window).scroll(function() {
+
+        var position =$(this).scrollTop();
+       
+        // Si el usuario baja el scroll muestro el div qeu contiene el enlace botón
+        if (position > 300) {
+           $(".boton-subir").fadeIn('slow');
+         } else {
+         $(".boton-subir").fadeOut('slow');
+        }
+       });
+  </script>
 
 </head>
 <body>
   
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-    crossorigin="anonymous">       
+    crossorigin="anonymous"> 
+
+    
+
 
     <!-- PANEL -->
 <div class="container gedf-wrapper">
 <div class="row">
     <div class="col-md-3">
-        <div class="card" style="background-color: #003566;">
+        <div class="new-card">
             <div class="card-body">
                 <a class="btn btn-outline-light " href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img alt="Brand" width="30" height="30" src="img/home.png"> Home
@@ -75,15 +124,14 @@
                   </a> <br> <br>
                 <a class="btn btn-warning" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" style='width:100%;' aria-haspopup="true" aria-expanded="false">
                     <img alt="Brand" width="30" height="30" src="img/add (2).png"> Nuevo Post
-                  </a> <br> <br>
+                  </a> <br>
             </div>
         </div>
     </div>
 
-    <br>
 
     <div class="col-md-6 gedf-main">
-
+        <br>
         <!--- \\\\\\\Post-->
         <div class="card gedf-card">
             <div class="new-card-header" style="background-color: #003566;">
@@ -117,14 +165,14 @@
                     <h5 class="card-title">Titulo equipo pokemon</h5>
                 </a>
 
-                <table>
-                    <tr>
-                      <td><div style="text-align: center;"><img alt="Brand" width="100" height="100" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></div></td>
-                      <td><div style="text-align: center;"><img alt="Brand" width="100" height="100" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></div></td>
-                      <td><div style="text-align: center;"><img alt="Brand" width="100" height="100" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></div></td>
-                      <td><div style="text-align: center;"><img alt="Brand" width="100" height="100" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></div></td>
-                    </tr>
-                </table>
+                <div class="container">
+                    <div class="row row-cols-4">
+                      <div class="col"><img alt="Brand" width="100" height="100" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></div>
+                      <div class="col"><img alt="Brand" width="100" height="100" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></div>
+                      <div class="col"><img alt="Brand" width="100" height="100" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></div>
+                      <div class="col"><img alt="Brand" width="100" height="100" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></div>
+                    </div>
+                </div>
 
             </div>
             <div class="card-footer"  style="background-color: #003566;">
@@ -189,12 +237,60 @@
             </div>
         </div>
         <!-- Post /////-->
+        <br>
+        <!--- \\\\\\\Post-->
+        <div class="card gedf-card">
+            <div class="new-card-header" style="background-color: #003566;">
+                <div class="d-flex justify-content-between align-items-center" >
+                    <div class="d-flex justify-content-between align-items-center" >
+                        <div class="mr-2">
+                            <img class="rounded-circle" width="45" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                        </div>
+                        <div class="ml-2">
+                            <div style="color: white;" class="h5 m-0">@SergioCopia</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="dropdown">
+                            <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+                                <i class="fa fa-ellipsis-h"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
+                                <div class="h6 dropdown-header">Configuration</div>
+                                <a class="dropdown-item" href="#">Save</a>
+                                <a class="dropdown-item" href="#">Hide</a>
+                                <a class="dropdown-item" href="#">Report</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+            </div>
+            <div class="card-body" style="background-color: #003566;">
+                <a class="card-link" href="#">
+                    <h5 class="card-title">Titulo equipo pokemon</h5>
+                </a>
+
+
+                <div class="container">
+                    <div class="row row-cols-1">
+                        <div class="col"><img display="block" margin="auto" alt="Brand" width="100" height="100" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"  style="background-color: #003566;">
+                <a href="#" class="card-link"><i class="fa fa-gittip"> <label>XX<label></i></a>
+                <a href="#" class="card-link"><i class="fa fa-comment"> <label>XX<label></i></a>
+                <a href="#" class="card-link"><i class="fa fa-mail-forward"> <label>XX<label></label></i></a>
+            </div>
+        </div>
+        <!-- Post /////-->
+        <br>
     </div>
 
     <!-- NOTIFICACIONES -->
     <div class="col-md-3">
-        <div class="card gedf-card" style="background-color: #003566;">
+        <div class="card gedf-card" style="background-color: #003566; border: 1px solid rgb(255, 255, 255);">
             <div class="card-body">
                 <h5 class="card-title">Notificaciones</h5>
                 <p class="card-text">Juanito le ha dado like a tu ultimo post</p>
@@ -205,8 +301,15 @@
     </div>
 </div>
 </div>
+
+<!-- BOTON SUBIR -->
+<div id="stop" class="boton-subir">
+    <a href="#top"><img alt="Brand" width="30" height="30" src="img/up-arrow.png"></a>
+</div>
+
 <!-- NUEVO ENLACE A LIBRERÍAS JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
