@@ -19,6 +19,7 @@ async function SubmitRegister(event) {
             const nextId = await GetNextUserId();
             await AddUser(nextId, nick, password, email, dob);
             //TODO: Redirect to main page
+            window.location.href = `inicio.html?userid=${user.data().nextId}`
         }
     }
 }

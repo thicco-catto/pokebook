@@ -2,25 +2,55 @@
 <html lang="en">
 
     <head>
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link href="css/StyleRegistro.css" rel="stylesheet"/>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
     </head>
 
-    <body>
-        <h1>Crear una cuenta</h1>
+<div class="container">
+    <div class="Header">
+          
+        
+        </div>
 
-        <form id="login-form" method="post">
-            Nick: <input type="text" id="Nick" name="UserNick"><br>
-            Contraseña: <input type="password" id="Password" name="Password"><br>
-            <input type="submit" value="Continuar">
+    </div>
+    <div class="AreaLogin">
+
+    <body>
+        <div class="camposFormulario">
+        <h1>Iniciar sesión</h1>
+        <form id="register-form" method="post">
+          
+           
+             <p for="Email" class="normal">Email:</p>
+             <div class="center"><input type="email" id="Email" name="UserEmail" class="inputContainer" required/></div>
+                     
+             <p for="Password" class="normal">Contraseña:</p>
+             <div class="center"><input type="password" id="Password" name="Password"class="inputContainer" required/></div>          
+          
+             <br>
+
+            <div class="center"><input type="submit" class="normal"  value = "Continuar"></div>
+
+
+            
+          
         </form>
+    </div>
+
+    <p for="Already" class="smallText">¿Necesitas una cuenta? <a href="registro.html" class="link">Registrarse</a> </p>
 
         <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
         <script src="scripts/server.js"></script>
         <script src="scripts/login.js"></script>
     </body>
+</div>
+  
+<div class="Footer"></div>
+</div>
 
 </html>

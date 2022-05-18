@@ -12,6 +12,7 @@ async function SubmitLogin(event){
     }else{
         //TODO: Redirect
         console.log(`logged in as ${user.data().nick}`)
+        window.location.href = `inicio.html?userid=${user.data().userID}`
     }
 }
 
