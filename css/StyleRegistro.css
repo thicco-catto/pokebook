@@ -99,4 +99,13 @@ p.smallText{
   color: blue;
 }
 
+.boton-continuar {
+  color: #000;
+  background-color: #ffc107;
+  border-color: #ffc107;
+}
 
+.btn {
+text-align: center;
+margin-top: 1%;
+}
