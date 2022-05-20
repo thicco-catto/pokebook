@@ -85,3 +85,11 @@ function CheckUserPass(nick, pass) {
         })
     );
 }
+
+function GetPosts(){
+    return new Promise(resolve =>
+        db.collection("posts").get().then((querySnapshot) => {
+            resolve(querySnapshot);
+        })
+    );
+}
