@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="css/stylePerfil.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokebook: Incio</title>
+    <link rel="shortcut icon" href="favicon.png" />
+    <!-- NUEVO LINK AL CSS -->
+    <link href="css/style.css" rel="stylesheet"/>
+
+  <style>
+    body {
+      background-color: #001D3D;
+    }
+
+    h1, h2, h3, h4, h5, h6, p, a{
+        color: white;
+    }
+
+    .h7 {
+        font-size: 0.8rem;
+        color: white;
+    }
+
+    .gedf-wrapper {
+        margin-top: 0.97rem;
+    }
+
+  @media (min-width: 992px) {
+      .gedf-main {
+          padding-left: 4rem;
+          padding-right: 4rem;
+      }
+      .gedf-card {
+          margin-bottom: 2.77rem;
+      }
+    }
+
+  /**Reset Bootstrap*/
+  .dropdown-toggle::after {
+      content: none;
+      display: none;
+  }
+
+  .new-card-header {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    }
+
+    .new-card {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #003566;
+        background-clip: border-box;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 0.25rem;
+    }
+
+    .boton-subir {
+        position: fixed;
+        right: 3%;
+        bottom: 10px;
+        background-color: #ffffff;
+        padding: 10px;
+        display: none;
+        opacity: 0.7;
+        border-radius: 0.25rem;
+      }
+      
+      .boton-subir a {
+        font-size: 24px;
+        color: #fff;
+      }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(window).scroll(function() {
+
+        var position =$(this).scrollTop();
+       
+        // Si el usuario baja el scroll muestro el div qeu contiene el enlace botón
+        if (position > 300) {
+           $(".boton-subir").fadeIn('slow');
+         } else {
+         $(".boton-subir").fadeOut('slow');
+        }
+       });
+  </script>
+
+</head>
+<body>
+  
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous"> 
+
+    
+
+
+    <!-- PANEL -->
+<div class="container gedf-wrapper">
+<div class="row">
+    <div class="col-md-3">
+        <div class="new-card">
+            <div class="card-body">
+                <a class="btn btn-outline-light " href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img alt="Brand" width="30" height="30" src="img/home.png"> Home
+                  </a> <br> <br>
+                <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img alt="Brand" width="30" height="30" src="img/conf.png"> Ajustes
+                  </a><br> <br>
+                <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img alt="Brand" width="30" height="30" src="img/perfil.png"> Perfil
+                  </a> <br> <br>
+                <a class="btn btn-warning" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" style='width:100%;' aria-haspopup="true" aria-expanded="false">
+                    <img alt="Brand" width="30" height="30" src="img/add (2).png"> Nuevo Post
+                  </a> <br>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 gedf-main">
+        <!--PERFIl-->
+                  <div class="card" style="border-radius: 4px; background-color: #003566;" >
+                    <div class="card-body p-4">
+                      <div class="d-flex text-black">
+                        <div class="flex-shrink-0">
+                          <img src="img/abra.jpg"
+                            alt="Generic placeholder image" class="img-fluid"
+                            style="width: 180px;height: 180px; border-radius: 10px;">
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                          <h5 class="mb-1">Nombre</h5>
+                          <p class="mb-2 pb-1" style="color: #A8A8A8;">email</p>
+                          <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
+                            style="background-color: #003566;">
+                            
+                            <div class="px-3">
+                              <p class="small text-muted mb-1" style="color: #A8A8A8;">Seguidores</p><!--No lo pilla-->
+                              <p class="mb-0">XXX</p>
+                            </div>
+                            <div>
+                              <p class="small text-muted mb-1" style="color: #A8A8A8;" >Seguidos</p><!--No lo pilla-->
+                              <p class="mb-0">XXX</p>
+                            </div>
+                          </div>
+                          <div class="d-flex pt-1">
+                              <a class="botonusuario">
+                            <button type="button" class="btn btn-outline-primary me-1 flex-grow-1" style="background-color: white; color:black" >Editar perfil</button></a>
+                            <button type="button" class="btn btn-primary flex-grow-1" style=" background-color: white; color: black;">Follow</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+               
+    </div>
+
+    <!-- NOTIFICACIONES -->
+    <div class="col-md-3">
+        <div class="card gedf-card" style="background-color: #003566; border: 1px solid rgb(255, 255, 255);">
+            <div class="card-body">
+                <h5 class="card-title">Notificaciones</h5>
+                <p class="card-text">Juanito le ha dado like a tu ultimo post</p>
+                <p class="card-text">Ash le ha dado like a tu ultimo post</p>
+                <p class="card-text">Sergio le ha dado like a tu ultimo post</p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+    <!-- NUEVO ENLACE A LIBRERÍAS JS -->
+    <script src="https://unpkg.com/pokeapi-js-wrapper/dist/index.js"></script>
+    <script>
+        const P = new Pokedex.Pokedex()
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="scripts/server.js"></script>
+    <script src="scripts/renderers/postRenderer.js"></script>
+    <script src="scripts/renderers/postListRenderer.js"></script>
+
+<!-- BOTON SUBIR -->
+<div id="stop" class="boton-subir">
+    <a href="#top"><img alt="Brand" width="30" height="30" src="img/up-arrow.png"></a>
+</div>
+
+</body>
+
+</html>
