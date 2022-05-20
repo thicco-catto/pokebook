@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="css/stylePerfil.css" rel="stylesheet"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -113,7 +114,7 @@
     <div class="col-md-3">
         <div class="new-card">
             <div class="card-body">
-                <a class="btn btn-outline-light " href="inicio.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-outline-light " href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img alt="Brand" width="30" height="30" src="img/home.png"> Home
                   </a> <br> <br>
                 <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -122,7 +123,7 @@
                 <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img alt="Brand" width="30" height="30" src="img/perfil.png"> Perfil
                   </a> <br> <br>
-                <a class="btn btn-warning" href="crear_post.html" role="button" id="dropdownMenuLink" data-toggle="dropdown" style='width:100%;' aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-warning" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" style='width:100%;' aria-haspopup="true" aria-expanded="false">
                     <img alt="Brand" width="30" height="30" src="img/add (2).png"> Nuevo Post
                   </a> <br>
             </div>
@@ -131,9 +132,40 @@
 
 
     <div class="col-md-6 gedf-main">
-
-        <div id="posts"></div>
-
+        <!--PERFIl-->
+                  <div class="card" style="border-radius: 4px; background-color: #003566;" >
+                    <div class="card-body p-4">
+                      <div class="d-flex text-black">
+                        <div class="flex-shrink-0">
+                          <img src="img/abra.jpg"
+                            alt="Generic placeholder image" class="img-fluid"
+                            style="width: 180px;height: 180px; border-radius: 10px;">
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                          <h5 class="mb-1">Nombre</h5>
+                          <p class="mb-2 pb-1" style="color: #A8A8A8;">email</p>
+                          <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
+                            style="background-color: #003566;">
+                            
+                            <div class="px-3">
+                              <p class="small text-muted mb-1" style="color: #A8A8A8;">Seguidores</p><!--No lo pilla-->
+                              <p class="mb-0">XXX</p>
+                            </div>
+                            <div>
+                              <p class="small text-muted mb-1" style="color: #A8A8A8;" >Seguidos</p><!--No lo pilla-->
+                              <p class="mb-0">XXX</p>
+                            </div>
+                          </div>
+                          <div class="d-flex pt-1">
+                              <a class="botonusuario">
+                            <button type="button" class="btn btn-outline-primary me-1 flex-grow-1" style="background-color: white; color:black" >Editar perfil</button></a>
+                            <button type="button" class="btn btn-primary flex-grow-1" style=" background-color: white; color: black;">Follow</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+               
     </div>
 
     <!-- NOTIFICACIONES -->

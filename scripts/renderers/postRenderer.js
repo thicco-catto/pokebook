@@ -1,4 +1,20 @@
-<div class="card gedf-card">
+function parseHTML(str) {
+    let tmp = document.implementation.createHTMLDocument();
+    tmp.body.innerHTML = str;
+    return tmp.body.children[0];
+}
+
+async function renderPost(post) {
+    let pokemonImgs = "";
+
+    for(const poke in post.data().pokemon){
+        const pokeId = post.data().pokemon[poke];
+        const pokemonFromDB = await P.getPokemonByName(pokeId);
+        pokemonImgs += `<div class="col"><img alt="Brand" width="100" height="100" src="${pokemonFromDB.sprites.front_default}"></div>\n`;
+    }
+
+    let html = `
+	<div class="card gedf-card">
     <div class="new-card-header" style="background-color: #003566;">
         <div class="d-flex justify-content-between align-items-center" >
             <div class="d-flex justify-content-between align-items-center" >
@@ -27,18 +43,13 @@
     </div>
     <div class="card-body" style="background-color: #003566;">
         <a class="card-link" href="#">
-            <h5 class="card-title">Titulo equipo pokemon</h5>
+            <h5 class="card-title">${post.data().title}</h5>
         </a>
 
 
         <div class="container">
             <div class="row row-cols-3">
-              <div class="col"><img alt="Brand" width="100" height="100" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></div>
-              <div class="col"><img alt="Brand" width="100" height="100" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></div>
-              <div class="col"><img alt="Brand" width="100" height="100" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></div>
-              <div class="col"><img alt="Brand" width="100" height="100" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></div>
-              <div class="col"><img alt="Brand" width="100" height="100" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></div>
-              <div class="col"><img alt="Brand" width="100" height="100" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></div>
+                ${pokemonImgs}
             </div>
         </div>
     </div>
@@ -48,3 +59,7 @@
         <a href="#" class="card-link"><i class="fa fa-mail-forward"> <label>XX<label></label></i></a>
     </div>
 </div>
+	`;
+    let postHTML = parseHTML(html);
+    return postHTML
+}
