@@ -8,7 +8,8 @@ async function renderPost(post) {
     let pokemonImgs = "";
 
     for(const poke in post.data().pokemon){
-        const pokemonFromDB = await P.getPokemonByName("poke");
+        const pokeId = post.data().pokemon[poke];
+        const pokemonFromDB = await P.getPokemonByName(pokeId);
         pokemonImgs += `<div class="col"><img alt="Brand" width="100" height="100" src="${pokemonFromDB.sprites.front_default}"></div>\n`;
     }
 
