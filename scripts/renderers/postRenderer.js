@@ -32,9 +32,7 @@ async function renderPost(post) {
                     </button>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
                         <div class="h6 dropdown-header">Configuration</div>
-                        <a class="dropdown-item" href="#">Save</a>
-                        <a class="dropdown-item" href="#">Hide</a>
-                        <a class="dropdown-item" href="#">Report</a>
+                        <a class="dropdown-item" href="#">Eliminar post</a>
                     </div>
                 </div>
             </div>
