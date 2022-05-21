@@ -18,16 +18,42 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                <a href="#" class="nav-link active" aria-current="page" style="color: white;">Notificaciones</a>
+                <div class="d-none d-sm-none d-md-block">
+                    <a href="inicio.html" class="nav-link active" aria-current="page" style="color: white;">Home</a>
+                </div>
                 <form class="d-flex">
+                    <br>
                     <div class="input-group">
+                        <br>
                         <input type="text" class="form-control" placeholder="Buscar usuario">
                         <button type="button" class="btn btn-secondary"><i class="bi-search"></i></button>
-                    </div>
+                    </div> 
                 </form>
-                <a href="#" class="nav-link active" aria-current="page" style="color: white;">Mi perfil
-                    <img alt="Brand" width="30" height="30" src="img/perfil.png">
-                </a>
+
+                <div class="d-block d-sm-block d-md-none">
+                    <br>
+                    <a class="btn btn-outline-light" href="inicio.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img alt="Brand" width="30" height="30" src="img/home.png"> Home
+                      </a> <br> <br>
+                      <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img alt="Brand" width="30" height="30" src="img/perfil.png"> Mi perfil
+                      </a> <br> <br>
+                    <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img alt="Brand" width="30" height="30" src="img/notificaciones.png"> Notificaciones
+                      </a> <br> <br>
+                    <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img alt="Brand" width="30" height="30" src="img/conf.png"> Ajustes
+                    </a> <br> <br>
+                    <a class="btn btn-warning" href="crear_post.html" role="button" id="dropdownMenuLink" data-toggle="dropdown" style='width:100%;' aria-haspopup="true" aria-expanded="false">
+                        <img alt="Brand" width="30" height="30" src="img/add (2).png"> Nuevo Post
+                      </a> <br> <br>
+                </div>
+
+                <div class="d-none d-sm-none d-md-block">
+                    <a href="#" class="nav-link active" aria-current="page" style="color: white;">Mi perfil
+                        <img alt="Brand" width="30" height="30" src="img/perfil.png">
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
