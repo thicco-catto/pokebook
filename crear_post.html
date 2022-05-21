@@ -238,6 +238,11 @@
                 <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img alt="Brand" width="30" height="30" src="img/perfil.png"> Perfil
                   </a> <br> <br>
+                <div class="d-block d-sm-block d-md-none">
+                    <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img alt="Brand" width="30" height="30" src="img/notificaciones.png"> Notificaciones
+                      </a> <br> <br>
+                </div>
                 <a class="btn btn-warning" href="crear_post.html" role="button" id="dropdownMenuLink" data-toggle="dropdown" style='width:100%;' aria-haspopup="true" aria-expanded="false">
                     <img alt="Brand" width="30" height="30" src="img/add (2).png"> Nuevo Post
                   </a> <br>
@@ -245,8 +250,10 @@
         </div>
     </div>
 
+    
 
     <div class="col-md-6">
+    <br>
     <div class="card gedf-card">
         <div class="new-card-header">
             <!-- CREA TU EQUIPO POKEMON -->
@@ -272,6 +279,34 @@
 
                 <br>
 
+                <!-- EQUIPO POKEMON -->
+
+                <h5>Su equipo pokemon:</h5>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 col-md-4">
+                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png">
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/124.png">
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <img alt="Brand" class="rounded mx-auto d-block" width="35" height="35" src="img/pokemon.png">
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <img alt="Brand" class="rounded mx-auto d-block" width="35" height="35" src="img/pokemon.png">
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <img alt="Brand" class="rounded mx-auto d-block" width="35" height="35" src="img/pokemon.png">
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <img alt="Brand" class="rounded mx-auto d-block" width="35" height="35" src="img/pokemon.png">
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
                 <!-- FILTROS --> <!-- ABRIR OTRO FORM -->
                 <h5>Filtros</h5>
                 <label for="pokename"> Buscar pokemon por nombre: </label>
@@ -280,57 +315,70 @@
                     <input type="text" name="pokename" class="form-control">
                 </div>
 
-                <table>
-                    <thead>
-                        <th style="color: white;">Generacion</th>
-                        <th></th>
-                        <th></th>
-                    </thead>
-                            <td>
-                                <div class="btn-group me-2" role="group" aria-label="First group">
-                                <button type="button" class="btn btn-success">1</button>
-                                <button type="button" class="btn btn-success">2</button>
-                                <button type="button" class="btn btn-success">3</button>
-                                <button type="button" class="btn btn-success">4</button>
-                                <button type="button" class="btn btn-success">5</button>
-                                <button type="button" class="btn btn-success">6</button>
-                                <button type="button" class="btn btn-success">7</button>
-                                <button type="button" class="btn btn-success">8</button>
-                                </div>
-                            </td>
+                <br>
 
-                            <td>
-                                <div class="btn-group" role="group">
-                                    <button id="btnGroupDrop1" type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                      Tipo
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                      <li><a class="dropdown-item" href="#">Normal</a></li>
-                                      <li><a class="dropdown-item" href="#">Lucha</a></li>
-                                      <li><a class="dropdown-item" href="#">Volador</a></li>
-                                      <li><a class="dropdown-item" href="#">Veneno</a></li>
-                                      <li><a class="dropdown-item" href="#">Tierra</a></li>
-                                      <li><a class="dropdown-item" href="#">Roca</a></li>
-                                      <li><a class="dropdown-item" href="#">Bicho</a></li>
-                                      <li><a class="dropdown-item" href="#">Fantasma</a></li>
-                                      <li><a class="dropdown-item" href="#">Acero</a></li>
-                                      <li><a class="dropdown-item" href="#">Fuego</a></li>
-                                      <li><a class="dropdown-item" href="#">Agua</a></li>
-                                      <li><a class="dropdown-item" href="#">Planta</a></li>
-                                      <li><a class="dropdown-item" href="#">Electrico</a></li>
-                                      <li><a class="dropdown-item" href="#">Psiquico</a></li>
-                                      <li><a class="dropdown-item" href="#">Hielo</a></li>
-                                      <li><a class="dropdown-item" href="#">Dragon</a></li>
-                                      <li><a class="dropdown-item" href="#">Siniestro</a></li>
-                                      <li><a class="dropdown-item" href="#">Hada</a></li>
-                                    </ul>
-                                </div>
-                            </td>
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Generacion
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <li><a class="dropdown-item" href="#">1</a></li>
+                        <li><a class="dropdown-item" href="#">2</a></li>
+                    </ul>
+                </div>
 
-                    <tbody>
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Tipo 1
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <li><a class="dropdown-item" href="#">Normal</a></li>
+                        <li><a class="dropdown-item" href="#">Lucha</a></li>
+                        <li><a class="dropdown-item" href="#">Volador</a></li>
+                        <li><a class="dropdown-item" href="#">Veneno</a></li>
+                        <li><a class="dropdown-item" href="#">Tierra</a></li>
+                        <li><a class="dropdown-item" href="#">Roca</a></li>
+                        <li><a class="dropdown-item" href="#">Bicho</a></li>
+                        <li><a class="dropdown-item" href="#">Fantasma</a></li>
+                        <li><a class="dropdown-item" href="#">Acero</a></li>
+                        <li><a class="dropdown-item" href="#">Fuego</a></li>
+                        <li><a class="dropdown-item" href="#">Agua</a></li>
+                        <li><a class="dropdown-item" href="#">Planta</a></li>
+                        <li><a class="dropdown-item" href="#">Electrico</a></li>
+                        <li><a class="dropdown-item" href="#">Psiquico</a></li>
+                        <li><a class="dropdown-item" href="#">Hielo</a></li>
+                        <li><a class="dropdown-item" href="#">Dragon</a></li>
+                        <li><a class="dropdown-item" href="#">Siniestro</a></li>
+                        <li><a class="dropdown-item" href="#">Hada</a></li>
+                    </ul>
+                </div>
 
-                    </tbody>
-                </table>
+                <div class="btn-group" role="group">
+                    <button id="btnGroupDrop1" type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        Tipo 2
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <li><a class="dropdown-item" href="#">Normal</a></li>
+                        <li><a class="dropdown-item" href="#">Lucha</a></li>
+                        <li><a class="dropdown-item" href="#">Volador</a></li>
+                        <li><a class="dropdown-item" href="#">Veneno</a></li>
+                        <li><a class="dropdown-item" href="#">Tierra</a></li>
+                        <li><a class="dropdown-item" href="#">Roca</a></li>
+                        <li><a class="dropdown-item" href="#">Bicho</a></li>
+                        <li><a class="dropdown-item" href="#">Fantasma</a></li>
+                        <li><a class="dropdown-item" href="#">Acero</a></li>
+                        <li><a class="dropdown-item" href="#">Fuego</a></li>
+                        <li><a class="dropdown-item" href="#">Agua</a></li>
+                        <li><a class="dropdown-item" href="#">Planta</a></li>
+                        <li><a class="dropdown-item" href="#">Electrico</a></li>
+                        <li><a class="dropdown-item" href="#">Psiquico</a></li>
+                        <li><a class="dropdown-item" href="#">Hielo</a></li>
+                        <li><a class="dropdown-item" href="#">Dragon</a></li>
+                        <li><a class="dropdown-item" href="#">Siniestro</a></li>
+                        <li><a class="dropdown-item" href="#">Hada</a></li>
+                    </ul>
+                </div>
+
 
                 <!-- TABLA -->
                 <br>
@@ -340,6 +388,7 @@
                             <table style="color: #fff;" class="table table-fixed">
                                 <thead>
                                     <tr>
+                                        <th></th>
                                         <th>Foto</th>
                                         <th>Nombre</th>
                                         <th>Generacion</th>
@@ -349,7 +398,8 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td><img alt="Brand" width="75" height="75" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></td>
+                                        <td><input type="checkbox" id="" name="" value="" class="align-middle"></td>
+                                        <td><img alt="Brand" width="75" height="75" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"></td>
                                         <td>Pikachu</td>
                                         <td>Primera</td>
                                         <td>Niidea</td>
@@ -357,7 +407,8 @@
                                     </tr>
 
                                     <tr>
-                                        <td><img alt="Brand" width="75" height="75" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></td>
+                                        <td><input type="checkbox" id="" name="" value=""></td>
+                                        <td><img alt="Brand" width="75" height="75" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"></td>
                                         <td>Pikachu</td>
                                         <td>Primera</td>
                                         <td>Niidea</td>
@@ -365,47 +416,8 @@
                                     </tr>
 
                                     <tr>
-                                        <td><img alt="Brand" width="75" height="75" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></td>
-                                        <td>Pikachu</td>
-                                        <td>Primera</td>
-                                        <td>Niidea</td>
-                                        <td>Electrico</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><img alt="Brand" width="75" height="75" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></td>
-                                        <td>Pikachu</td>
-                                        <td>Primera</td>
-                                        <td>Niidea</td>
-                                        <td>Electrico</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><img alt="Brand" width="75" height="75" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></td>
-                                        <td>Pikachu</td>
-                                        <td>Primera</td>
-                                        <td>Niidea</td>
-                                        <td>Electrico</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><img alt="Brand" width="75" height="75" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></td>
-                                        <td>Pikachu</td>
-                                        <td>Primera</td>
-                                        <td>Niidea</td>
-                                        <td>Electrico</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><img alt="Brand" width="75" height="75" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></td>
-                                        <td>Pikachu</td>
-                                        <td>Primera</td>
-                                        <td>Niidea</td>
-                                        <td>Electrico</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><img alt="Brand" width="75" height="75" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/25.png"></td>
+                                        <td><input type="checkbox" id="" name="" value=""></td>
+                                        <td><img alt="Brand" width="75" height="75" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/69.png"></td>
                                         <td>Pikachu</td>
                                         <td>Primera</td>
                                         <td>Niidea</td>
@@ -419,8 +431,8 @@
 
                 <br>
 
-				<div class="col-md-3 text-center">
-					<button type="submit" name="submit" id="submitButton" class="btn btn-contact-bg">Subir</button>
+				<div class="text-center">
+					<button type="submit" name="submit" id="submitButton" class="btn btn-contact-bg">Crear equipo</button>
 				</div>
 			</form>
         </div>
@@ -430,15 +442,22 @@
 
     <!-- NOTIFICACIONES -->
     <div class="col-md-3">
-        <div class="card gedf-card" style="background-color: #003566; border: 1px solid rgb(255, 255, 255);">
-            <div class="card-body">
-                <h5 class="card-title">Notificaciones</h5>
-                <p class="card-text">Juanito le ha dado like a tu ultimo post</p>
-                <p class="card-text">Ash le ha dado like a tu ultimo post</p>
-                <p class="card-text">Sergio le ha dado like a tu ultimo post</p>
+        <div class="d-none d-sm-none d-md-block">
+            <div class="card gedf-card" style="background-color: #003566; border: 1px solid rgb(255, 255, 255);">
+                <div class="card-body">
+                    <h5 class="card-title">Notificaciones</h5>
+                    <p class="card-text">Juanito le ha dado like a tu ultimo post</p>
+                    <p class="card-text">Ash le ha dado like a tu ultimo post</p>
+                    <p class="card-text">Sergio le ha dado like a tu ultimo post</p>
+                </div>
             </div>
         </div>
+        
     </div>
+
+    <!-- La caña de españa
+    <div class="d-none d-sm-none d-md-block">Este texto solo visible para escritorio</div>
+    <div class="d-block d-sm-block d-md-none">Este texto solo visible para smartphone</div> -->
 </div>
 </div>
 

@@ -114,7 +114,7 @@
     <div class="col-md-3">
         <div class="new-card">
             <div class="card-body">
-                <a class="btn btn-outline-light " href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-outline-light " href="inicio.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img alt="Brand" width="30" height="30" src="img/home.png"> Home
                   </a> <br> <br>
                 <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -132,40 +132,58 @@
 
 
     <div class="col-md-6 gedf-main">
-        <!--PERFIl-->
-                  <div class="card" style="border-radius: 4px; background-color: #003566;" >
-                    <div class="card-body p-4">
-                      <div class="d-flex text-black">
-                        <div class="flex-shrink-0">
-                          <img src="img/abra.jpg"
-                            alt="Generic placeholder image" class="img-fluid"
-                            style="width: 180px;height: 180px; border-radius: 10px;">
-                        </div>
-                        <div class="flex-grow-1 ms-3">
-                          <h5 class="mb-1">Nombre</h5>
-                          <p class="mb-2 pb-1" style="color: #A8A8A8;">email</p>
-                          <div class="d-flex justify-content-start rounded-3 p-2 mb-2"
-                            style="background-color: #003566;">
-                            
-                            <div class="px-3">
-                              <p class="small text-muted mb-1" style="color: #A8A8A8;">Seguidores</p><!--No lo pilla-->
-                              <p class="mb-0">XXX</p>
-                            </div>
-                            <div>
-                              <p class="small text-muted mb-1" style="color: #A8A8A8;" >Seguidos</p><!--No lo pilla-->
-                              <p class="mb-0">XXX</p>
-                            </div>
-                          </div>
-                          <div class="d-flex pt-1">
-                              <a class="botonusuario">
-                            <button type="button" class="btn btn-outline-primary me-1 flex-grow-1" style="background-color: white; color:black" >Editar perfil</button></a>
-                            <button type="button" class="btn btn-primary flex-grow-1" style=" background-color: white; color: black;">Follow</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+      <!--PERFIl-->
+      <div class="card" style="border-radius: 4px; background-color: #003566;" >
+        <div class ="row row-cols-2 ">
+          <div class="col">
+            <div class="flex-shrink-0" style="padding: 5%;">
+              <img src="img/abra.jpg"
+                alt="Generic placeholder image" class="img-fluid"
+                style="width: 180px;height: 180px; border-radius: 10px;">
+            </div>
+          </div>
+          <div class="col">
+            <br>
+            <h3>Username</h3>
+            <h4>Email</h4>
+            <div class="row row-cols-2">
+              <div class="px-3">
+                <p class="small mb-0" style="color: #A8A8A8;">Seguidores</p><!--No lo pilla-->
+                <p class="mb-0">XXX</p>
+              </div>
+              <div>
+                <p class="small mb-0" style="color: #A8A8A8;">Seguidores</p><!--No lo pilla-->
+                <p class="mb-0">XXX</p>
+              </div>
+              
+            </div>
+            <div class="row row-cols-1">
+              
+              <div class="col" style="margin-left:20% ;">
+                <button class="btn btn-primary btn-outline-light mb-2"> Seguir </button>
+              </div>
+              
+            
+            </div>
+          </div>
                
+        </div>
+        <div class="col">
+          <div class="row row-cols-3">
+            <div class="col text-center mb-1">
+              <button class="btn btn-primary btn-lg active">Posts </button>
+            </div>
+            <div class="col text-center mb-1">
+              <!--<button class="btn btn-primary btn-outline-light"> Comentarios </button>-->
+            </div>
+            <div class="col text-center mb-1">
+              <button class="btn btn-primary btn-outline-light"> Likes </button>
+            </div>
+          </div>
+        </div>       
+      </div>
+      <br>
+      <div id="posts"></div>      
     </div>
 
     <!-- NOTIFICACIONES -->
