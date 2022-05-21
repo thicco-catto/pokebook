@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="favicon.png" />
     <!-- NUEVO LINK AL CSS -->
     <link href="css/style.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
     body {
@@ -176,7 +177,6 @@
             text-align: center!important;
         }
 
-
         /* BOTON BUSCAR */
         .has-search .form-control {
             padding-left: 2.375rem;
@@ -194,39 +194,17 @@
             color: #aaa;
         }
 
-
-        /* TABLA POKEMON */
-
-    .table-fixed tbody {
-        height: 230px;
-        overflow-y: auto;
-        width: 100%;
-    }
-
-    .table-fixed thead,
-    .table-fixed tbody,
-    .table-fixed tfoot {
-        display: block;
-        align-items: center;
-        
-    }
-
-    .table-fixed tbody td,
-    .table-fixed thead > tr> th,
-    .table-fixed tfoot > tr> td{
-        float: left;
-        border-bottom-width: 0;
-
-    }
-
   </style>
 </head>
 <body>
 
+    <!-- NAVBAR -->
+    
     <!-- PANEL -->
 <div class="container gedf-wrapper">
 <div class="row">
     <div class="col-md-3">
+        <div class="d-none d-sm-none d-md-block">
         <div class="new-card">
             <div class="card-body">
                 <a class="btn btn-outline-light " href="inicio.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -247,6 +225,7 @@
                     <img alt="Brand" width="30" height="30" src="img/add (2).png"> Nuevo Post
                   </a> <br>
             </div>
+        </div>
         </div>
     </div>
 
@@ -291,16 +270,16 @@
                             <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/124.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img alt="Brand" class="rounded mx-auto d-block" width="35" height="35" src="img/pokemon.png">
+                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img alt="Brand" class="rounded mx-auto d-block" width="35" height="35" src="img/pokemon.png">
+                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img alt="Brand" class="rounded mx-auto d-block" width="35" height="35" src="img/pokemon.png">
+                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img alt="Brand" class="rounded mx-auto d-block" width="35" height="35" src="img/pokemon.png">
+                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/pokeballabierta.png">
                         </div>
                     </div>
                 </div>
@@ -381,54 +360,47 @@
 
 
                 <!-- TABLA -->
-                <br>
-                <div class="table-responsive">
-                    <div class="panel panel-default">
-                        <div class="panel-body"> 
-                            <table style="color: #fff;" class="table table-fixed">
-                                <thead>
-                                    <tr>
-                                        <th></th>
-                                        <th>Foto</th>
-                                        <th>Nombre</th>
-                                        <th>Generacion</th>
-                                        <th>Evolucion</th>
-                                        <th>Tipo</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td><input type="checkbox" id="" name="" value="" class="align-middle"></td>
-                                        <td><img alt="Brand" width="75" height="75" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"></td>
-                                        <td>Pikachu</td>
-                                        <td>Primera</td>
-                                        <td>Niidea</td>
-                                        <td>Electrico</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="checkbox" id="" name="" value=""></td>
-                                        <td><img alt="Brand" width="75" height="75" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png"></td>
-                                        <td>Pikachu</td>
-                                        <td>Primera</td>
-                                        <td>Niidea</td>
-                                        <td>Electrico</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td><input type="checkbox" id="" name="" value=""></td>
-                                        <td><img alt="Brand" width="75" height="75" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/69.png"></td>
-                                        <td>Pikachu</td>
-                                        <td>Primera</td>
-                                        <td>Niidea</td>
-                                        <td>Electrico</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
+                <br> <br>
+                <table style="color:white;" class="table align-middle mb-0">
+                    <thead style="color: white;">
+                      <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Pokemon</th>
+                        <th>Generacion</th>
+                        <th>Tipo 1</th>
+                        <th>Tipo 2</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <!-- POKEMON -->
+                        <tr>
+                            <td>
+                                <input type="checkbox" id="" value="">
+                            </td>
+                            <td>
+                            <div class="d-flex align-items-center">
+                                <img
+                                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
+                                    alt=""
+                                    style="width: 65px; height: 65px"
+                                    class="rounded-circle"
+                                    />
+                            </div>
+                            </td>
+                            <td>
+                                name
+                            </td>
+                            <td>
+                                Generacion
+                            </td>
+                            <td>
+                                tipo1
+                            </td>
+                            <td>tipo2</td>
+                        </tr>
+                    </tbody>
+                  </table>
                 <br>
 
 				<div class="text-center">
@@ -460,6 +432,9 @@
     <div class="d-block d-sm-block d-md-none">Este texto solo visible para smartphone</div> -->
 </div>
 </div>
+
+<!-- NUEVO ENLACE A LIBRERÍAS JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>
 
