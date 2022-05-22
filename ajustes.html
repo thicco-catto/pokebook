@@ -75,6 +75,25 @@
     color: #fff;
   }
 
+  .tab-pane{
+    background-color: #003566;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #003566;
+    background-clip: border-box;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 0.25rem;
+    padding: 2.5%;
+  }
+
 
 </style>
 
@@ -122,19 +141,162 @@
     
                 <div class="new-card" style="background-color: #003566;">
                   <div class="list-group" style="background-color: #003566;">
-                    <a href="#" class="list-group-item list-group-item-action">
-                      The current link item
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">A second link item</a>
-                    <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-                    <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
-                    <a href="#" class="list-group-item list-group-item-action">A disabled link item</a>
+                    <a href="#profile" class="list-group-item list-group-item-action">Información del perfil</a>
+                    <a href="#account" class="list-group-item list-group-item-action">Cuenta</a>
+                    <a href="#security" class="list-group-item list-group-item-action">Seguridad</a>
+                    <a href="#notification" class="list-group-item list-group-item-action">Notificaciones</a>
                   </div>
                 </div>
                 </div>
+                <br><br><br>
+                <br><br>
+                <div class="tab-pane active" id="profile">
+                  <h6>INFORMACIÓN DE TU PERFIL</h6>
+                  <hr>
+                  <form>
+                    <div class="form-group">
+                      <label for="fullName">Nombre completo</label>
+                      <input type="text" class="form-control" id="fullName" aria-describedby="fullNameHelp" placeholder="Introduce tu nombre completo">
+                      <small id="fullNameHelp" class="form-text text-muted">Your name may appear around here where you are mentioned. You can change or remove it at any time.</small>
+                    </div>
+                    <div class="form-group">
+                      <label for="bio">Biografía</label>
+                      <textarea class="form-control autosize" id="bio" placeholder="Escribe algo sobre ti" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 62px;"></textarea>
+                    </div>
+                    <div class="form-group">
+                      <label for="url">URL</label>
+                      <input type="text" class="form-control" id="url" placeholder="Introduce tu dirección web">
+                    </div>
+                    <div class="form-group">
+                      <label for="location">Localización</label>
+                      <input type="text" class="form-control" id="location" placeholder="Introuduce tu localización">
+                    </div>
+                    <div class="form-group small text-muted">
+                      All of the fields on this page are optional and can be deleted at any time, and by filling them out, you're giving us consent to share this data wherever your user profile appears.
+                    </div>
+                    <button type="button" class="btn btn-primary">Actualizar perfil</button>
+                    <button type="reset" class="btn btn-light">Descartar cambios</button>
+                  </form>
+                </div>
+                <br><br><br><br>
+                <div class="tab-pane" id="account">
+                  <h6>CUENTA</h6>
+                  <hr>
+                  <form>
+                    <div class="form-group">
+                      <label for="username">Nombre de usuario</label>
+                      <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Introduce tu nombre de usuario">
+                      <small id="usernameHelp" class="form-text text-muted">Al cambiar tu nombre de usuario, tu antiguo nombre de usuario estará disponible para todo aquel que lo demande.</small>
+                    </div>
+                    <hr>
+                    <div class="form-group">
+                      <label class="d-block text-danger">Eliminar cuenta</label>
+                      <p class="text-muted font-size-sm">Una vez elimines la cuenta, no hay vuelta atrás. Por favor, asegúrese antes de hacerlo.</p>
+                    </div>
+                    <button class="btn btn-danger" type="button">Eliminar cuenta</button>
+                  </form>
+                </div>
+                <br><br><br><br>
+                <div class="tab-pane" id="security">
+                  <h6>SEGURIDAD</h6>
+                  <hr>
+                  <form>
+                    <div class="form-group">
+                      <label class="d-block">Cambiar contraseña</label>
+                      <input type="text" class="form-control" placeholder="Introduce tu antigua contraseña">
+                      <input type="text" class="form-control mt-1" placeholder="Nueva contraseña">
+                      <input type="text" class="form-control mt-1" placeholder="Confirmar nueva contraseña">
+                    </div>
+                  </form>
+                  <hr>
+                  <form>
+                    <div class="form-group">
+                      <label class="d-block">Two Factor Authentication</label>
+                      <button class="btn btn-info" type="button">Enable two-factor authentication</button>
+                      <p class="small text-muted mt-2">Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to log in.</p>
+                    </div>
+                  </form>
+                  <hr>
+                  <form>
+                    <div class="form-group mb-0">
+                      <label class="d-block">Sesiones</label>
+                      <p class="font-size-sm text-secondary">This is a list of devices that have logged into your account. Revoke any sessions that you do not recognize.</p>
+                      <ul class="list-group list-group-sm">
+                        <li class="list-group-item has-icon">
+                          <div>
+                            <h6 class="mb-0">San Francisco City 190.24.335.55</h6>
+                            <small class="text-muted">Your current session seen in United States</small>
+                          </div>
+                          <button class="btn btn-light btn-sm ml-auto" type="button">More info</button>
+                        </li>
+                      </ul>
+                    </div>
+                  </form>
+                </div>
+                <br><br><br><br>
+                <div class="tab-pane" id="notification">
+                  <h6>NOTIFICACIONES</h6>
+                  <hr>
+                  <form>
+                    <div class="form-group">
+                      <label class="d-block mb-0">Alertas de seguridad</label>
+                      <div class="small text-muted mb-3">Recibir notificaciones de alerta de seguridad via email</div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1" checked="">
+                        <label class="custom-control-label" for="customCheck1">Recibir email cada vez que se encuentre una vulnerabilidad</label>
+                      </div>
+                      <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck2" checked="">
+                        <label class="custom-control-label" for="customCheck2">Recibir email con un breve resumen de vulnerabilidad</label>
+                      </div>
+                    </div>
+                    <div class="form-group mb-0">
+                      <br>
+                      <label class="d-block">Notificaciones SMS</label>
+                      <ul class="list-group list-group-sm">
+                        <li class="list-group-item has-icon">
+                          Comentarios
+                          <div class="custom-control custom-control-nolabel custom-switch ml-auto">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch1" checked="">
+                            <label class="custom-control-label" for="customSwitch1"></label>
+                          </div>
+                        </li>
+                        <li class="list-group-item has-icon">
+                          Updates From People
+                          <div class="custom-control custom-control-nolabel custom-switch ml-auto">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch2">
+                            <label class="custom-control-label" for="customSwitch2"></label>
+                          </div>
+                        </li>
+                        <li class="list-group-item has-icon">
+                          Recordatorios
+                          <div class="custom-control custom-control-nolabel custom-switch ml-auto">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch3" checked="">
+                            <label class="custom-control-label" for="customSwitch3"></label>
+                          </div>
+                        </li>
+                        <li class="list-group-item has-icon">
+                          Eventos
+                          <div class="custom-control custom-control-nolabel custom-switch ml-auto">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch4" checked="">
+                            <label class="custom-control-label" for="customSwitch4"></label>
+                          </div>
+                        </li>
+                        <li class="list-group-item has-icon">
+                          Usuarios que sigues
+                          <div class="custom-control custom-control-nolabel custom-switch ml-auto">
+                            <input type="checkbox" class="custom-control-input" id="customSwitch5">
+                            <label class="custom-control-label" for="customSwitch5"></label>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </form>
+                </div>
+
+
+
             </div>
-
-
     
     </div>
 </div>
