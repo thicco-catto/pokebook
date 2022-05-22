@@ -9,7 +9,7 @@
     <title>Document</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -36,28 +36,32 @@
            <p for="Email" class="normal">Email:</p>
            
            <div class="center"><input type="email" id="Email" name="UserEmail" class="inputContainer" required/></div>
-         
-           <br> 
-          <p for="Nick" class="normal">Nick:</p>
-          <div class="center"><input type="text" id="Nick" name="UserNick" class="inputContainer"required /></div>
-          <br> 
+           <label style="color:red ; margin-left:20%">asda </label>
+           <br>  <br>            
+           <p for="Nick" class="normal">Nick: </p>
+           <div class="center"><input type="text" id="Nick" name="UserNick" class="inputContainer"required /></div>
+           <label style="color:red ; margin-left:20%">asdsads </label>
+           <br>  <br>  
            <p for="Password" class="normal">Contraseña:</p>
            <div class="center"><input type="password" id="Password" name="Password"class="inputContainer" required/></div>
-         
-           <br> 
+           <label style="color:red ; margin-left:20%">asdsadsad </label>
+           <br>  <br>  
           <p for="PasswordConfirm" class="normal">Confirmar contraseña:</p>
           <div class="center"><input type="password" id="PasswordConfirm" name="PasswordConfirm" class="inputContainer" required/></div>
-        
-          <br> 
+          <label style="color:red ; margin-left:20%"> asdsadsad</label>
+          <br>  <br>  
           <p for ="Birthday" class="normal">Fecha de nacimiento:</p>
-          <div class="center"><input type="date" id="Birthday" name="Birthday"class="inputContainer" required/>
+          <div class="center"><input type="date" id="Birthday" name="Birthday"class="inputContainer" required/></div>
             <br> 
         
             <br> 
-          <p for ="Terms" class="Terms"> <input type="radio" id="Terms" name="Terms" />Estoy de acuerdo con los <a href="download/Terminos y Condiciones.pdf" download="download/TerminosyCondiciones.pdf">términos y condiciones</a>.</p>
-        
+          <p for ="Terms" class="Terms mb-1 "> <input type="checkbox" id="Terms" name="Terms" />Estoy de acuerdo con los <a href="download/Terminos y Condiciones.pdf" download="download/TerminosyCondiciones.pdf">términos y condiciones</a>.</p>
+          <label style="color:red ; margin-left:24%;">Debe de aceptar los términos y condiones para poder registrarte ⚠</label>
           
-          <div class="center"><input type="submit" class="normal"  value = "Continuar"></div>
+          <div class="btnContinue">
+            <input class="boton-continuar" type="submit" value="Continuar"></input>
+           </div>
+           
          <p for="Already" class="small"><a href="login.html">¿Ya estás registrado?</a> </p>
         
       </form>
