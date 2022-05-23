@@ -3,19 +3,24 @@ async function SubmitLogin(event){
 
     const nick = document.getElementById("Nick").value;
     const password = document.getElementById("Password").value;
-    console.log("login");
 
-    const user = await CheckUserPass(nick, password);
-    if(user == null){
+    const user = await GetUserByNick(nick);
+
+    if(!user.exists){
+        //TODO: Error wrong username
+        console.log("Username doesnt exist")
+        return;
+    }
+
+    if(user.data().password !== password){
         //TODO: Error wrong pass
         console.log("Wrong password");
-    }else{
-        //TODO: Redirect
-        console.log(`logged in as ${user.data().nick}`)
-        window.location.href = `inicio.html?userid=${user.data().userID}`
+        return;
     }
+
+    console.log(`logged in as ${user.id}`)
+    window.location.href = `inicio.html?user=${user.id}`
 }
 
 const form = document.getElementById("login-form");
-
 form.addEventListener("submit", SubmitLogin);
