@@ -41,18 +41,14 @@ function typeToSpanish(type){
     }
 }
 
-async function onLoad(event) {
-    const interval = {
-        offset: 0,
-        limit: 898,
-    }
-    const pokemonList = await P.getPokemonsList(interval);
+let isLoading = false;
+let pokemonList = [];
 
+function fillTable(){
     const tableBody = document.getElementById("pokemonList");
 
-    for (let i = 0; i < pokemonList.count; i++) {
-        if(pokemonList.results[i] === undefined){continue;}
-        const pokemon = await P.getPokemonByName(pokemonList.results[i].name);
+    for (let i = 0; i < pokemonList.length; i++) {
+        const pokemon = pokemonList[i];
         
         let newRow = tableBody.insertRow()
 
@@ -93,4 +89,42 @@ async function onLoad(event) {
     }
 }
 
-addEventListener("DOMContentLoaded", onLoad)
+
+async function onLoad(event) {
+    isLoading = true;
+
+    const interval = {
+        offset: 0,
+        limit: 898,
+    }
+    const pokemonListRaw = await P.getPokemonsList(interval);
+
+    for (let i = 0; i < pokemonListRaw.count; i++) {
+        if(pokemonListRaw.results[i] === undefined){continue;}
+        const pokemon = await P.getPokemonByName(pokemonListRaw.results[i].name);
+        console.log(i);
+        pokemonList.push(pokemon);
+    }
+
+    console.log("finished loading");
+    isLoading = false;
+
+    fillTable();
+}
+addEventListener("DOMContentLoaded", onLoad);
+
+
+async function onSubmit(event){
+    event.preventDefault();   
+    if(isLoading){
+        //TODO: make it clear it is loading
+        console.log("loading");
+        return;
+    }
+    const table = document.getElementById("pokemonList");
+    table.innerHTML = "";
+    fillTable();
+}
+const form = document.getElementById("filter-form");
+console.log(form);
+form.addEventListener("submit", onSubmit);
