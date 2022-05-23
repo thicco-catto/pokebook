@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokebook: Crear Equipo</title>
+    <link rel="shortcut icon" href="favicon.png" />
+    <!-- NUEVO LINK AL CSS -->
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #001D3D;
+    }
+
+    h1, h2, h3, h4, h5, h6, p, a{
+        color: white;
+    }
+
+    .h7 {
+        font-size: 0.8rem;
+        color: white;
+    }
+
+    .gedf-wrapper {
+        margin-top: 0.97rem;
+    }
+
+  @media (min-width: 992px) {
+      .gedf-main {
+          padding-left: 4rem;
+          padding-right: 4rem;
+      }
+      .gedf-card {
+          margin-bottom: 2.77rem;
+      }
+    }
+
+
+  .new-card-header {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    background-color: #003566;
+    }
+
+    .new-card {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #003566;
+        background-clip: border-box;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 0.25rem;
+    }
+
+
+
+    /*  NUEVOS ESTILOS */ 
+        .contact-area {
+            background: url(../img/bg/contact-bg.png) no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        @media only screen and (max-width:768px) {
+            .contact {
+                margin-bottom: 60px;
+            }
+        }
+        
+        .contact input {
+            background: #fff;
+            border: 1px solid #fff;
+            border-radius: 3px;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            color: #232434;
+            font-size: 16px;
+            height: 60px;
+            padding: 10px;
+            width: 100%;
+            font-family: 'poppins', sans-serif;
+            padding-left: 30px;
+            -webkit-transition: all 0.3s ease 0s;
+            -o-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;
+        }
+        
+        .contact textarea {
+            background: #fff;
+            border: 1px solid #fff;
+            border-radius: 3px;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            color: #232434;
+            font-size: 16px;
+            padding: 10px;
+            width: 100%;
+            font-family: 'poppins', sans-serif;
+            padding-left: 30px;
+            -webkit-transition: all 0.3s ease 0s;
+            -o-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;
+        }
+        
+        .contact input:focus {
+            background: #fff;
+            border: 1px solid #fff;
+            color: #232434;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            outline: 0 none;
+        }
+        
+        .contact textarea:focus {
+            background: #fff;
+            border: 1px solid #fff;
+            color: #232434;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            outline: 0 none;
+        }
+        
+        
+        .btn-contact-bg {
+            border-radius: 10px;
+            color: black;
+            outline: medium none !important;
+            padding: 15px 27px;
+            text-transform: capitalize;
+            -webkit-transition: all 0.3s ease 0s;
+            -o-transition: all 0.3s ease 0s;
+            transition: all 0.3s ease 0s;
+            background: #FFC300;
+            font-family: 'poppins', sans-serif;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .btn-contact-bg:hover,
+        .btn-contact-bg:focus {
+            background: #fff;
+            color: #232434;
+        }
+        
+        label {
+            color: white;
+            margin-bottom: 1px;
+        }
+        
+        .section-title h1 {
+            font-size: 44px;
+            font-weight: 500;
+            margin-top: 0;
+            position: relative;
+            text-transform: capitalize;
+            margin-bottom: 15px;
+        }
+        .section-title p {
+            padding: 0 10px;
+            width: 70%;
+            margin: auto;
+            letter-spacing: 1px;
+        }
+
+        .text-center {
+            text-align: center!important;
+        }
+
+        /* BOTON BUSCAR */
+        .has-search .form-control {
+            padding-left: 2.375rem;
+        }
+        
+        .has-search .form-control-feedback {
+            position: absolute;
+            z-index: 2;
+            display: block;
+            width: 2.375rem;
+            height: 2.375rem;
+            line-height: 2.375rem;
+            text-align: center;
+            pointer-events: none;
+            color: #aaa;
+        }
+
+  </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    
+    <!-- PANEL -->
+<div class="container gedf-wrapper">
+<div class="row">
+    <div class="col-md-3">
+        <div class="d-none d-sm-none d-md-block">
+        <div class="new-card">
+            <div class="card-body">
+                <a class="btn btn-outline-light" href="inicio.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img alt="Brand" width="30" height="30" src="img/home.png"> Home
+                  </a> <br> <br>
+                <a class="btn btn-outline-light" href="ajustes.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img alt="Brand" width="30" height="30" src="img/conf.png"> Ajustes
+                  </a><br> <br>
+                <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img alt="Brand" width="30" height="30" src="img/perfil.png"> Perfil
+                  </a> <br> <br>
+                <div class="d-block d-sm-block d-md-none">
+                    <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img alt="Brand" width="30" height="30" src="img/notificaciones.png"> Notificaciones
+                      </a> <br> <br>
+                </div>
+                <a class="btn btn-warning" href="crear_post.html" role="button" id="dropdownMenuLink" data-toggle="dropdown" style='width:100%;' aria-haspopup="true" aria-expanded="false">
+                    <img alt="Brand" width="30" height="30" src="img/add (2).png"> Nuevo Post
+                  </a> <br>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    
+
+    <div class="col-md-6">
+    <br>
+    <div class="card gedf-card">
+        
+            <!-- POST EQUIPO POKEMON -->
+        
+        
+
+        <div class="card-body" style="background-color: #003566;">
+            <form class="form">
+                <div class="d-flex align-items-center" >
+                    <div class="mr-2">
+                        <img class="rounded-circle" width="45" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    </div>
+                    <div class="ml-2">
+                        <div style="color: white;" class="h5 m-0">@SergioCopia</div>
+                    </div>
+                </div>
+               
+				<div class="form-group col-md-12">
+                    <div class="card-body" style="background-color: #003566; "> <h3> Titulo del equipo</h3></div>
+				</div>
+
+            
+                <div class="form-group col-md-12">
+					<div class="card-body" style="background-color: #003566; "> <p> Descripción del equipo</p></div>
+				</div>
+
+              
+
+                <br>
+
+                <!-- EQUIPO POKEMON -->
+
+                <div class="card-body" style="background-color: #003566; "> <h5> Equipo pokemon</h5></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 col-md-4">
+                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png">
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/124.png">
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/pokeballabierta.png">
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/pokeballabierta.png">
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/pokeballabierta.png">
+                        </div>
+                        <div class="col-6 col-md-4">
+                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/pokeballabierta.png">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer"  style="background-color: #003566;">  <!--FALTA LOS ICONOS QUE NO SE COMO VAN-->
+                    <a href="#" class="card-link"><i class="fa fa-gittip"> <label>XX<label></i></a>
+                    <a href="#" class="card-link"><i class="fa fa-comment"> <label>XX<label></i></a>
+                    <a href="#" class="card-link"><i class="fa fa-mail-forward"> <label>XX<label></label></i></a>
+                </div>
+				
+			</form>
+        </div>
+    </div>
+
+
+
+
+    <div class="card gedf-card">
+        
+        <!-- RESPUESTA -->
+    
+    
+
+    <div class="card-body" style="background-color: #003566;">
+        <form class="form">
+            <p> En respuesta a @SergioCopia:</p>
+            <div class="d-flex align-items-center" >
+                <div class="mr-2">
+                    <img class="rounded-circle" width="45" src="img/wanditaa.png" alt="">
+                </div>
+                <div class="ml-2">
+                    <div style="color: white;" class="h5 m-0">@MiguelCopia</div>
+                </div>
+            </div>
+
+
+            <div class="form-group col-md-12">
+                <div class="card-body" style="background-color: #003566; "> <p> Contenido de la respuesta</p></div>
+            </div>
+
+          
+
+            <br>
+
+            <!-- EQUIPO POKEMON -->
+
+            <div class="card-footer"  style="background-color: #003566;">  <!--FALTA LOS ICONOS QUE NO SE COMO VAN-->
+                <a href="#" class="card-link"><i class="fa fa-gittip"> <label>XX<label></i></a>
+                <a href="#" class="card-link"><i class="fa fa-comment"> <label>XX<label></i></a>
+                <a href="#" class="card-link"><i class="fa fa-mail-forward"> <label>XX<label></label></i></a>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+
+
+
+    </div>
+
+
+
+
+    
+
+
+    <!-- NOTIFICACIONES -->
+    <div class="col-md-3">
+        <div class="d-none d-sm-none d-md-block">
+            <div class="card gedf-card" style="background-color: #003566; border: 1px solid rgb(255, 255, 255);">
+                <div class="card-body">
+                    <a href="notificaciones.html"><h5 class="card-title">NOTIFICACIONES</h5></a>
+                    <p class="card-text">Juanito le ha dado like a tu ultimo post</p>
+                    <p class="card-text">Ash le ha dado like a tu ultimo post</p>
+                    <p class="card-text">Sergio le ha dado like a tu ultimo post</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- La caña de españa
+    <div class="d-none d-sm-none d-md-block">Este texto solo visible para escritorio</div>
+    <div class="d-block d-sm-block d-md-none">Este texto solo visible para smartphone</div> -->
+</div>
+</div>
+
+<!-- NUEVO ENLACE A LIBRERÍAS JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
