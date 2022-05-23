@@ -40,7 +40,7 @@ async function renderPost(post) {
 
     </div>
     <div class="card-body" style="background-color: #003566;">
-        <a class="card-link" href="#">
+        <a class="card-link" href="postgrande.html">  <!-- link a comentario -->
             <h5 class="card-title">${post.data().title}</h5>
         </a>
 
@@ -53,7 +53,7 @@ async function renderPost(post) {
     </div>
     <div class="card-footer"  style="background-color: #003566;">
         <a href="#" class="card-link"><i class="fa fa-gittip"> <label>XX<label></i></a>
-        <a href="#" class="card-link"><i class="fa fa-comment"> <label>XX<label></i></a>
+        <a href="crearcomentario.html" class="card-link"><i class="fa fa-comment"> <label>XX<label></i></a>
         <a href="#" class="card-link"><i class="fa fa-mail-forward"> <label>XX<label></label></i></a>
     </div>
 </div>
