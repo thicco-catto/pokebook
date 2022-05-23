@@ -14,76 +14,24 @@ firebase.initializeApp(firebaseConfig);
 // Initialize Cloud Firestore and get a reference to the service
 const db = firebase.firestore();
 
-function GetUserById(id) {
+function GetUserByNick(nick) {
     return new Promise(resolve =>
-        db.collection("users").get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                if (doc.data().userID === id) {
-                    console.log("hola");
-                    resolve(doc);
-                }
-            })
-
-            resolve(null);
-        })
+        db.collection("users").doc(nick).get().then((doc) =>
+            resolve(doc)
+        )
     );
 }
 
-
-function GetNextUserId() {
-    return new Promise(resolve =>
-        db.collection("users").get().then((querySnapshot) => {
-            let maxId = 0;
-            querySnapshot.forEach((doc) => {
-                if (doc.data().userID > maxId) {
-                    maxId = doc.data().userID;
-                }
-            });
-            resolve(maxId + 1);
-        })
-    );
-}
-
-function CheckNickExists(nick){
+function AddUser(nick, password, email, dob) {
     return new Promise(resolve =>{
-        db.collection("users").get().then((querySnapshot) => {
-            let existsNick = false;
-            querySnapshot.forEach((doc) =>{
-                if(doc.data().nick === nick){
-                    existsNick = true;
-                }
-            });
-            resolve(existsNick);
-        });
-    })
-}
-
-function AddUser(id, nick, password, email, dob) {
-    return new Promise(resolve =>{
-        db.collection("users").add(
+        db.collection("users").doc(nick).set(
             {
-                userID: id,
-                nick: nick,
                 password: password,
                 email: email,
                 dob: dob
             }
-        );
+        ).then(() => resolve());
     });
-}
-
-function CheckUserPass(nick, pass) {
-    return new Promise(resolve =>
-        db.collection("users").get().then((querySnapshot) => {
-            let correctUser = null
-            querySnapshot.forEach((doc) => {
-                if (doc.data().nick === nick && doc.data().password === pass) {
-                    correctUser = doc;
-                }
-            })
-            resolve(correctUser);
-        })
-    );
 }
 
 function GetPosts(){

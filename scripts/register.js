@@ -9,21 +9,20 @@ async function SubmitRegister(event) {
 
     if (password !== password2) {
         //TODO: Error non repeated passwords
-        console.log("repeated passwords");
-    } else {
-        const existsNick = await CheckNickExists(nick);
-        if (existsNick) {
-            //TODO: Error nickname exists
-            console.log("The nickname is repeated")
-        } else {
-            const nextId = await GetNextUserId();
-            await AddUser(nextId, nick, password, email, dob);
-            //TODO: Redirect to main page
-            window.location.href = `inicio.html?userid=${user.data().nextId}`
-        }
+        console.log("Passwords must match passwords");
+        return;
     }
+
+    const user = await GetUserByNick(nick);
+    if (user.exists) {
+        //TODO: Error nickname exists
+        console.log("The nickname is repeated");
+        return;
+    }
+
+    await AddUser(nick, password, email, dob);
+    window.location.href = `inicio.html?user=${nick}`;
 }
 
 const form = document.getElementById("register-form");
-
 form.addEventListener("submit", SubmitRegister);
