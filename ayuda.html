@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokebook</title>
+    <link rel="shortcut icon" href="favicon.png" />
+    <!-- NUEVO LINK AL CSS -->
+    <link href="css/style.css" rel="stylesheet"/>
+    
+    <style>
+        .col-sm-4{
+            margin-top: 1%;
+        }
+
+        h2,p,a{
+          color: white;
+        }
+        
+        .buttons-container {
+          width: 100%;
+          height: auto;
+          min-height: max-content;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding: 0 32px;
+          margin: 16px 0;
+      }
+      .collapsible {
+        background-color: #003566;
+        color: white;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+      }
+
+    .active, .collapsible:hover {
+        background-color: #003566;
+        border-color: #ffc107;
+        border-style: solid;
+    }
+
+    .content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #001D3D;
+        border-color: #003566;
+        border-style: solid;
+    }
+    </style>
+
+</head>
+<body style="background-color: #001D3D;">
+
+  <!-- BARRA DE NAVEGACION PC -->
+  <div class="d-none d-sm-none d-md-block">
+    <nav class="navbar navbar-expand-lg" style="background-color: #003566;"> 
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html" style="color: white;"> PokeBook
+            <img alt="Brand" width="30" height="30" src="img/logo.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <div>
+              <a href="registro.html">
+              <button class="btn btn-warning" type="button">Registrate</button> </a>
+              </div>
+            <div>
+              <a href="login.html">
+              <button class="btn btn-outline-warning" type="button">Acceder</button> </a>
+            </div>
+          </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- MINI NAV MOVIL -->
+  <div class="d-block d-sm-block d-md-none">
+      <div class="buttons-container">
+        <a class="navbar-brand" href="index.html" style="color: white;"> PokeBook
+          <img alt="Brand" width="30" height="30" src="img/logo.png">
+        </a>
+      </div>
+  </div>
+
+  <!-- SLIDES PC -->
+  <div class="container gedf-wrapper">
+    <div class="row">
+        <div class="">
+            <a style="color:#ffc107"><h1>Preguntas frecuentes</h1></a>
+            <button type="button" class="collapsible">¿Qué es Pokebook?🔽  </button>
+            <div class="content">
+                <p>Pokebook es una red social creada para compartir tus equipos pokémon. Además, en ella podrás seguir a personas e interactuar con ellos. </p>
+                <p>   -Podrás compartir tu equipo pokemon favorito, tus amigos podrán darte like y/o repostear el equipo si les gusta.</p>
+                <p> -Podrás seguir a los grandes jugadores de pokemon y así ver los equipos que usan para avanzar.</p>
+                <p> -¡Podrás hacer amigos!</p>
+                    
+                <img src="img/gifs/nice.gif" class="d-block w-70">
+            </div>
+                <button type="button" class="collapsible">¿Cómo seguir a otros usuarios?🔽</button>
+            <div class="content">
+                <p>Al seguir a otros usuarios podrás ver sus post y repost en tu feed</p>
+                <p>Para ello debes acceder al perfil del usuario a seguir, ya sea buscándolo en el buscador, a traves de un repost de otro usuario o a través de 
+                    que haya interactuado contigo. Una vez pinches en su perfil, te saldrá un botón al lado de su foto de perfil en el que pone "Seguir". Una vez 
+                    clicas ya lo tienes hecho.</p>
+                <p> Si por algún casual quieres dejar de seguir a ese usuario, que es muy pesado... con repetir el mismo proceso y pulsando el botón de "Seguido" lo dejarás de seguir</p>
+                <img src="img/gifs/uff-ouf.gif" class="d-block w-70">
+            </div>
+                <button type="button" class="collapsible">¿Qué son los likes?🔽</button>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <button type="button" class="collapsible">¿Cómo puedo comentar?🔽</button>
+            <div class="content">
+                <p></p>
+                    
+                <img src="img/gifs/nice.gif" class="d-block w-70">
+            </div>
+            <button type="button" class="collapsible">Repost, qué es y cómo utilizarlo🔽 </button>
+            <div class="content">
+                <p></p>
+                    
+                <img src="img/gifs/nice.gif" class="d-block w-70">
+            </div>
+            <button type="button" class="collapsible">Quiero publicar un post🔽</button>
+            <div class="content">
+                <p></p>
+                    
+                <img src="img/gifs/nice.gif" class="d-block w-70">
+            </div>
+            <button type="button" class="collapsible">Las notificaciones🔽</button>
+            <div class="content">
+                <p>!</p>
+                    
+                <img src="img/gifs/nice.gif" class="d-block w-70">
+            </div>
+            <button type="button" class="collapsible">Borrar post🔽</button>
+            <div class="content">
+                <p>!</p>
+                    
+                <img src="img/gifs/nice.gif" class="d-block w-70">
+            </div>
+          </div>
+    </div>
+  </div>        
+
+
+ 
+
+  <!-- MÓVIL: SLIDES + BOTONES -->
+  <div class="d-block d-sm-block d-md-none">
+
+    <!-- BOTONES -->
+    <div class="buttons-container">
+      <a href="registro.html">
+        <button class="btn btn-warning" type="button">Registrate</button> 
+      </a>
+      <a href="login.html">
+        <button class="btn btn-outline-warning" type="button">Acceder</button> 
+      </a>
+    </div>
+    <h3 style="color: white; text-align: center;">Comienza tu aventura</h3>
+  </div>
+
+
+  <!-- FOOTER -->
+  <div class="container">
+    <footer class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="" class="nav-link px-2"><p>Home</p></a></li>
+        <li class="nav-item"><a href="" class="nav-link px-2"><p>Features</p></a></li>
+        <li class="nav-item"><a href="" class="nav-link px-2"><p>Pricing</p></a></li>
+        <li class="nav-item"><a href="" class="nav-link px-2"><p>FAQs</p></a></li>
+        <li class="nav-item"><a href="" class="nav-link px-2"><p>About</p></a></li>
+      </ul>
+      <p class="text-center text-muted"><p>© 2022 PokeBook, Inc</p></p>
+    </footer>
+  </div>
+
+<!-- NUEVO ENLACE A LIBRERÍAS JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+    
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    }
+    </script>
+</body>
+</html>

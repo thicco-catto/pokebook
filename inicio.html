@@ -66,7 +66,7 @@
         border-radius: 0.25rem;
     }
 
-    .boton-subir {
+    .boton-crear {
         position: fixed;
         right: 3%;
         bottom: 10px;
@@ -76,7 +76,7 @@
         border-radius: 1.5rem;
       }
       
-      .boton-subir a {
+      .boton-crear a {
         color: #fff;
       }
   </style>
@@ -86,12 +86,11 @@
     $(window).scroll(function() {
 
         var position =$(this).scrollTop();
-       
-        // Si el usuario baja el scroll muestro el div qeu contiene el enlace botón
-        if (position > -1) {
-           $(".boton-subir").fadeIn('slow');
+        // Si el usuario baja el scroll muestro el div que contiene el enlace botón
+        if (position > 01) {
+           $(".boton-crear").fadeIn('slow');
          } else {
-         $(".boton-subir").fadeOut('slow');
+         $(".boton-crear").fadeOut('slow');
         }
        });
   </script>
@@ -115,7 +114,7 @@
                     <a class="btn btn-outline-light " href="inicio.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img alt="Brand" width="30" height="30" src="img/home.png"> Home
                       </a> <br> <br>
-                    <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="btn btn-outline-light" href="ajustes.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <img alt="Brand" width="30" height="30" src="img/conf.png"> Ajustes
                       </a><br> <br>
                     <a class="btn btn-outline-light" href="Perfil.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -146,7 +145,7 @@
         <div class="d-none d-sm-none d-md-block">
             <div class="card gedf-card" style="background-color: #003566; border: 1px solid rgb(255, 255, 255);">
                 <div class="card-body">
-                    <h5 class="card-title">Notificaciones</h5>
+                    <a href="notificaciones.html"><h5 class="card-title">NOTIFICACIONES</h5></a>
                     <p class="card-text">Juanito le ha dado like a tu ultimo post</p>
                     <p class="card-text">Ash le ha dado like a tu ultimo post</p>
                     <p class="card-text">Sergio le ha dado like a tu ultimo post</p>
@@ -169,8 +168,8 @@
     <script src="scripts/renderers/postRenderer.js"></script>
     <script src="scripts/renderers/postListRenderer.js"></script>
 
-<!-- BOTON SUBIR -->
-<div id="stop" class="boton-subir">
+<!-- BOTON CREAR POST -->
+<div id="stop" class="boton-crear">
     <a href="crear_post.html"><img alt="Brand" width="40" height="40" src="img/add (2).png"></a>
 </div>
 
