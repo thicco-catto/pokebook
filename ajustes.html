@@ -4,118 +4,206 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokebook: Configuración</title>
+    <title>Pokebook: Ajustes</title>
     <link rel="shortcut icon" href="favicon.png" />
     <!-- NUEVO LINK AL CSS -->
-    <link href="css/styleAjustes.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
+
+<style>
+  body {
+    background-color: #001D3D;
+  }
+
+  h1, h2, h3, h4, h5, h6, p, a{
+      color: white;
+  }
+
+  .gedf-wrapper {
+      margin-top: 0.97rem;
+  }
+
+@media (min-width: 992px) {
+    .gedf-main {
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+    .gedf-card {
+        margin-bottom: 2.77rem;
+    }
+  }
+
+  .new-card {
+      position: relative;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      background-color: #003566;
+      background-clip: border-box;
+      border: 1px solid rgb(255, 255, 255);
+      border-radius: 0.25rem;
+  }
+      
+  label {
+      color: white;
+      margin-bottom: 1px;
+  }
+  
+  .section-title h1 {
+      font-size: 44px;
+      font-weight: 500;
+      margin-top: 0;
+      position: relative;
+      text-transform: capitalize;
+      margin-bottom: 15px;
+  }
+
+  .text-center {
+      text-align: center!important;
+  }
+
+  .list-group-item {
+    background-color: #003566;
+    color: #fff;
+  }
+
+  .tab-pane{
+    background-color: #003566;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #003566;
+    background-clip: border-box;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 0.25rem;
+    padding: 2.5%;
+  }
+
+
+</style>
 
 <body>
     
-    <div class="container">
-
-        <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb" class="main-breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="inicio.html">Inicio</a></li>
-            <li class="breadcrumb-item"><a href="Perfil.html">Perfil</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Ajustes</li>
-          </ol>
-        </nav>
-        <!-- /Breadcrumb -->
-  
-        <div class="row gutters-sm">
-          <div class="col-md-4 d-none d-md-block">
-            <div class="card">
-              <div class="card-body">
-                <nav class="nav flex-column nav-pills nav-gap-y-1">
-                  <a href="#profile" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded active">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user mr-2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>Tu perfil
-                  </a>
-                  <a href="#account" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings mr-2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>Configuración de cuenta
-                  </a>
-                  <a href="#security" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield mr-2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Seguridad
-                  </a>
-                  <a href="#notification" data-toggle="tab" class="nav-item nav-link has-icon nav-link-faded">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell mr-2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>Notificaciones
-                  </a>
-                </nav>
-              </div>
+  <div class="container gedf-wrapper">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="d-none d-sm-none d-md-block">
+            <div class="new-card">
+                <div class="card-body">
+                    <a class="btn btn-outline-light " href="inicio.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img alt="Brand" width="30" height="30" src="img/home.png"> Home
+                      </a> <br> <br>
+                    <a class="btn btn-outline-light" href="ajustes.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img alt="Brand" width="30" height="30" src="img/conf.png"> Ajustes
+                      </a><br> <br>
+                    <a class="btn btn-outline-light" href="Perfil.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img alt="Brand" width="30" height="30" src="img/perfil.png"> Perfil
+                      </a> <br> <br>
+                    <div class="d-block d-sm-block d-md-none">
+                        <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img alt="Brand" width="30" height="30" src="img/notificaciones.png"> Notificaciones
+                          </a> <br> <br>
+                    </div>
+                    <a class="btn btn-warning" href="crear_post.html" role="button" id="dropdownMenuLink" data-toggle="dropdown" style='width:100%;' aria-haspopup="true" aria-expanded="false">
+                        <img alt="Brand" width="30" height="30" src="img/add (2).png"> Nuevo Post
+                      </a> <br>
+                </div>
             </div>
-          </div>
-          <div class="col-md-8">
-            <div class="card">
-              <div class="card-header border-bottom mb-3 d-flex d-md-none">
-                <ul class="nav nav-tabs card-header-tabs nav-gap-x-1" role="tablist">
-                  <li class="nav-item">
-                    <a href="#profile" data-toggle="tab" class="nav-link has-icon active"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#account" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#security" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#notification" data-toggle="tab" class="nav-link has-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg></a>
-                  </li>
-                </ul>
-              </div>
-              <div class="card-body tab-content">
+            </div>
+        </div>
+
+
+         <!-- ESCRITORIO -->
+        
+            <!-- AJUSTES -->
+            <div class="col-md-9">
+                <div class="d-none d-sm-none d-md-block">
+                <div>
+                    <div class="section-title text-center">
+                        <h3>AJUSTES</h3>
+                    </div>
+                </div>
+    
+                <div class="new-card" style="background-color: #003566;">
+                  <div class="list-group" style="background-color: #003566;">
+                    <a href="#profile" class="list-group-item list-group-item-action">Información del perfil</a>
+                    <a href="#account" class="list-group-item list-group-item-action">Cuenta</a>
+                    <a href="#security" class="list-group-item list-group-item-action">Seguridad</a>
+                    <a href="#notification" class="list-group-item list-group-item-action">Notificaciones</a>
+                  </div>
+                </div>
+                </div>
+                <br><br><br>
+                <br><br>
                 <div class="tab-pane active" id="profile">
                   <h6>INFORMACIÓN DE TU PERFIL</h6>
                   <hr>
                   <form>
                     <div class="form-group">
                       <label for="fullName">Nombre completo</label>
-                      <input type="text" class="form-control" id="fullName" aria-describedby="fullNameHelp" placeholder="Escribe tu nombre completo">
+                      <input type="text" class="form-control" id="fullName" aria-describedby="fullNameHelp" placeholder="Introduce tu nombre completo">
                       <small id="fullNameHelp" class="form-text text-muted">Your name may appear around here where you are mentioned. You can change or remove it at any time.</small>
                     </div>
                     <div class="form-group">
                       <label for="bio">Biografía</label>
-                      <textarea class="form-control autosize" id="bio" placeholder="Escibe algo sobre ti" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 62px;"></textarea>
+                      <textarea class="form-control autosize" id="bio" placeholder="Escribe algo sobre ti" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 62px;"></textarea>
                     </div>
                     <div class="form-group">
                       <label for="url">URL</label>
-                      <input type="text" class="form-control" id="url" placeholder="Escribe tu dirección web">
+                      <input type="text" class="form-control" id="url" placeholder="Introduce tu dirección web">
                     </div>
                     <div class="form-group">
                       <label for="location">Localización</label>
-                      <input type="text" class="form-control" id="location" placeholder="Escribe tu ciudad">
+                      <input type="text" class="form-control" id="location" placeholder="Introuduce tu localización">
                     </div>
                     <div class="form-group small text-muted">
-                        Todos los campos de esta página son opcionales y pueden ser borrados en cualquier momento, y rellenándolos nos estás dando consentimiento para compartir estos datos en tu perfil.
+                      All of the fields on this page are optional and can be deleted at any time, and by filling them out, you're giving us consent to share this data wherever your user profile appears.
                     </div>
                     <button type="button" class="btn btn-primary">Actualizar perfil</button>
-                    <button type="reset" class="btn btn-light">Restaurar cambios</button>
+                    <button type="reset" class="btn btn-light">Descartar cambios</button>
                   </form>
                 </div>
+                <br><br><br><br>
                 <div class="tab-pane" id="account">
-                  <h6>CONFIGURACIÓN DE CUENTA</h6>
+                  <h6>CUENTA</h6>
                   <hr>
                   <form>
                     <div class="form-group">
                       <label for="username">Nombre de usuario</label>
                       <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" placeholder="Introduce tu nombre de usuario">
-                      <small id="usernameHelp" class="form-text text-muted">After changing your username, your old username becomes available for anyone else to claim.</small>
+                      <small id="usernameHelp" class="form-text text-muted">Al cambiar tu nombre de usuario, tu antiguo nombre de usuario estará disponible para todo aquel que lo demande.</small>
                     </div>
                     <hr>
                     <div class="form-group">
                       <label class="d-block text-danger">Eliminar cuenta</label>
-                      <p class="text-muted font-size-sm">Una vez elimines tu cuenta, no hay vuelta atrás. Por favor, asegúrate antes de hacerlo.</p>
+                      <p class="text-muted font-size-sm">Una vez elimines la cuenta, no hay vuelta atrás. Por favor, asegúrese antes de hacerlo.</p>
                     </div>
                     <button class="btn btn-danger" type="button">Eliminar cuenta</button>
                   </form>
                 </div>
+                <br><br><br><br>
                 <div class="tab-pane" id="security">
-                  <h6>AJUSTES DE SEGURIDAD</h6>
+                  <h6>SEGURIDAD</h6>
                   <hr>
                   <form>
                     <div class="form-group">
                       <label class="d-block">Cambiar contraseña</label>
-                      <input type="text" class="form-control" placeholder="Introduce tu contraseña antigua>
+                      <input type="text" class="form-control" placeholder="Introduce tu antigua contraseña">
                       <input type="text" class="form-control mt-1" placeholder="Nueva contraseña">
                       <input type="text" class="form-control mt-1" placeholder="Confirmar nueva contraseña">
                     </div>
@@ -132,8 +220,7 @@
                   <form>
                     <div class="form-group mb-0">
                       <label class="d-block">Sesiones</label>
-                      <p class="font-size-sm text-secondary">Esta es la lista de dispositivos que han iniciado sesión con tu cuenta Elimine cualquier
-                          sesión que no reconozcas.</p>
+                      <p class="font-size-sm text-secondary">This is a list of devices that have logged into your account. Revoke any sessions that you do not recognize.</p>
                       <ul class="list-group list-group-sm">
                         <li class="list-group-item has-icon">
                           <div>
@@ -146,23 +233,25 @@
                     </div>
                   </form>
                 </div>
+                <br><br><br><br>
                 <div class="tab-pane" id="notification">
-                  <h6>AJUSTES DE NOTIFICACIONES</h6>
+                  <h6>NOTIFICACIONES</h6>
                   <hr>
                   <form>
                     <div class="form-group">
                       <label class="d-block mb-0">Alertas de seguridad</label>
-                      <div class="small text-muted mb-3">Recibe notificaciones de alerta de seguridad via email</div>
+                      <div class="small text-muted mb-3">Recibir notificaciones de alerta de seguridad via email</div>
                       <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="customCheck1" checked="">
-                        <label class="custom-control-label" for="customCheck1">Email cada vez que se encuentre una vulnerabilidad</label>
+                        <label class="custom-control-label" for="customCheck1">Recibir email cada vez que se encuentre una vulnerabilidad</label>
                       </div>
                       <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="customCheck2" checked="">
-                        <label class="custom-control-label" for="customCheck2">Email con un breve resumen de vulnerabilidad</label>
+                        <label class="custom-control-label" for="customCheck2">Recibir email con un breve resumen de vulnerabilidad</label>
                       </div>
                     </div>
                     <div class="form-group mb-0">
+                      <br>
                       <label class="d-block">Notificaciones SMS</label>
                       <ul class="list-group list-group-sm">
                         <li class="list-group-item has-icon">
@@ -204,17 +293,21 @@
                     </div>
                   </form>
                 </div>
-              </div>
+
+
+
             </div>
-          </div>
-        </div>
-  
-      </div>
-
+    
     </div>
+</div>
 
-        
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- NUEVO ENLACE A LIBRERÍAS JS -->
+    <script src="https://unpkg.com/pokeapi-js-wrapper/dist/index.js"></script>
+
+
+
+<!-- NUEVO ENLACE A LIBRERÍAS JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 
 </body>
