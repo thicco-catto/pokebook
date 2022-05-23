@@ -9,7 +9,7 @@ async function onLoad(event){
 
     for(const i in postArray){
         const post = postArray[i];
-        let postDiv = parseHTML(`<div class="post"></div>`);
+        let postDiv = parseHTML(`<div class="post"></div><br>`);
         let postHTML = await renderPost(post);
         postDiv.appendChild(postHTML);
         postsDiv.appendChild(postDiv);
