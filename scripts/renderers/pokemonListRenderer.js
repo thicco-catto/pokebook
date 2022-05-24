@@ -1,3 +1,74 @@
+class Pokemon{
+    constructor(sprite, name, type1, type2, gen){
+        this.sprite = sprite;
+        this.name = name;
+        this.type1 = type1;
+        this.type2 = type2;
+        this.gen = gen;
+    }
+
+    // get sprite(){
+    //     return this.sprite;
+    // }
+
+    // set sprite(sprite){
+    //     this.sprite = sprite;
+    // }
+
+    // get name(){
+    //     return this.name;
+    // }
+
+    // set name(name){
+    //     this.name = name;
+    // }
+
+    // get type1(){
+    //     return this.type1;
+    // }
+
+    // set type1(type1){
+    //     this.type1 = type1;
+    // }
+
+    // get type2(){
+    //     return this.type2;
+    // }
+
+    // set type2(type2){
+    //     this.type2 = type2;
+    // }
+
+    // get gen(){
+    //     return this.gen;
+    // }
+
+    // set gen(gen){
+    //     this.gen = gen;
+    // }
+
+}
+
+function getGenerationFromId(id){
+    if(id > 0 && id <= 151){
+        return "1";
+    }else if(id > 151 && id <= 251){
+        return "2";
+    }else if(id > 251 && id <= 386){
+        return "3";
+    }else if(id > 386 && id <= 493){
+        return "4";
+    }else if(id > 493 && id <= 649){
+        return "5";
+    }else if(id > 649 && id <= 721){
+        return "6";
+    }else if(id > 721 && id <= 809){
+        return "7";
+    }else if(id > 809 && id <= 898){
+        return "8";
+    }
+}
+
 function typeToSpanish(type){
     switch(type){
         case "normal":
@@ -53,13 +124,18 @@ function fillTable(pokemonList){
         let newRow = tableBody.insertRow()
 
         let inputCell = newRow.insertCell()
-        let input = document.createElement("input");
-        input.type = "checkbox";
+        //let input = document.createElement("input");
+        //input.type = "checkbox";
+        let input = parseHTML(`<div>
+        <button style="width: auto;" type="button" class="btn btn-light btn-sm"><img alt="Brand" width="15" height="15" src="img/utilidades/add.png"></button>
+        <button style="width: auto;" type="button" class="btn btn-light btn-sm"><img alt="Brand" width="15" height="15" src="img/utilidades/del.png"></button>
+        </div>
+        `);
         inputCell.appendChild(input);
 
         let imgCell = newRow.insertCell()
         let img = document.createElement("img");
-        img.src = pokemon.sprites.front_default;
+        img.src = pokemon.sprite;
         img.alt = pokemon.name
         img.style = "width: 65px; height: 65px";
         img.class = "rounded-circle";
@@ -74,14 +150,14 @@ function fillTable(pokemonList){
         nameCell.appendChild(name);
 
         let type1Cell = newRow.insertCell();
-        let type1 = document.createTextNode(typeToSpanish(pokemon.types[0].type.name));
+        let type1 = document.createTextNode(typeToSpanish(pokemon.type1));
         type1Cell.appendChild(type1);
 
         let secondType;
-        if(pokemon.types[1] === undefined){
+        if(pokemon.type2 === undefined){
             secondType = "";
         }else{
-            secondType = typeToSpanish(pokemon.types[1].type.name);
+            secondType = typeToSpanish(pokemon.type2);
         }
         let type2Cell = newRow.insertCell();
         let type2 = document.createTextNode(secondType);
@@ -102,7 +178,15 @@ async function onLoad(event) {
     for (let i = 0; i < pokemonListRaw.count; i++) {
         if(pokemonListRaw.results[i] === undefined){continue;}
         const pokemon = await P.getPokemonByName(pokemonListRaw.results[i].name);
-        pokemonList.push(pokemon);
+
+        let type2 = undefined;
+        if(pokemon.types[1] !== undefined){ type2 = pokemon.types[1].type.name; }
+
+        let generation = getGenerationFromId(i + 1);
+
+        const pokemonClass = new Pokemon(pokemon.sprites.front_default, pokemon.name, pokemon.types[0].type.name, type2, generation);
+
+        pokemonList.push(pokemonClass);
     }
 
     document.getElementById("loading-gif").style.visibility = "hidden";
@@ -118,14 +202,13 @@ addEventListener("DOMContentLoaded", onLoad);
 async function onSubmit(event){
     event.preventDefault();   
     if(isLoading){
-        //TODO: make it clear it is loading
-        console.log("loading");
         return;
     }
 
     let filteredPokemonList = [];
 
     const nameFilter = document.getElementById("name-filter").value;
+    const genFilter = document.getElementById("gen-filter").value;
     const type1Filter = document.getElementById("type1-filter").value;
     const type2Filter = document.getElementById("type2-filter").value;
     const typesFilter = []
@@ -140,13 +223,17 @@ async function onSubmit(event){
             continue;
         }
 
+        if(genFilter.length !== 0 && genFilter !== pokemon.gen){
+            continue;
+        }
+
         let numTypesMatch = 0
         if(typesFilter.length > 0){
-            if(typesFilter.includes(pokemon.types[0].type.name)){
+            if(typesFilter.includes(pokemon.type1)){
                 numTypesMatch++;
             }
 
-            if(pokemon.types[1] !== undefined && typesFilter.includes(pokemon.types[1].type.name)){
+            if(pokemon.type2 !== undefined && typesFilter.includes(pokemon.type2)){
                 numTypesMatch++;
             }
         }

@@ -258,10 +258,16 @@
                             <h5>Filtros</h5>
                             <input id="name-filter" style="width: 25%;" type="text" name="pokename" class="form-control" placeholder="nombre">
                             
-                            <select style="width: auto; height: 20%;" class="form-select" aria-label="Default select example">
-                                <option selected>Gen</option>
+                            <select id="gen-filter" style="width: auto; height: 20%;" class="form-select" aria-label="Default select example">
+                                <option value="" selected>Gen</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
+                                <option value="3">Three</option>
+                                <option value="4">Four</option>
+                                <option value="5">Five</option>
+                                <option value="6">Six</option>
+                                <option value="7">Seven</option>
+                                <option value="8">Eight</option>
                             </select>
 
                             <select id="type1-filter" style="width: 20%; height: 25%;" class="form-select" aria-label="Default select example">
@@ -312,11 +318,7 @@
                         </div>
                     </div>
                 </form>
-                
-                <!-- BOTONES DE MIGUEL PARA CRISTOBAL CON MUXO LOVE -->
-                <button style="width: auto;" type="button" class="btn btn-light btn-sm"><img alt="Brand" width="15" height="15" src="img/utilidades/add.png"></button>
-                <button style="width: auto;" type="button" class="btn btn-light btn-sm"><img alt="Brand" width="15" height="15" src="img/utilidades/del.png"></button>
-
+        
                 <!-- TABLA -->
                 <br> <br>
                 <table style="color:white;" class="table align-middle mb-0" id="pokemonTable">
@@ -337,7 +339,7 @@
                 
                 <!-- LOADING POKEMOM -->
                 <div class="text-center">
-                    <img id="loading-gif" alt="Brand" width="60" height="60" src="img/loading.gif">
+                    <img id="loading-gif" alt="Brand" width="60" height="60" src="img/utilidades/loading.gif">
                     <br> <br>
                 </div>
         </div>
