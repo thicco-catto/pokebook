@@ -60,14 +60,18 @@ h1 {
 body {
     background-color: #003566;
   }
+
 .AreaRegistro{
     border-radius: 25px;
     background-color: #001D3D;
-}div.center {
+}
+
+div.center {
     
     text-align: center;
   
   }
+
   #Email,.inputContainer{
     width:60%;
     height:30px;
@@ -108,4 +112,15 @@ p.smallText{
 .btnContinue {
 text-align: center;
 margin-top: 1%;
+}
+
+@media only screen and (min-width: 701px) {
+  
+  
+}
+
+
+@media only screen and (max-width: 700px) {
+
+
 }

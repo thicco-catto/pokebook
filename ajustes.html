@@ -141,44 +141,16 @@
     
                 <div class="new-card" style="background-color: #003566;">
                   <div class="list-group" style="background-color: #003566;">
-                    <a href="#profile" class="list-group-item list-group-item-action">Información del perfil</a>
+                  
                     <a href="#account" class="list-group-item list-group-item-action">Cuenta</a>
                     <a href="#security" class="list-group-item list-group-item-action">Seguridad</a>
                     <a href="#notification" class="list-group-item list-group-item-action">Notificaciones</a>
                   </div>
                 </div>
                 </div>
-                <br><br><br>
-                <br><br>
-                <div class="tab-pane active" id="profile">
-                  <h6>INFORMACIÓN DE TU PERFIL</h6>
-                  <hr>
-                  <form>
-                    <div class="form-group">
-                      <label for="fullName">Nombre completo</label>
-                      <input type="text" class="form-control" id="fullName" aria-describedby="fullNameHelp" placeholder="Introduce tu nombre completo">
-                      <small id="fullNameHelp" class="form-text text-muted">Your name may appear around here where you are mentioned. You can change or remove it at any time.</small>
-                    </div>
-                    <div class="form-group">
-                      <label for="bio">Biografía</label>
-                      <textarea class="form-control autosize" id="bio" placeholder="Escribe algo sobre ti" style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 62px;"></textarea>
-                    </div>
-                    <div class="form-group">
-                      <label for="url">URL</label>
-                      <input type="text" class="form-control" id="url" placeholder="Introduce tu dirección web">
-                    </div>
-                    <div class="form-group">
-                      <label for="location">Localización</label>
-                      <input type="text" class="form-control" id="location" placeholder="Introuduce tu localización">
-                    </div>
-                    <div class="form-group small text-muted">
-                      All of the fields on this page are optional and can be deleted at any time, and by filling them out, you're giving us consent to share this data wherever your user profile appears.
-                    </div>
-                    <button type="button" class="btn btn-primary">Actualizar perfil</button>
-                    <button type="reset" class="btn btn-light">Descartar cambios</button>
-                  </form>
-                </div>
                 <br><br><br><br>
+                <br><br><br><br>
+
                 <div class="tab-pane" id="account">
                   <h6>CUENTA</h6>
                   <hr>
@@ -208,30 +180,14 @@
                       <input type="text" class="form-control mt-1" placeholder="Confirmar nueva contraseña">
                     </div>
                   </form>
-                  <hr>
+                  <br>
                   <form>
-                    <div class="form-group">
-                      <label class="d-block">Two Factor Authentication</label>
-                      <button class="btn btn-info" type="button">Enable two-factor authentication</button>
-                      <p class="small text-muted mt-2">Two-factor authentication adds an additional layer of security to your account by requiring more than just a password to log in.</p>
+                    <div class="form-group">                      
+                      <button class="btn btn-info" type="button">Confirmar nueva contraseña</button>
                     </div>
                   </form>
-                  <hr>
+                  
                   <form>
-                    <div class="form-group mb-0">
-                      <label class="d-block">Sesiones</label>
-                      <p class="font-size-sm text-secondary">This is a list of devices that have logged into your account. Revoke any sessions that you do not recognize.</p>
-                      <ul class="list-group list-group-sm">
-                        <li class="list-group-item has-icon">
-                          <div>
-                            <h6 class="mb-0">San Francisco City 190.24.335.55</h6>
-                            <small class="text-muted">Your current session seen in United States</small>
-                          </div>
-                          <button class="btn btn-light btn-sm ml-auto" type="button">More info</button>
-                        </li>
-                      </ul>
-                    </div>
-                  </form>
                 </div>
                 <br><br><br><br>
                 <div class="tab-pane" id="notification">
@@ -252,7 +208,7 @@
                     </div>
                     <div class="form-group mb-0">
                       <br>
-                      <label class="d-block">Notificaciones SMS</label>
+                      <label class="d-block">Notificaciones</label>
                       <ul class="list-group list-group-sm">
                         <li class="list-group-item has-icon">
                           Comentarios
@@ -262,24 +218,17 @@
                           </div>
                         </li>
                         <li class="list-group-item has-icon">
-                          Updates From People
+                          Likes
                           <div class="custom-control custom-control-nolabel custom-switch ml-auto">
                             <input type="checkbox" class="custom-control-input" id="customSwitch2">
                             <label class="custom-control-label" for="customSwitch2"></label>
                           </div>
                         </li>
                         <li class="list-group-item has-icon">
-                          Recordatorios
+                          Reposts
                           <div class="custom-control custom-control-nolabel custom-switch ml-auto">
                             <input type="checkbox" class="custom-control-input" id="customSwitch3" checked="">
                             <label class="custom-control-label" for="customSwitch3"></label>
-                          </div>
-                        </li>
-                        <li class="list-group-item has-icon">
-                          Eventos
-                          <div class="custom-control custom-control-nolabel custom-switch ml-auto">
-                            <input type="checkbox" class="custom-control-input" id="customSwitch4" checked="">
-                            <label class="custom-control-label" for="customSwitch4"></label>
                           </div>
                         </li>
                         <li class="list-group-item has-icon">
@@ -289,6 +238,12 @@
                             <label class="custom-control-label" for="customSwitch5"></label>
                           </div>
                         </li>
+                        <br>
+                        <form>
+                          <div class="form-group">                      
+                            <button class="btn btn-info" type="button">Confirmar cambios</button>
+                          </div>
+                        </form>
                       </ul>
                     </div>
                   </form>
