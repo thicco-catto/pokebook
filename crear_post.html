@@ -39,7 +39,7 @@
     }
 
 
-  .new-card-header {
+    .new-card-header {
     padding: 0.5rem 1rem;
     margin-bottom: 0;
     background-color: #003566;
@@ -61,152 +61,83 @@
         border: 1px solid rgb(255, 255, 255);
         border-radius: 0.25rem;
     }
+        
+        
+    .btn-contact-bg {
+        border-radius: 10px;
+        color: black;
+        outline: medium none !important;
+        padding: 15px 27px;
+        text-transform: capitalize;
+        -webkit-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+        background: #FFC300;
+        font-family: 'poppins', sans-serif;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    .btn-contact-bg:hover,
+    .btn-contact-bg:focus {
+        background: #fff;
+        color: #232434;
+    }
+    
+    label {
+        color: white;
+        margin-bottom: 1px;
+    }
+    
+    .section-title h1 {
+        font-size: 44px;
+        font-weight: 500;
+        margin-top: 0;
+        position: relative;
+        text-transform: capitalize;
+        margin-bottom: 15px;
+    }
+    .section-title p {
+        padding: 0 10px;
+        width: 70%;
+        margin: auto;
+        letter-spacing: 1px;
+    }
 
+    .text-center {
+        text-align: center!important;
+    }
 
+    /* BOTON BUSCAR */
+    .has-search .form-control {
+        padding-left: 2.375rem;
+    }
+    
+    .has-search .form-control-feedback {
+        position: absolute;
+        z-index: 2;
+        display: block;
+        width: 2.375rem;
+        height: 2.375rem;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+        color: #aaa;
+    }
 
-    /*  NUEVOS ESTILOS */ 
-        .contact-area {
-            background: url(../img/bg/contact-bg.png) no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
+    .boton-crear {
+        position: fixed;
+        right: 3%;
+        bottom: 10px;
+        background-color: white;
+        padding: 7px;
+        display: none;
+        border-radius: 1.5rem;
         }
         
-        @media only screen and (max-width:768px) {
-            .contact {
-                margin-bottom: 60px;
-            }
+        .boton-crear a {
+        color: #fff;
         }
-        
-        .contact input {
-            background: #fff;
-            border: 1px solid #fff;
-            border-radius: 3px;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-            color: #232434;
-            font-size: 16px;
-            height: 60px;
-            padding: 10px;
-            width: 100%;
-            font-family: 'poppins', sans-serif;
-            padding-left: 30px;
-            -webkit-transition: all 0.3s ease 0s;
-            -o-transition: all 0.3s ease 0s;
-            transition: all 0.3s ease 0s;
-        }
-        
-        .contact textarea {
-            background: #fff;
-            border: 1px solid #fff;
-            border-radius: 3px;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-            color: #232434;
-            font-size: 16px;
-            padding: 10px;
-            width: 100%;
-            font-family: 'poppins', sans-serif;
-            padding-left: 30px;
-            -webkit-transition: all 0.3s ease 0s;
-            -o-transition: all 0.3s ease 0s;
-            transition: all 0.3s ease 0s;
-        }
-        
-        .contact input:focus {
-            background: #fff;
-            border: 1px solid #fff;
-            color: #232434;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-            outline: 0 none;
-        }
-        
-        .contact textarea:focus {
-            background: #fff;
-            border: 1px solid #fff;
-            color: #232434;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-            outline: 0 none;
-        }
-        
-        
-        .btn-contact-bg {
-            border-radius: 10px;
-            color: black;
-            outline: medium none !important;
-            padding: 15px 27px;
-            text-transform: capitalize;
-            -webkit-transition: all 0.3s ease 0s;
-            -o-transition: all 0.3s ease 0s;
-            transition: all 0.3s ease 0s;
-            background: #FFC300;
-            font-family: 'poppins', sans-serif;
-            cursor: pointer;
-            width: 100%;
-        }
-        
-        .btn-contact-bg:hover,
-        .btn-contact-bg:focus {
-            background: #fff;
-            color: #232434;
-        }
-        
-        label {
-            color: white;
-            margin-bottom: 1px;
-        }
-        
-        .section-title h1 {
-            font-size: 44px;
-            font-weight: 500;
-            margin-top: 0;
-            position: relative;
-            text-transform: capitalize;
-            margin-bottom: 15px;
-        }
-        .section-title p {
-            padding: 0 10px;
-            width: 70%;
-            margin: auto;
-            letter-spacing: 1px;
-        }
-
-        .text-center {
-            text-align: center!important;
-        }
-
-        /* BOTON BUSCAR */
-        .has-search .form-control {
-            padding-left: 2.375rem;
-        }
-        
-        .has-search .form-control-feedback {
-            position: absolute;
-            z-index: 2;
-            display: block;
-            width: 2.375rem;
-            height: 2.375rem;
-            line-height: 2.375rem;
-            text-align: center;
-            pointer-events: none;
-            color: #aaa;
-        }
-
-        .boton-crear {
-            position: fixed;
-            right: 3%;
-            bottom: 10px;
-            background-color: white;
-            padding: 7px;
-            display: none;
-            border-radius: 1.5rem;
-          }
-          
-          .boton-crear a {
-            color: #fff;
-          }
       </style>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -233,7 +164,7 @@
     <div class="col-md-3">
         <div class="d-none d-sm-none d-md-block">
         <div class="new-card">
-            <div class="card-body">
+            <div id="arriba" class="card-body">
                 <a class="btn btn-outline-light" href="inicio.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img alt="Brand" width="30" height="30" src="img/home.png"> Home
                   </a> <br> <br>
@@ -311,6 +242,10 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="text-center">
+					<button type="submit" name="submit" id="submitButton" class="btn btn-contact-bg">Crear equipo</button>
+				</div>
 
                 <br>
 
@@ -402,10 +337,6 @@
                     <img alt="Brand" width="60" height="60" src="img/loading.gif">
                     <br> <br>
                 </div>
-
-				<div class="text-center">
-					<button type="submit" name="submit" id="submitButton" class="btn btn-contact-bg">Crear equipo</button>
-				</div>
         </div>
     </div>
     </div>
@@ -424,10 +355,6 @@
             </div>
         </div>
     </div>
-
-    <!-- La caña de españa
-    <div class="d-none d-sm-none d-md-block">Este texto solo visible para escritorio</div>
-    <div class="d-block d-sm-block d-md-none">Este texto solo visible para smartphone</div> -->
 </div>
 </div>
 
@@ -444,7 +371,7 @@
 
 <!-- BOTON CREAR POST -->
 <div id="stop" class="boton-crear">
-    <a href="crear_post.html"><img alt="Brand" width="40" height="40" src="img/up-arrow.png"></a>
+    <a href="#arriba"><img alt="Brand" width="40" height="40" src="img/up-arrow.png"></a>
 </div>
 
 </body>
