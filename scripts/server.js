@@ -68,3 +68,11 @@ function AddPost(id, user, title, description, pokemon){
         ).then(() => resolve());
     });
 }
+
+function GetPostById(id){
+    return new Promise(resolve =>
+        db.collection("posts").doc(id.toString()).get().then((doc) =>
+            resolve(doc)
+        )
+    );
+}

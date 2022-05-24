@@ -1,4 +1,9 @@
 async function renderPost(post) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const user = urlParams.get("user");
+
     let pokemonImgs = "";
 
     for(const poke in post.data().pokemon){
@@ -34,7 +39,7 @@ async function renderPost(post) {
 
     </div>
     <div class="card-body" style="background-color: #003566;">
-        <a class="card-link" href="postgrande.html">  <!-- link a comentario -->
+        <a class="card-link" href="postgrande.html?user=${user}&post=${post.id}">  <!-- link a comentario -->
             <h5 class="card-title">${post.data().title}</h5>
         </a>
 
