@@ -1,10 +1,9 @@
-function parseHTML(str) {
-    let tmp = document.implementation.createHTMLDocument();
-    tmp.body.innerHTML = str;
-    return tmp.body.children[0];
-}
-
 async function renderPost(post) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const user = urlParams.get("user");
+
     let pokemonImgs = "";
 
     for(const poke in post.data().pokemon){
@@ -22,7 +21,7 @@ async function renderPost(post) {
                     <img class="rounded-circle" width="45" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
                 </div>
                 <div class="ml-2">
-                    <div style="color: white;" class="h5 m-0">@SergioCopia</div>
+                    <div style="color: white;" class="h5 m-0">@${post.data().op}</div>
                 </div>
             </div>
             <div>
@@ -40,7 +39,7 @@ async function renderPost(post) {
 
     </div>
     <div class="card-body" style="background-color: #003566;">
-        <a class="card-link" href="postgrande.html">  <!-- link a comentario -->
+        <a class="card-link" href="postgrande.html?user=${user}&post=${post.id}">  <!-- link a comentario -->
             <h5 class="card-title">${post.data().title}</h5>
         </a>
 

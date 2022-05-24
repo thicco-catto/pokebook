@@ -28,18 +28,18 @@
         margin-top: 0.97rem;
     }
 
-  @media (min-width: 992px) {
-      .gedf-main {
-          padding-left: 4rem;
-          padding-right: 4rem;
-      }
-      .gedf-card {
-          margin-bottom: 2.77rem;
-      }
+    @media (min-width: 992px) {
+        .gedf-main {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+        .gedf-card {
+            margin-bottom: 2.77rem;
+        }
     }
 
 
-  .new-card-header {
+    .new-card-header {
     padding: 0.5rem 1rem;
     margin-bottom: 0;
     background-color: #003566;
@@ -61,172 +61,108 @@
         border: 1px solid rgb(255, 255, 255);
         border-radius: 0.25rem;
     }
+        
+        
+    .btn-contact-bg {
+        border-radius: 10px;
+        color: black;
+        outline: medium none !important;
+        padding: 15px 27px;
+        text-transform: capitalize;
+        -webkit-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+        background: #FFC300;
+        font-family: 'poppins', sans-serif;
+        cursor: pointer;
+        width: 100%;
+    }
+    
+    .btn-contact-bg:hover,
+    .btn-contact-bg:focus {
+        background: #fff;
+        color: #232434;
+    }
+    
+    label {
+        color: white;
+        margin-bottom: 1px;
+    }
+    
+    .section-title h1 {
+        font-size: 44px;
+        font-weight: 500;
+        margin-top: 0;
+        position: relative;
+        text-transform: capitalize;
+        margin-bottom: 15px;
+    }
+    .section-title p {
+        padding: 0 10px;
+        width: 70%;
+        margin: auto;
+        letter-spacing: 1px;
+    }
 
+    .text-center {
+        text-align: center!important;
+    }
 
+    /* BOTON BUSCAR */
+    .has-search .form-control {
+        padding-left: 2.375rem;
+    }
+    
+    .has-search .form-control-feedback {
+        position: absolute;
+        z-index: 2;
+        display: block;
+        width: 2.375rem;
+        height: 2.375rem;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+        color: #aaa;
+    }
 
-    /*  NUEVOS ESTILOS */ 
-        .contact-area {
-            background: url(../img/bg/contact-bg.png) no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            background-position: center;
-        }
+    .boton-crear {
+        position: fixed;
+        right: 3%;
+        bottom: 10px;
+        background-color: white;
+        padding: 7px;
+        display: none;
+        border-radius: 1.5rem;
+    }
         
-        @media only screen and (max-width:768px) {
-            .contact {
-                margin-bottom: 60px;
-            }
-        }
-        
-        .contact input {
-            background: #fff;
-            border: 1px solid #fff;
-            border-radius: 3px;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-            color: #232434;
-            font-size: 16px;
-            height: 60px;
-            padding: 10px;
-            width: 100%;
-            font-family: 'poppins', sans-serif;
-            padding-left: 30px;
-            -webkit-transition: all 0.3s ease 0s;
-            -o-transition: all 0.3s ease 0s;
-            transition: all 0.3s ease 0s;
-        }
-        
-        .contact textarea {
-            background: #fff;
-            border: 1px solid #fff;
-            border-radius: 3px;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-            color: #232434;
-            font-size: 16px;
-            padding: 10px;
-            width: 100%;
-            font-family: 'poppins', sans-serif;
-            padding-left: 30px;
-            -webkit-transition: all 0.3s ease 0s;
-            -o-transition: all 0.3s ease 0s;
-            transition: all 0.3s ease 0s;
-        }
-        
-        .contact input:focus {
-            background: #fff;
-            border: 1px solid #fff;
-            color: #232434;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-            outline: 0 none;
-        }
-        
-        .contact textarea:focus {
-            background: #fff;
-            border: 1px solid #fff;
-            color: #232434;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-            outline: 0 none;
-        }
-        
-        
-        .btn-contact-bg {
-            border-radius: 10px;
-            color: black;
-            outline: medium none !important;
-            padding: 15px 27px;
-            text-transform: capitalize;
-            -webkit-transition: all 0.3s ease 0s;
-            -o-transition: all 0.3s ease 0s;
-            transition: all 0.3s ease 0s;
-            background: #FFC300;
-            font-family: 'poppins', sans-serif;
-            cursor: pointer;
-            width: 100%;
-        }
-        
-        .btn-contact-bg:hover,
-        .btn-contact-bg:focus {
-            background: #fff;
-            color: #232434;
-        }
-        
-        label {
-            color: white;
-            margin-bottom: 1px;
-        }
-        
-        .section-title h1 {
-            font-size: 44px;
-            font-weight: 500;
-            margin-top: 0;
-            position: relative;
-            text-transform: capitalize;
-            margin-bottom: 15px;
-        }
-        .section-title p {
-            padding: 0 10px;
-            width: 70%;
-            margin: auto;
-            letter-spacing: 1px;
-        }
+    .boton-crear a {
+        color: #fff;
+    }
 
-        .text-center {
-            text-align: center!important;
-        }
+    </style>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(window).scroll(function() {
 
-        /* BOTON BUSCAR */
-        .has-search .form-control {
-            padding-left: 2.375rem;
+        var position =$(this).scrollTop();
+        // Si el usuario baja el scroll muestro el div que contiene el enlace botón
+        if (position > 01) {
+            $(".boton-crear").fadeIn('slow');
+            } else {
+            $(".boton-crear").fadeOut('slow');
         }
-        
-        .has-search .form-control-feedback {
-            position: absolute;
-            z-index: 2;
-            display: block;
-            width: 2.375rem;
-            height: 2.375rem;
-            line-height: 2.375rem;
-            text-align: center;
-            pointer-events: none;
-            color: #aaa;
-        }
-
-  </style>
+        });
+    </script>
 </head>
 <body>
 
     <!-- NAVBAR -->
-    
+    <div id="header"></div>
     <!-- PANEL -->
 <div class="container gedf-wrapper">
 <div class="row">
-    <div class="col-md-3">
-        <div class="d-none d-sm-none d-md-block">
-        <div class="new-card">
-            <div class="card-body">
-                <a class="btn btn-outline-light" href="inicio.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img alt="Brand" width="30" height="30" src="img/home.png"> Home
-                  </a> <br> <br>
-                <a class="btn btn-outline-light" href="ajustes.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img alt="Brand" width="30" height="30" src="img/conf.png"> Ajustes
-                  </a><br> <br>
-                <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img alt="Brand" width="30" height="30" src="img/perfil.png"> Perfil
-                  </a> <br> <br>
-                <div class="d-block d-sm-block d-md-none">
-                    <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img alt="Brand" width="30" height="30" src="img/notificaciones.png"> Notificaciones
-                      </a> <br> <br>
-                </div>
-                <a class="btn btn-warning" href="crear_post.html" role="button" id="dropdownMenuLink" data-toggle="dropdown" style='width:100%;' aria-haspopup="true" aria-expanded="false">
-                    <img alt="Brand" width="30" height="30" src="img/add (2).png"> Nuevo Post
-                  </a> <br>
-            </div>
-        </div>
-        </div>
+    <div id="sidebar" class="col-md-3">
     </div>
 
     
@@ -242,21 +178,22 @@
         </div>
 
         <div class="card-body" style="background-color: #003566;">
-            <form class="form">
+            <form id="team-form" class="form">
 
                 <label for="titulo"> Título: </label>
 				<div class="form-group col-md-12">
-                    <input type="text" name="titulo" class="form-control" required="required">
+                    <input id="Title" type="text" name="titulo" class="form-control" required="required">
 				</div>
 
                 <br>
 
                 <label for="titulo"> Descripción: </label>
                 <div class="form-group col-md-12">
-					<textarea rows="3" name="message" class="form-control"></textarea>
+					<textarea id="Description" rows="3" name="message" class="form-control"></textarea>
 				</div>
 
                 <br>
+            
 
                 <!-- EQUIPO POKEMON -->
 
@@ -264,108 +201,105 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-6 col-md-4">
-                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png">
+                            <img id="pokemon-team-1" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/124.png">
+                            <img id="pokemon-team-2" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/pokeballabierta.png">
+                            <img id="pokemon-team-3" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/pokeballabierta.png">
+                            <img id="pokemon-team-4" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/pokeballabierta.png">
+                            <img id="pokemon-team-5" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/pokeballabierta.png">
+                            <img id="pokemon-team-6" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
                     </div>
                 </div>
 
+                <div class="text-center">
+					<button type="submit" name="submit" id="submitButton" class="btn btn-contact-bg">Crear equipo</button>
+				</div>
+            </form>
+
                 <br>
 
-                <!-- FILTROS --> <!-- ABRIR OTRO FORM -->
-                <form>
-                    <h5>Filtros</h5>
-                    <label for="pokename"> Buscar pokemon por nombre: </label>
-                    <div class="form-group has-search">
-                        <input type="text" name="pokename" class="form-control">
-                    </div>
+                <!-- FILTROS -->
+                <form id="filter-form">
+                    
+                    <div class="container">
+                        <div class="row">
+                            <h5>Filtros</h5>
+                            <input id="name-filter" style="width: 25%;" type="text" name="pokename" class="form-control" placeholder="nombre">
+                            
+                            <select id="gen-filter" style="width: auto; height: 20%;" class="form-select" aria-label="Default select example">
+                                <option value="" selected>Gen</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                                <option value="4">Four</option>
+                                <option value="5">Five</option>
+                                <option value="6">Six</option>
+                                <option value="7">Seven</option>
+                                <option value="8">Eight</option>
+                            </select>
 
-                    <br>
+                            <select id="type1-filter" style="width: 20%; height: 25%;" class="form-select" aria-label="Default select example">
+                                <option value="" selected>Tipo 1</option>
+                                <option value="normal">Normal</option>
+                                <option value="fighting">Lucha</option>
+                                <option value="flying">Volador</option>
+                                <option value="poison">Veneno</option>
+                                <option value="ground">Tierra</option>
+                                <option value="rock">Roca</option>
+                                <option value="bug">Bicho</option>
+                                <option value="ghost">Fantasma</option>
+                                <option value="steel">Acero</option>
+                                <option value="fire">Fuego</option>
+                                <option value="water">Agua</option>
+                                <option value="grass">Planta</option>
+                                <option value="electric">Electrico</option>
+                                <option value="psychic">Psiquico</option>
+                                <option value="ice">Hielo</option>
+                                <option value="dragon">Dragon</option>
+                                <option value="dark">Siniestro</option>
+                                <option value="fairy">Hada</option>
+                            </select>
 
-                    <div class="btn-group" role="group">
-                        <button id="btnGroupDrop1" type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Generacion
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                            <li><a class="dropdown-item" href="#">1</a></li>
-                            <li><a class="dropdown-item" href="#">2</a></li>
-                        </ul>
-                    </div>
+                            <select id="type2-filter" style="width: 20%; height: 25%;" class="form-select" aria-label="Default select example">
+                                <option value="" selected>Tipo 2</option>
+                                <option value="normal">Normal</option>
+                                <option value="fighting">Lucha</option>
+                                <option value="flying">Volador</option>
+                                <option value="poison">Veneno</option>
+                                <option value="ground">Tierra</option>
+                                <option value="rock">Roca</option>
+                                <option value="bug">Bicho</option>
+                                <option value="ghost">Fantasma</option>
+                                <option value="steel">Acero</option>
+                                <option value="fire">Fuego</option>
+                                <option value="water">Agua</option>
+                                <option value="grass">Planta</option>
+                                <option value="electric">Electrico</option>
+                                <option value="psychic">Psiquico</option>
+                                <option value="ice">Hielo</option>
+                                <option value="dragon">Dragon</option>
+                                <option value="dark">Siniestro</option>
+                                <option value="fairy">Hada</option>
+                            </select>
 
-                    <div class="btn-group" role="group">
-                        <button id="btnGroupDrop1" type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Tipo 1
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                            <li><a class="dropdown-item" href="#">Normal</a></li>
-                            <li><a class="dropdown-item" href="#">Lucha</a></li>
-                            <li><a class="dropdown-item" href="#">Volador</a></li>
-                            <li><a class="dropdown-item" href="#">Veneno</a></li>
-                            <li><a class="dropdown-item" href="#">Tierra</a></li>
-                            <li><a class="dropdown-item" href="#">Roca</a></li>
-                            <li><a class="dropdown-item" href="#">Bicho</a></li>
-                            <li><a class="dropdown-item" href="#">Fantasma</a></li>
-                            <li><a class="dropdown-item" href="#">Acero</a></li>
-                            <li><a class="dropdown-item" href="#">Fuego</a></li>
-                            <li><a class="dropdown-item" href="#">Agua</a></li>
-                            <li><a class="dropdown-item" href="#">Planta</a></li>
-                            <li><a class="dropdown-item" href="#">Electrico</a></li>
-                            <li><a class="dropdown-item" href="#">Psiquico</a></li>
-                            <li><a class="dropdown-item" href="#">Hielo</a></li>
-                            <li><a class="dropdown-item" href="#">Dragon</a></li>
-                            <li><a class="dropdown-item" href="#">Siniestro</a></li>
-                            <li><a class="dropdown-item" href="#">Hada</a></li>
-                        </ul>
+                            <button style="width: auto;" type="submit" class="btn btn-primary btn-sm">Filtrar</button>
+                        </div>
                     </div>
-
-                    <div class="btn-group" role="group">
-                        <button id="btnGroupDrop1" type="button" class="btn btn-outline-light dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Tipo 2
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                            <li><a class="dropdown-item" href="#">Normal</a></li>
-                            <li><a class="dropdown-item" href="#">Lucha</a></li>
-                            <li><a class="dropdown-item" href="#">Volador</a></li>
-                            <li><a class="dropdown-item" href="#">Veneno</a></li>
-                            <li><a class="dropdown-item" href="#">Tierra</a></li>
-                            <li><a class="dropdown-item" href="#">Roca</a></li>
-                            <li><a class="dropdown-item" href="#">Bicho</a></li>
-                            <li><a class="dropdown-item" href="#">Fantasma</a></li>
-                            <li><a class="dropdown-item" href="#">Acero</a></li>
-                            <li><a class="dropdown-item" href="#">Fuego</a></li>
-                            <li><a class="dropdown-item" href="#">Agua</a></li>
-                            <li><a class="dropdown-item" href="#">Planta</a></li>
-                            <li><a class="dropdown-item" href="#">Electrico</a></li>
-                            <li><a class="dropdown-item" href="#">Psiquico</a></li>
-                            <li><a class="dropdown-item" href="#">Hielo</a></li>
-                            <li><a class="dropdown-item" href="#">Dragon</a></li>
-                            <li><a class="dropdown-item" href="#">Siniestro</a></li>
-                            <li><a class="dropdown-item" href="#">Hada</a></li>
-                        </ul>
-                    </div>
-                     <br> <br>
-                    <button type="submit" class="btn btn-primary btn-sm">Filtrar</button>
                 </form>
-                
-
-
+        
                 <!-- TABLA -->
                 <br> <br>
-                <table style="color:white;" class="table align-middle mb-0">
+                <table style="color:white;" class="table align-middle mb-0" id="pokemonTable">
                     <thead style="color: white;">
                       <tr>
                         <th></th>
@@ -375,40 +309,17 @@
                         <th>Tipo 2</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody id="pokemonList">
                         <!-- POKEMON -->
-                        <tr>
-                            <td>
-                                <input type="checkbox" id="" value="">
-                            </td>
-                            <td>
-                            <div class="d-flex align-items-center">
-                                <img
-                                    src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
-                                    alt=""
-                                    style="width: 65px; height: 65px"
-                                    class="rounded-circle"
-                                    />
-                            </div>
-                            </td>
-                            <td>
-                                name
-                            </td>
-                            <td>
-                                tipo1
-                            </td>
-                            <td>
-                                tipo2
-                            </td>
-                        </tr>
                     </tbody>
                   </table>
                 <br>
-
-				<div class="text-center">
-					<button type="submit" name="submit" id="submitButton" class="btn btn-contact-bg">Crear equipo</button>
-				</div>
-			</form>
+                
+                <!-- LOADING POKEMOM -->
+                <div class="text-center">
+                    <img id="loading-gif" alt="Brand" width="60" height="60" src="img/utilidades/loading.gif">
+                    <br> <br>
+                </div>
         </div>
     </div>
     </div>
@@ -420,23 +331,36 @@
             <div class="card gedf-card" style="background-color: #003566; border: 1px solid rgb(255, 255, 255);">
                 <div class="card-body">
                     <a href="notificaciones.html"><h5 class="card-title">NOTIFICACIONES</h5></a>
-                    <p class="card-text">Juanito le ha dado like a tu ultimo post</p>
-                    <p class="card-text">Ash le ha dado like a tu ultimo post</p>
-                    <p class="card-text">Sergio le ha dado like a tu ultimo post</p>
+                    <p class="card-text"><a href="Perfil.html" role="button">@SergioCopia</a> <a href="postgrande.html">ha dado like</a></p>
+                    <p class="card-text"><a href="Perfil.html" role="button">@SergioCopia</a> <a href="postgrande.html">ha comentado</a></p>
+                    <p class="card-text"><a href="Perfil.html" role="button">@SergioCopia</a> <a href="postgrande.html">ha hecho repost</a></p>
                 </div>
             </div>
         </div>
-        
     </div>
-
-    <!-- La caña de españa
-    <div class="d-none d-sm-none d-md-block">Este texto solo visible para escritorio</div>
-    <div class="d-block d-sm-block d-md-none">Este texto solo visible para smartphone</div> -->
 </div>
 </div>
 
 <!-- NUEVO ENLACE A LIBRERÍAS JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/pokeapi-js-wrapper/dist/index.js"></script>
+<script>
+    const P = new Pokedex.Pokedex()
+</script>
+<script src="scripts/parseHTML.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="scripts/server.js"></script>
+<script src="scripts/renderers/pokemonListRenderer.js"></script>
+<script src="scripts/renderers/headerRenderer.js"></script>
+<script src="scripts/renderers/sidebarRenderer.js"></script>
+
+
+<!-- BOTON CREAR POST -->
+<div id="stop" class="boton-crear">
+    <a href="#arriba"><img alt="Brand" width="40" height="40" src="img/utilidades/up-arrow.png"></a>
+</div>
 
 </body>
 
