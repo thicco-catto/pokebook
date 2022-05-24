@@ -101,36 +101,13 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
     crossorigin="anonymous"> 
 
-    
 
+    <div id="header"></div>
 
     <!-- PANEL -->
 <div class="container gedf-wrapper">
     <div class="row">
-        <div class="col-md-3">
-            <div class="d-none d-sm-none d-md-block">
-            <div class="new-card">
-                <div class="card-body">
-                    <a class="btn btn-outline-light " href="inicio.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img alt="Brand" width="30" height="30" src="img/home.png"> Home
-                      </a> <br> <br>
-                    <a class="btn btn-outline-light" href="ajustes.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img alt="Brand" width="30" height="30" src="img/conf.png"> Ajustes
-                      </a><br> <br>
-                    <a class="btn btn-outline-light" href="Perfil.html" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img alt="Brand" width="30" height="30" src="img/perfil.png"> Perfil
-                      </a> <br> <br>
-                    <div class="d-block d-sm-block d-md-none">
-                        <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img alt="Brand" width="30" height="30" src="img/notificaciones.png"> Notificaciones
-                          </a> <br> <br>
-                    </div>
-                    <a class="btn btn-warning" href="crear_post.html" role="button" id="dropdownMenuLink" data-toggle="dropdown" style='width:100%;' aria-haspopup="true" aria-expanded="false">
-                        <img alt="Brand" width="30" height="30" src="img/add (2).png"> Nuevo Post
-                      </a> <br>
-                </div>
-            </div>
-            </div>
+        <div id="sidebar" class="col-md-3">
         </div>
 
 
@@ -146,14 +123,19 @@
             <div class="card gedf-card" style="background-color: #003566; border: 1px solid rgb(255, 255, 255);">
                 <div class="card-body">
                     <a href="notificaciones.html"><h5 class="card-title">NOTIFICACIONES</h5></a>
-                    <p class="card-text">Juanito le ha dado like a tu ultimo post</p>
-                    <p class="card-text">Ash le ha dado like a tu ultimo post</p>
-                    <p class="card-text">Sergio le ha dado like a tu ultimo post</p>
+                    <p class="card-text"><a href="Perfil.html" role="button">@SergioCopia</a> <a href="postgrande.html">ha dado like</a></p>
+                    <p class="card-text"><a href="Perfil.html" role="button">@SergioCopia</a> <a href="postgrande.html">ha comentado</a></p>
+                    <p class="card-text"><a href="Perfil.html" role="button">@SergioCopia</a> <a href="postgrande.html">ha hecho repost</a></p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+</div>
+
+<!-- BOTON CREAR POST -->
+<div id="stop" class="boton-crear">
+    <a href="crear_post.html"><img alt="Brand" width="40" height="40" src="img/utilidades/add (2).png"></a>
 </div>
 
     <!-- NUEVO ENLACE A LIBRERÍAS JS -->
@@ -165,14 +147,11 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="scripts/server.js"></script>
+    <script src="scripts/parseHTML.js"></script>
     <script src="scripts/renderers/postRenderer.js"></script>
     <script src="scripts/renderers/postListRenderer.js"></script>
-
-<!-- BOTON CREAR POST -->
-<div id="stop" class="boton-crear">
-    <a href="crear_post.html"><img alt="Brand" width="40" height="40" src="img/add (2).png"></a>
-</div>
-
+    <script src="scripts/renderers/headerRenderer.js"></script>
+    <script src="scripts/renderers/sidebarRenderer.js"></script>
 </body>
 
 </html>
