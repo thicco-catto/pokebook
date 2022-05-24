@@ -320,7 +320,7 @@
                     <div class="container">
                         <div class="row">
                             <h5>Filtros</h5>
-                            <input style="width: 25%;" type="text" name="pokename" class="form-control" placeholder="nombre">
+                            <input id="name-filter" style="width: 25%;" type="text" name="pokename" class="form-control" placeholder="nombre">
                             
                             <select style="width: auto; height: 20%;" class="form-select" aria-label="Default select example">
                                 <option selected>Gen</option>
@@ -328,8 +328,8 @@
                                 <option value="2">Two</option>
                             </select>
 
-                            <select style="width: 20%; height: 25%;" class="form-select" aria-label="Default select example">
-                                <option selected>Tipo 1</option>
+                            <select id="type1-filter" style="width: 20%; height: 25%;" class="form-select" aria-label="Default select example">
+                                <option value="" selected>Tipo 1</option>
                                 <option value="normal">Normal</option>
                                 <option value="fighting">Lucha</option>
                                 <option value="flying">Volador</option>
@@ -350,8 +350,8 @@
                                 <option value="fairy">Hada</option>
                             </select>
 
-                            <select style="width: 20%; height: 25%;" class="form-select" aria-label="Default select example">
-                                <option selected>Tipo 2</option>
+                            <select id="type2-filter" style="width: 20%; height: 25%;" class="form-select" aria-label="Default select example">
+                                <option value="" selected>Tipo 2</option>
                                 <option value="normal">Normal</option>
                                 <option value="fighting">Lucha</option>
                                 <option value="flying">Volador</option>
@@ -399,7 +399,7 @@
                 
                 <!-- LOADING POKEMOM -->
                 <div class="text-center">
-                    <img alt="Brand" width="60" height="60" src="img/loading.gif">
+                    <img id="loading-gif" alt="Brand" width="60" height="60" src="img/loading.gif">
                     <br> <br>
                 </div>
 

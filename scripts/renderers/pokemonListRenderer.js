@@ -44,7 +44,7 @@ function typeToSpanish(type){
 let isLoading = false;
 let pokemonList = [];
 
-function fillTable(){
+function fillTable(pokemonList){
     const tableBody = document.getElementById("pokemonList");
 
     for (let i = 0; i < pokemonList.length; i++) {
@@ -102,14 +102,15 @@ async function onLoad(event) {
     for (let i = 0; i < pokemonListRaw.count; i++) {
         if(pokemonListRaw.results[i] === undefined){continue;}
         const pokemon = await P.getPokemonByName(pokemonListRaw.results[i].name);
-        console.log(i);
         pokemonList.push(pokemon);
     }
+
+    document.getElementById("loading-gif").style.visibility = "hidden";
 
     console.log("finished loading");
     isLoading = false;
 
-    fillTable();
+    fillTable(pokemonList);
 }
 addEventListener("DOMContentLoaded", onLoad);
 
@@ -121,10 +122,44 @@ async function onSubmit(event){
         console.log("loading");
         return;
     }
+
+    let filteredPokemonList = [];
+
+    const nameFilter = document.getElementById("name-filter").value;
+    const type1Filter = document.getElementById("type1-filter").value;
+    const type2Filter = document.getElementById("type2-filter").value;
+    const typesFilter = []
+    if(type1Filter.length !== 0){ typesFilter.push(type1Filter); }
+    if(type2Filter.length !== 0){ typesFilter.push(type2Filter); }
+
+    for (let i = 0; i < pokemonList.length; i++) {
+        const pokemon = pokemonList[i];
+
+        const regex = new RegExp(`${nameFilter}.*`);
+        if(!pokemon.name.match(regex)){
+            continue;
+        }
+
+        let numTypesMatch = 0
+        if(typesFilter.length > 0){
+            if(typesFilter.includes(pokemon.types[0].type.name)){
+                numTypesMatch++;
+            }
+
+            if(pokemon.types[1] !== undefined && typesFilter.includes(pokemon.types[1].type.name)){
+                numTypesMatch++;
+            }
+        }
+
+        if(numTypesMatch < typesFilter.length){ continue; }
+
+        filteredPokemonList.push(pokemon);
+    }
+
     const table = document.getElementById("pokemonList");
     table.innerHTML = "";
-    fillTable();
+    fillTable(filteredPokemonList);
 }
+
 const form = document.getElementById("filter-form");
-console.log(form);
 form.addEventListener("submit", onSubmit);
