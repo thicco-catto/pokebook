@@ -244,6 +244,12 @@ filterForm.addEventListener("submit", onFilterSubmit);
 async function onTeamSubmit(event){
     event.preventDefault();
 
+    if(pokemonTeam.length === 0){
+        //TODO: Add proper warning
+        console.log("Add at least 1 pokemon");
+        return;
+    }
+
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
@@ -260,7 +266,8 @@ async function onTeamSubmit(event){
         pokemonTeamFix.push(element + 1)
     }
 
-    AddPost(postId, user, title, description, pokemonTeamFix);
+    await AddPost(postId, user, title, description, pokemonTeamFix);
+    window.location.href = `postgrande.html?user=${user}&post=${postId}`;
 }
 
 const teamForm = document.getElementById("team-form");
