@@ -1,76 +1,36 @@
-class Pokemon{
-    constructor(sprite, name, type1, type2, gen){
+class Pokemon {
+    constructor(id, sprite, name, type1, type2, gen) {
+        this.id = id;
         this.sprite = sprite;
         this.name = name;
         this.type1 = type1;
         this.type2 = type2;
         this.gen = gen;
     }
-
-    // get sprite(){
-    //     return this.sprite;
-    // }
-
-    // set sprite(sprite){
-    //     this.sprite = sprite;
-    // }
-
-    // get name(){
-    //     return this.name;
-    // }
-
-    // set name(name){
-    //     this.name = name;
-    // }
-
-    // get type1(){
-    //     return this.type1;
-    // }
-
-    // set type1(type1){
-    //     this.type1 = type1;
-    // }
-
-    // get type2(){
-    //     return this.type2;
-    // }
-
-    // set type2(type2){
-    //     this.type2 = type2;
-    // }
-
-    // get gen(){
-    //     return this.gen;
-    // }
-
-    // set gen(gen){
-    //     this.gen = gen;
-    // }
-
 }
 
-function getGenerationFromId(id){
-    if(id > 0 && id <= 151){
+function getGenerationFromId(id) {
+    if (id > 0 && id <= 151) {
         return "1";
-    }else if(id > 151 && id <= 251){
+    } else if (id > 151 && id <= 251) {
         return "2";
-    }else if(id > 251 && id <= 386){
+    } else if (id > 251 && id <= 386) {
         return "3";
-    }else if(id > 386 && id <= 493){
+    } else if (id > 386 && id <= 493) {
         return "4";
-    }else if(id > 493 && id <= 649){
+    } else if (id > 493 && id <= 649) {
         return "5";
-    }else if(id > 649 && id <= 721){
+    } else if (id > 649 && id <= 721) {
         return "6";
-    }else if(id > 721 && id <= 809){
+    } else if (id > 721 && id <= 809) {
         return "7";
-    }else if(id > 809 && id <= 898){
+    } else if (id > 809 && id <= 898) {
         return "8";
     }
 }
 
-function typeToSpanish(type){
-    switch(type){
+function typeToSpanish(type) {
+    switch (type) {
         case "normal":
             return "Normal";
         case "fighting":
@@ -114,23 +74,54 @@ function typeToSpanish(type){
 
 let isLoading = false;
 let pokemonList = [];
+let pokemonTeam = [];
 
-function fillTable(pokemonList){
+function reloadTeam(){
+    for (var i = 0; i < 6; i++) {
+        let img = "img/utilidades/pokeballabierta.png";
+
+        if(i < pokemonTeam.length){
+            let pokemonIndex = pokemonTeam[i];
+            img = pokemonList[pokemonIndex].sprite;
+        }
+
+        let imgHTML = document.getElementById(`pokemon-team-${i+1}`);
+        imgHTML.src = img;
+    }
+}
+
+function addPokemon(event) {
+    if (pokemonTeam.length == 6) { return; }
+    pokemonTeam.push(parseInt(event.target.id));
+    reloadTeam();
+}
+
+function removePokemon(event) {
+    for (var i = 0; i < pokemonTeam.length; i++) {
+        if (pokemonTeam[i] === parseInt(event.target.id)) {
+            pokemonTeam.splice(i, 1);
+            reloadTeam();
+            break;
+        }
+    }
+}
+
+function fillTable(pokemonList) {
     const tableBody = document.getElementById("pokemonList");
 
     for (let i = 0; i < pokemonList.length; i++) {
         const pokemon = pokemonList[i];
-        
+
         let newRow = tableBody.insertRow()
 
         let inputCell = newRow.insertCell()
-        //let input = document.createElement("input");
-        //input.type = "checkbox";
-        let input = parseHTML(`<div>
-        <button style="width: auto;" type="button" class="btn btn-light btn-sm"><img alt="Brand" width="15" height="15" src="img/utilidades/add.png"></button>
-        <button style="width: auto;" type="button" class="btn btn-light btn-sm"><img alt="Brand" width="15" height="15" src="img/utilidades/del.png"></button>
-        </div>
-        `);
+        let plusButton = parseHTML(`<button id="${pokemon.id}" style="width: auto;" type="button" class="btn btn-light btn-sm"><img id="${pokemon.id}" alt="Brand" width="15" height="15" src="img/utilidades/add.png"></button>`);
+        let minusButton = parseHTML(`<button id="${pokemon.id}" style="width: auto;" type="button" class="btn btn-light btn-sm"><img id="${pokemon.id}" alt="Brand" width="15" height="15" src="img/utilidades/del.png"></button>`);
+        plusButton.onclick = addPokemon;
+        minusButton.onclick = removePokemon;
+        let input = parseHTML(`<div></div>`);
+        input.appendChild(plusButton);
+        input.appendChild(minusButton);
         inputCell.appendChild(input);
 
         let imgCell = newRow.insertCell()
@@ -154,9 +145,9 @@ function fillTable(pokemonList){
         type1Cell.appendChild(type1);
 
         let secondType;
-        if(pokemon.type2 === undefined){
+        if (pokemon.type2 === undefined) {
             secondType = "";
-        }else{
+        } else {
             secondType = typeToSpanish(pokemon.type2);
         }
         let type2Cell = newRow.insertCell();
@@ -164,7 +155,6 @@ function fillTable(pokemonList){
         type2Cell.appendChild(type2);
     }
 }
-
 
 async function onLoad(event) {
     isLoading = true;
@@ -176,15 +166,15 @@ async function onLoad(event) {
     const pokemonListRaw = await P.getPokemonsList(interval);
 
     for (let i = 0; i < pokemonListRaw.count; i++) {
-        if(pokemonListRaw.results[i] === undefined){continue;}
+        if (pokemonListRaw.results[i] === undefined) { continue; }
         const pokemon = await P.getPokemonByName(pokemonListRaw.results[i].name);
 
         let type2 = undefined;
-        if(pokemon.types[1] !== undefined){ type2 = pokemon.types[1].type.name; }
+        if (pokemon.types[1] !== undefined) { type2 = pokemon.types[1].type.name; }
 
         let generation = getGenerationFromId(i + 1);
 
-        const pokemonClass = new Pokemon(pokemon.sprites.front_default, pokemon.name, pokemon.types[0].type.name, type2, generation);
+        const pokemonClass = new Pokemon(i, pokemon.sprites.front_default, pokemon.name, pokemon.types[0].type.name, type2, generation);
 
         pokemonList.push(pokemonClass);
     }
@@ -199,9 +189,9 @@ async function onLoad(event) {
 addEventListener("DOMContentLoaded", onLoad);
 
 
-async function onSubmit(event){
-    event.preventDefault();   
-    if(isLoading){
+function onFilterSubmit(event) {
+    event.preventDefault();
+    if (isLoading) {
         return;
     }
 
@@ -212,33 +202,33 @@ async function onSubmit(event){
     const type1Filter = document.getElementById("type1-filter").value;
     const type2Filter = document.getElementById("type2-filter").value;
     const typesFilter = []
-    if(type1Filter.length !== 0){ typesFilter.push(type1Filter); }
-    if(type2Filter.length !== 0){ typesFilter.push(type2Filter); }
+    if (type1Filter.length !== 0) { typesFilter.push(type1Filter); }
+    if (type2Filter.length !== 0) { typesFilter.push(type2Filter); }
 
     for (let i = 0; i < pokemonList.length; i++) {
         const pokemon = pokemonList[i];
 
         const regex = new RegExp(`${nameFilter}.*`);
-        if(!pokemon.name.match(regex)){
+        if (!pokemon.name.match(regex)) {
             continue;
         }
 
-        if(genFilter.length !== 0 && genFilter !== pokemon.gen){
+        if (genFilter.length !== 0 && genFilter !== pokemon.gen) {
             continue;
         }
 
         let numTypesMatch = 0
-        if(typesFilter.length > 0){
-            if(typesFilter.includes(pokemon.type1)){
+        if (typesFilter.length > 0) {
+            if (typesFilter.includes(pokemon.type1)) {
                 numTypesMatch++;
             }
 
-            if(pokemon.type2 !== undefined && typesFilter.includes(pokemon.type2)){
+            if (pokemon.type2 !== undefined && typesFilter.includes(pokemon.type2)) {
                 numTypesMatch++;
             }
         }
 
-        if(numTypesMatch < typesFilter.length){ continue; }
+        if (numTypesMatch < typesFilter.length) { continue; }
 
         filteredPokemonList.push(pokemon);
     }
@@ -248,5 +238,30 @@ async function onSubmit(event){
     fillTable(filteredPokemonList);
 }
 
-const form = document.getElementById("filter-form");
-form.addEventListener("submit", onSubmit);
+const filterForm = document.getElementById("filter-form");
+filterForm.addEventListener("submit", onFilterSubmit);
+
+async function onTeamSubmit(event){
+    event.preventDefault();
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const user = urlParams.get("user");
+
+    const postId = await GetNextPostId();
+
+    const title = document.getElementById("Title").value;
+    const description = document.getElementById("Description").value;
+
+    let pokemonTeamFix = [];
+    for (let i = 0; i < pokemonTeam.length; i++) {
+        const element = pokemonTeam[i];
+        pokemonTeamFix.push(element + 1)
+    }
+
+    AddPost(postId, user, title, description, pokemonTeamFix);
+}
+
+const teamForm = document.getElementById("team-form");
+teamForm.addEventListener("submit", onTeamSubmit);

@@ -201,22 +201,22 @@
         </div>
 
         <div class="card-body" style="background-color: #003566;">
-            <form class="form">
+            <form id="team-form" class="form">
 
                 <label for="titulo"> Título: </label>
 				<div class="form-group col-md-12">
-                    <input type="text" name="titulo" class="form-control" required="required">
+                    <input id="Title" type="text" name="titulo" class="form-control" required="required">
 				</div>
 
                 <br>
 
                 <label for="titulo"> Descripción: </label>
                 <div class="form-group col-md-12">
-					<textarea rows="3" name="message" class="form-control"></textarea>
+					<textarea id="Description" rows="3" name="message" class="form-control"></textarea>
 				</div>
 
                 <br>
-            </form>
+            
 
                 <!-- EQUIPO POKEMON -->
 
@@ -224,22 +224,22 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-6 col-md-4">
-                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png">
+                            <img id="pokemon-team-1" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/124.png">
+                            <img id="pokemon-team-2" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
+                            <img id="pokemon-team-3" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
+                            <img id="pokemon-team-4" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
+                            <img id="pokemon-team-5" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
+                            <img id="pokemon-team-6" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
                     </div>
                 </div>
@@ -247,6 +247,7 @@
                 <div class="text-center">
 					<button type="submit" name="submit" id="submitButton" class="btn btn-contact-bg">Crear equipo</button>
 				</div>
+            </form>
 
                 <br>
 
@@ -371,6 +372,9 @@
     const P = new Pokedex.Pokedex()
 </script>
 <script src="scripts/parseHTML.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="scripts/server.js"></script>
 <script src="scripts/renderers/pokemonListRenderer.js"></script>
 
 

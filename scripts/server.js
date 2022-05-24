@@ -41,3 +41,30 @@ function GetPosts(){
         })
     );
 }
+
+function GetNextPostId(){
+    return new Promise(resolve =>{
+        db.collection("posts").get().then((querySnapshot) => {
+            let maxId = -1;
+            querySnapshot.forEach((doc) => {
+                if(parseInt(doc.id) > maxId){
+                    maxId = parseInt(doc.id);
+                }
+            });
+            resolve(maxId + 1);
+        });
+    });
+}
+
+function AddPost(id, user, title, description, pokemon){
+    return new Promise(resolve =>{
+        db.collection("posts").doc(id.toString()).set(
+            {
+                op: user,
+                title: title,
+                description: description,
+                pokemon: pokemon
+            }
+        ).then(() => resolve());
+    });
+}
