@@ -7,7 +7,7 @@ async function SubmitLogin(event){
     const user = await GetUserByNick(nick);
 
     const errorMsg = document.getElementById("login-error");
-    errorMsg.style.visibility = "visible";
+    errorMsg.style.visibility = "hidden";
 
     if(!user.exists || user.data().password !== password){
         //TODO: Error wrong username
