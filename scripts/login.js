@@ -6,15 +6,13 @@ async function SubmitLogin(event){
 
     const user = await GetUserByNick(nick);
 
-    if(!user.exists){
+    const errorMsg = document.getElementById("login-error");
+    errorMsg.style.visibility = "visible";
+
+    if(!user.exists || user.data().password !== password){
         //TODO: Error wrong username
         console.log("Username doesnt exist")
-        return;
-    }
-
-    if(user.data().password !== password){
-        //TODO: Error wrong pass
-        console.log("Wrong password");
+        errorMsg.style.visibility = "visible";
         return;
     }
 

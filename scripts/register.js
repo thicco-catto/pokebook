@@ -7,21 +7,35 @@ async function SubmitRegister(event) {
     const password2 = document.getElementById("PasswordConfirm").value;
     const dob = document.getElementById("Birthday").value;
 
-    if (password !== password2) {
-        //TODO: Error non repeated passwords
-        console.log("Passwords must match passwords");
-        return;
-    }
+    let nickMsg = document.getElementById("nick-error");
+    let emailMsg = document.getElementById("email-error");
+    let passwordMsg = document.getElementById("password-error");
+    let repeatedPasswordMsg = document.getElementById("password-repeat-error");
+    let tosMsg = document.getElementById("tos-error");
+
+    nickMsg.style.visibility = "hidden";
+    emailMsg.style.visibility = "hidden";
+    passwordMsg.style.visibility = "hidden";
+    repeatedPasswordMsg.style.visibility = "hidden";
+    tosMsg.style.visibility = "hidden";
+
+    let error = false;
 
     const user = await GetUserByNick(nick);
     if (user.exists) {
-        //TODO: Error nickname exists
-        console.log("The nickname is repeated");
-        return;
+        nickMsg.style.visibility = "visible";
+        error = true;
     }
 
-    await AddUser(nick, password, email, dob);
-    window.location.href = `inicio.html?user=${nick}`;
+    if (password !== password2) {
+        repeatedPasswordMsg.style.visibility = "visible";
+        error = true;
+    }
+
+    if (!error) {
+        await AddUser(nick, password, email, dob);
+        window.location.href = `inicio.html?user=${nick}`;
+    }
 }
 
 const form = document.getElementById("register-form");
