@@ -2,11 +2,16 @@ async function onLoad(event){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
+    const user = urlParams.get("user");
+
     const postId = urlParams.get("post");
     const post = await GetPostById(postId);
 
+    const opProfileLink = document.getElementById("profile-link");
+    opProfileLink.href = `Perfil.html?user=${user}&userProfile=${post.data().op}`;
+
     const opNick = document.getElementById("op-nick");
-    opNick.textContent = post.data().op;
+    opNick.textContent = "@" + post.data().op;
 
     const title = document.getElementById("post-title");
     title.textContent = post.data().title;

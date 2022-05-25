@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -220,10 +220,12 @@
             <form class="form">
                 <div class="d-flex align-items-center" >
                     <div class="mr-2">
-                        <img class="rounded-circle" width="45" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                        <img class="rounded-circle" width="45" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="foto de perfil">
                     </div>
                     <div class="ml-2">
+                        <a id="profile-link" href="">
                         <div id="op-nick" style="color: white;" class="h5 m-0">@SergioCopia</div>
+                        </a>
                     </div>
                 </div>
                
@@ -248,9 +250,21 @@
                     </div>
                 </div>
                 <div class="card-footer"  style="background-color: #003566;">  <!--FALTA LOS ICONOS QUE NO SE COMO VAN-->
-                    <a href="#" class="card-link"><i class="fa fa-gittip"> <label>XX<label></i></a>
-                    <a href="#" class="card-link"><i class="fa fa-comment"> <label>XX<label></i></a>
-                    <a href="#" class="card-link"><i class="fa fa-mail-forward"> <label>XX<label></label></i></a>
+                    <a title="numero de me gustas" href="#" id="nmegustas" class="card-link">
+                        <i title="numero de me gustas" class="fa fa-gittip"> 
+                            <label for="nmegustas">XX</label>
+                        </i>
+                    </a>
+                    <a title="numero de comentarios" href="crearcomentario.html" id="ncoments" class="card-link">
+                        <i title="numero de comentarios" class="fa fa-comment"> 
+                            <label for="ncoments">XX</label>
+                        </i>
+                    </a>
+                    <a title="numero de reposts" href="#" id="nreposts" class="card-link">
+                        <i title="numero de repost"class="fa fa-mail-forward"> 
+                            <label for="nreposts">XX</label>
+                        </i>
+                    </a>
                 </div>
 				
 			</form>
@@ -264,14 +278,14 @@
         
         <!-- RESPUESTA -->
     
-    
+       
 
     <div class="card-body" style="background-color: #003566;">
         <form class="form">
             <p> En respuesta a @SergioCopia:</p>
             <div class="d-flex align-items-center" >
                 <div class="mr-2">
-                    <img class="rounded-circle" width="45" src="img/profilepic/wanditaa.png" alt="">
+                    <img class="rounded-circle" width="45" src="img/profilepic/wanditaa.png" alt="foto de perfil">
                 </div>
                 <div class="ml-2">
                     <div style="color: white;" class="h5 m-0">@MiguelCopia</div>
@@ -285,15 +299,27 @@
 
           
 
-            <br>
+            <!--<br>-->
 
             <!-- EQUIPO POKEMON -->
 
-            <div class="card-footer"  style="background-color: #003566;">  <!--FALTA LOS ICONOS QUE NO SE COMO VAN-->
-                <a href="#" class="card-link"><i class="fa fa-gittip"> <label>XX<label></i></a>
-                <a href="#" class="card-link"><i class="fa fa-comment"> <label>XX<label></i></a>
-                <a href="#" class="card-link"><i class="fa fa-mail-forward"> <label>XX<label></label></i></a>
-            </div>
+            <!--<div class="card-footer"  style="background-color: #003566;">  FALTA LOS ICONOS QUE NO SE COMO VAN-->
+                <!--<a title="numero de me gustas" href="#" id="Rnmegustas" class="card-link">-->
+                    <!--<i title="R numero de me gustas" class="fa fa-gittip"> -->
+                        <!--<label for="Rnmegustas">XX</label>-->
+                    <!--</i>-->
+                <!--</a>-->
+                <!--<a title="numero de comentarios" href="crearcomentario.html" id="Rncoments" class="card-link">-->
+                    <!--<i title="R numero de comentarios" class="fa fa-comment"> -->
+                        <!--<label for="Rncoments">XX</label>-->
+                    <!--</i>-->
+                <!--</a>-->
+                <!--<a title="numero de reposts" href="#" id="Rnreposts" class="card-link">-->
+                    <!--<i title="R numero de repost"class="fa fa-mail-forward"> -->
+                        <!--<label for="Rnreposts">XX</label>-->
+                    <!--</i>-->
+                <!--</a>-->
+            <!--</div>-->
 
         </form>
     </div>
