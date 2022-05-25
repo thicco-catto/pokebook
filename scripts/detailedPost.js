@@ -31,5 +31,27 @@ async function onLoad(event){
         let pokemonHTML = parseHTML(pokemonStr);
         pokemonTeamDiv.appendChild(pokemonHTML);
     }
+
+    const likeButton = document.getElementById("nmegustas");
+    likeButton.classList.add(`likebutton-${post.id}`);
+    likeButton.onclick = onLike
+    const likesMsg = likeButton.children[0].children[0];
+    likesMsg.id = `likenum-${post.id}`;
+    const postLikes = await GetLikesPerPost(post.id);
+    const numLikes = postLikes.size;
+    likesMsg.textContent = numLikes;
+
+    document.getElementById("ncomments").href = `crearcomentario.html?user=${user}&post=${postId}`;
+    const comments = await GetCommentsPerPost(post.id);
+    document.getElementById("comments-number").textContent = comments.size;
+
+    const repostButton = document.getElementById("nreposts");
+    repostButton.classList.add(`repostbutton-${post.id}`);
+    repostButton.onclick = onRepost
+    const repostsMsg = repostButton.children[0].children[0];
+    repostsMsg.id = `repostnum-${post.id}`;
+    const postReposts = await GetRepostsPerPost(post.id);
+    const numReposts = postReposts.size;
+    repostsMsg.textContent = numReposts;
 }
 addEventListener("DOMContentLoaded", onLoad);
