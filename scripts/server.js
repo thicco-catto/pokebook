@@ -76,3 +76,11 @@ function GetPostById(id){
         )
     );
 }
+
+function GetPostsByUser(nick){
+    return new Promise(resolve =>
+        db.collection("posts").where("op", "==", nick).get().then((querySnapshot) =>
+            resolve(querySnapshot)
+        )
+    );
+}
