@@ -157,9 +157,10 @@
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <div id="header"></div>
-    <!-- PANEL -->
+<!-- NAVBAR -->
+<div id="header"></div>
+
+<!-- PANEL -->
 <div class="container gedf-wrapper">
 <div class="row">
     <div id="sidebar" class="col-md-3">
@@ -299,7 +300,9 @@
         
                 <!-- TABLA -->
                 <br> <br>
+                <div STYLE="width: 100%; font-size: 12px; overflow: auto;">
                 <table style="color:white;" class="table align-middle mb-0" id="pokemonTable">
+                    <div class="d-none d-sm-none d-md-block">
                     <thead style="color: white;">
                       <tr>
                         <th></th>
@@ -309,10 +312,12 @@
                         <th>Tipo 2</th>
                       </tr>
                     </thead>
+                    </div>
                     <tbody id="pokemonList">
                         <!-- POKEMON -->
                     </tbody>
-                  </table>
+                </table>
+                </div>
                 <br>
                 
                 <!-- LOADING POKEMOM -->
@@ -360,7 +365,7 @@
 
 <!-- BOTON CREAR POST -->
 <div id="stop" class="boton-crear">
-    <a href="#arriba"><img alt="Brand" width="40" height="40" src="img/utilidades/up-arrow.png"></a>
+    <a href="#header"><img alt="Brand" width="40" height="40" src="img/utilidades/up-arrow.png"></a>
 </div>
 
 </body>

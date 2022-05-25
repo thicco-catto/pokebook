@@ -9,8 +9,8 @@ function onLoad(event){
     const navbarStr = `
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #003566;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="inicio.html?user=${user}" style="color: white;"> PokeBook
-            <img alt="logo" width="30" height="30" src="img/utilidades/logo.png">
+        <a class="navbar-brand" href="inicio.html?user=${user}" style="color: white;"> <h1 style="font-size: 20px; padding: 10px 0 0 0;">PokeBook
+            <img alt="logo" width="30" height="30" src="img/utilidades/logo.png"> </h1>
         </a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="color: white;">
             <span class="navbar-toggler-icon"></span>
