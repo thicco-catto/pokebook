@@ -10,22 +10,22 @@ function onLoad(event){
     <div class="d-none d-sm-none d-md-block">
     <div class="new-card">
         <div class="card-body">
-            <a class="btn btn-outline-light " href="inicio.html?user=${user}" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img alt="Brand" width="30" height="30" src="img/utilidades/home.png"> Home
+            <a class="btn btn-outline-light " href="inicio.html?user=${user}" role="button" id="dropdownMenuLink1" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img alt="inicio" width="30" height="30" src="img/utilidades/home.png"> Home
             </a> <br> <br>
-            <a class="btn btn-outline-light" href="ajustes.html?user=${user}" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img alt="Brand" width="30" height="30" src="img/utilidades/conf.png"> Ajustes
+            <a class="btn btn-outline-light" href="ajustes.html?user=${user}" role="button"  style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img alt="ajustes" width="30" height="30" src="img/utilidades/conf.png"> Ajustes
             </a><br> <br>
-            <a class="btn btn-outline-light" href="Perfil.html?user=${user}&userProfile=${user}" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img alt="Brand" width="30" height="30" src="img/utilidades/perfil.png"> Perfil
+            <a class="btn btn-outline-light" href="Perfil.html?user=${user}&userProfile=${user}" role="button"  style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img alt="perfil" width="30" height="30" src="img/utilidades/perfil.png"> Perfil
             </a> <br> <br>
             <div class="d-block d-sm-block d-md-none">
-                <a class="btn btn-outline-light" href="#" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img alt="Brand" width="30" height="30" src="img/utilidades/notificaciones.png"> Notificaciones
+                <a class="btn btn-outline-light" href="#" role="button" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img alt="notificaciones" width="30" height="30" src="img/utilidades/notificaciones.png"> Notificaciones
                 </a> <br> <br>
             </div>
-            <a class="btn btn-warning" href="crear_post.html?user=${user}" role="button" id="dropdownMenuLink" data-toggle="dropdown" style='width:100%;' aria-haspopup="true" aria-expanded="false">
-                <img alt="Brand" width="30" height="30" src="img/utilidades/add (2).png"> Nuevo Post
+            <a class="btn btn-warning" href="crear_post.html?user=${user}" role="button" data-toggle="dropdown" style='width:100%;' aria-haspopup="true" aria-expanded="false">
+                <img alt="nuevo post" width="30" height="30" src="img/utilidades/add (2).png"> Nuevo Post
             </a> <br>
         </div>
     </div>

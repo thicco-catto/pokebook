@@ -32,7 +32,7 @@ p.small{
   font-size: small;
 }
 
-p.normal {
+label.normalRegistro {
   align-items: center;
   margin-left: 20%;
   font-family: 'Lato', sans-serif;
@@ -40,14 +40,16 @@ p.normal {
   color: white;
   font-size: large;
 }
+
 label.normal {
   align-items: center;
-  margin-left: 20%;
+  margin-left: 25%;
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   color: white;
   font-size: large;
 }
+
 .Terms{
     align-items: center;
     text-align: center;
@@ -74,17 +76,6 @@ body {
     background-color: #001D3D;
 }
 
-div.center {
-    
-    text-align: center;
-  
-  }
-
-  #Email,.inputContainer{
-    width:60%;
-    height:30px;
-  }
-
   .AreaLogin{
     border-radius: 25px;
     background-color: #001D3D;
@@ -94,13 +85,30 @@ div.center {
     height: 400px;
 }
 
+div.center{
+  text-align: center;
+}
+
+#Email,.inputContainer{
+  width:60%;
+  height:30px;
+}
+
+
 .camposFormulario{
   padding: 5%;
 }
 
+.inputCont{
+  align-items: center;
+  margin-left: 25%;
+  width: 50%;
+  height: 25px;
+}
+
 p.smallText{
   align-items: flex-end;
-  margin-left: 55%;
+  margin-left: 85%;
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   color: white;
@@ -122,6 +130,7 @@ text-align: center;
 margin-top: 1%;
 }
 
+
 @media only screen and (max-width: 380px) {
   .AreaLogin{
     border-radius: 25px;
@@ -130,6 +139,10 @@ margin-top: 1%;
     width: 80%;
     margin-top: 10%;
     height: 415px;
+    }
+
+    p.smallText{
+      transform: translate(-217%);
     }
   }
 
@@ -141,7 +154,11 @@ margin-top: 1%;
     width: 90%;
     margin-top: 10%;
     height: 405px;
-    }
+  }
+
+  p.smallText{
+    transform: translate(-205%);
+  }
 }
 
 @media only screen and (max-width: 550px) {
@@ -164,4 +181,33 @@ margin-top: 1%;
     margin-top: 10%;
     height: 415px;
     }
+
+    p.smallText{
+      margin-left: 80%;
+    }
+
+}
+
+.text-muted{
+  text-align: center;
+}
+
+.text-reset{
+  color: rgb(170, 170, 170);
+}
+
+.text-reset:hover{
+  color: dodgerblue;
+}
+
+.textoSolicitud{
+  color: white;
+}
+
+.AreaLogin2{
+  background-color: #001D3D;
+  margin: auto;
+  width: 40%;
+  margin-top: 10%;
+  height: 300px;
 }

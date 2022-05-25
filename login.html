@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
     <head>
         <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
@@ -22,34 +22,40 @@
     <body>
         <div class="camposFormulario">
         <h1>Iniciar sesión</h1>
-        <form id="login-form">
+        <form id="login-form" class="components">
           
            
-             <p for="Nick" class="normal">Nick:</p>
-             <div class="center"><input type="text" id="Nick" name="UserEmail" class="inputContainer" required/></div>
-                     
-             <p for="Password" class="normal">Contraseña:</p>
-             <div class="center"><input type="password" id="Password" name="Password"class="inputContainer" required/></div>          
-          
+             <label for="Nick" class="normal">Nick:</label>
              <br>
+             <input type="text" id="Nick" name="UserEmail" class="inputCont" required/>
+            
+             <br><br>
+            
+             <label for="Password" class="normal">Contraseña:</label>
+             <br>
+             <input type="password" id="Password" name="Password"class="inputCont" required/>         
+          
+             <br><br>
 
              <div class="btnContinue">
                 <input class="boton-continuar" type="submit" value="Continuar"></input>
                </div>
-
-
-            
+            <p class="text-muted">
+        <a href="olvidoContraseña.html" class="text-reset">¿Has olvidado tu contraseña?</a>
+            </p>
           
         </form>
+        <p class="smallText"><a href="registro.html" class="link">Registrarse</a> </p>
     </div>
 
-    <p for="Already" class="smallText">¿Necesitas una cuenta? <a href="registro.html" class="link">Registrarse</a> </p>
 
-        <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-        <script src="scripts/server.js"></script>
-        <script src="scripts/login.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="scripts/server.js"></script>
+    <script src="scripts/login.js"></script>
     </body>
+    
 </div>
   
 <div class="Footer"></div>
