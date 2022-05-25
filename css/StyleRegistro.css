@@ -32,13 +32,21 @@ p.small{
   font-size: small;
 }
 
-  p.normal {
-    align-items: center;
-    margin-left: 20%;
-    font-family: 'Lato', sans-serif;
-    font-weight: bold;
-    color: white;
-    font-size: large;
+p.normal {
+  align-items: center;
+  margin-left: 20%;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: large;
+}
+label.normal {
+  align-items: center;
+  margin-left: 20%;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: large;
 }
 .Terms{
     align-items: center;
