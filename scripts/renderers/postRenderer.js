@@ -21,7 +21,9 @@ async function renderPost(post) {
                     <img class="rounded-circle" width="45" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
                 </div>
                 <div class="ml-2">
+                <a href="Perfil.html?user=${user}&userProfile=${post.data().op}">
                     <div style="color: white;" class="h5 m-0">@${post.data().op}</div>
+                    </a>
                 </div>
             </div>
             <div>

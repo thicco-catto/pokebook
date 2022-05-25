@@ -16,7 +16,7 @@ function onLoad(event){
             <a class="btn btn-outline-light" href="ajustes.html?user=${user}" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img alt="Brand" width="30" height="30" src="img/utilidades/conf.png"> Ajustes
             </a><br> <br>
-            <a class="btn btn-outline-light" href="Perfil.html?user=${user}" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="btn btn-outline-light" href="Perfil.html?user=${user}&userProfile=${user}" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <img alt="Brand" width="30" height="30" src="img/utilidades/perfil.png"> Perfil
             </a> <br> <br>
             <div class="d-block d-sm-block d-md-none">

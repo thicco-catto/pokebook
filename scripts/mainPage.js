@@ -1,10 +1,5 @@
 async function onLoad(event){
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-
-    const user = urlParams.get("userProfile");
-
-    const posts = await GetPostsByUser(user);
+    const posts = await GetPosts();
 
     let postArray = [];
     console.log(posts.size);
