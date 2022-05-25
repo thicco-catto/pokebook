@@ -14,6 +14,10 @@ firebase.initializeApp(firebaseConfig);
 // Initialize Cloud Firestore and get a reference to the service
 const db = firebase.firestore();
 
+//-----------
+//User
+//-----------
+
 function GetUserByNick(nick) {
     return new Promise(resolve =>
         db.collection("users").doc(nick).get().then((doc) =>
@@ -33,6 +37,10 @@ function AddUser(nick, password, email, dob) {
         ).then(() => resolve());
     });
 }
+
+//-----------
+//Posts
+//-----------
 
 function GetPosts(){
     return new Promise(resolve =>
@@ -85,6 +93,10 @@ function GetPostsByUser(nick){
     );
 }
 
+//-----------
+//Likes
+//-----------
+
 function GetLikesPerPost(post){
     return new Promise(resolve =>
         db.collection(`posts/${post}/likes`).get().then((querySnapshot) =>
@@ -117,6 +129,11 @@ function RemoveLikeFromPost(post, user){
     );
 }
 
+//-----------
+//Reposts
+//-----------
+
+
 function GetRepostsPerPost(post){
     return new Promise(resolve =>
         db.collection(`posts/${post}/reposts`).get().then((querySnapshot) =>
@@ -144,6 +161,29 @@ function AddRepostToPost(post, user){
 function RemoveRepostFromPost(post, user){
     return new Promise(resolve =>
         db.collection(`posts/${post}/reposts`).doc(user).delete().then(() =>
+            resolve()
+        )  
+    );
+}
+
+//-----------
+//Comments
+//-----------
+
+function GetCommentsPerPost(post){
+    return new Promise(resolve =>
+        db.collection(`posts/${post}/comments`).get().then((querySnapshot) =>
+            resolve(querySnapshot)
+        )  
+    );
+}
+
+function AddCommentToPost(post, user, comment){
+    return new Promise(resolve =>
+        db.collection(`posts/${post}/comments`).add({
+            op : user,
+            text : comment
+        }).then(() =>
             resolve()
         )  
     );

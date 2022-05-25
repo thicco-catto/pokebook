@@ -41,6 +41,10 @@ async function onLoad(event){
     const numLikes = postLikes.size;
     likesMsg.textContent = numLikes;
 
+    document.getElementById("ncomments").href = `crearcomentario.html?user=${user}&post=${postId}`;
+    const comments = await GetCommentsPerPost(post.id);
+    document.getElementById("comments-number").textContent = comments.size;
+
     const repostButton = document.getElementById("nreposts");
     repostButton.classList.add(`repostbutton-${post.id}`);
     repostButton.onclick = onRepost

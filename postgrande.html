@@ -210,132 +210,65 @@
 
     <div class="col-md-6">
     <br>
-    <div class="card gedf-card">
-        
-            <!-- POST EQUIPO POKEMON -->
-        
-        
-
-        <div class="card-body" style="background-color: #003566;">
-            <form class="form">
-                <div class="d-flex align-items-center" >
-                    <div class="mr-2">
-                        <img class="rounded-circle" width="45" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="foto de perfil">
+        <div class="card gedf-card">
+                <!-- POST EQUIPO POKEMON -->
+            <div class="card-body" style="background-color: #003566;">
+                <form class="form">
+                    <div class="d-flex align-items-center" >
+                        <div class="mr-2">
+                            <img class="rounded-circle" width="45" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="foto de perfil">
+                        </div>
+                        <div class="ml-2">
+                            <a id="profile-link" href="">
+                            <div id="op-nick" style="color: white;" class="h5 m-0">@SergioCopia</div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="ml-2">
-                        <a id="profile-link" href="">
-                        <div id="op-nick" style="color: white;" class="h5 m-0">@SergioCopia</div>
+                
+                    <div class="form-group col-md-12">
+                        <div  class="card-body" style="background-color: #003566; "> <h3 id="post-title"> Titulo del equipo</h3></div>
+                    </div>
+
+                
+                    <div class="form-group col-md-12">
+                        <div  class="card-body" style="background-color: #003566; "> <p id="post-description"> Descripción del equipo</p></div>
+                    </div>
+
+                
+
+                    <br>
+
+                    <!-- EQUIPO POKEMON -->
+
+                    <div class="card-body" style="background-color: #003566; "> <h5> Equipo pokemon</h5></div>
+                    <div class="container">
+                        <div id="pokemon-team" class="row">
+                        </div>
+                    </div>
+                    <div class="card-footer"  style="background-color: #003566;">  <!--FALTA LOS ICONOS QUE NO SE COMO VAN-->
+                        <a title="numero de me gustas" id="nmegustas" class="card-link">
+                            <i title="numero de me gustas" class="fa fa-gittip"> 
+                                <label for="nmegustas">XX</label>
+                            </i>
+                        </a>
+                        <a title="numero de comentarios" href="crearcomentario.html" id="ncomments" class="card-link">
+                            <i title="numero de comentarios" class="fa fa-comment"> 
+                                <label id="comments-number" for="ncomments">XX</label>
+                            </i>
+                        </a>
+                        <a title="numero de reposts" id="nreposts" class="card-link">
+                            <i title="numero de repost"class="fa fa-mail-forward"> 
+                                <label for="nreposts">XX</label>
+                            </i>
                         </a>
                     </div>
-                </div>
-               
-				<div class="form-group col-md-12">
-                    <div  class="card-body" style="background-color: #003566; "> <h3 id="post-title"> Titulo del equipo</h3></div>
-				</div>
-
-            
-                <div class="form-group col-md-12">
-					<div  class="card-body" style="background-color: #003566; "> <p id="post-description"> Descripción del equipo</p></div>
-				</div>
-
-              
-
-                <br>
-
-                <!-- EQUIPO POKEMON -->
-
-                <div class="card-body" style="background-color: #003566; "> <h5> Equipo pokemon</h5></div>
-                <div class="container">
-                    <div id="pokemon-team" class="row">
-                    </div>
-                </div>
-                <div class="card-footer"  style="background-color: #003566;">  <!--FALTA LOS ICONOS QUE NO SE COMO VAN-->
-                    <a title="numero de me gustas" id="nmegustas" class="card-link">
-                        <i title="numero de me gustas" class="fa fa-gittip"> 
-                            <label for="nmegustas">XX</label>
-                        </i>
-                    </a>
-                    <a title="numero de comentarios" href="crearcomentario.html" id="ncoments" class="card-link">
-                        <i title="numero de comentarios" class="fa fa-comment"> 
-                            <label for="ncoments">XX</label>
-                        </i>
-                    </a>
-                    <a title="numero de reposts" id="nreposts" class="card-link">
-                        <i title="numero de repost"class="fa fa-mail-forward"> 
-                            <label for="nreposts">XX</label>
-                        </i>
-                    </a>
-                </div>
-				
-			</form>
+                    
+                </form>
+            </div>
         </div>
+
+        <div id="comments"></div>
     </div>
-
-
-
-
-    <div class="card gedf-card">
-        
-        <!-- RESPUESTA -->
-    
-       
-
-    <div class="card-body" style="background-color: #003566;">
-        <form class="form">
-            <p> En respuesta a @SergioCopia:</p>
-            <div class="d-flex align-items-center" >
-                <div class="mr-2">
-                    <img class="rounded-circle" width="45" src="img/profilepic/wanditaa.png" alt="foto de perfil">
-                </div>
-                <div class="ml-2">
-                    <div style="color: white;" class="h5 m-0">@MiguelCopia</div>
-                </div>
-            </div>
-
-
-            <div class="form-group col-md-12">
-                <div class="card-body" style="background-color: #003566; "> <p> Contenido de la respuesta</p></div>
-            </div>
-
-          
-
-            <!--<br>-->
-
-            <!-- EQUIPO POKEMON -->
-
-            <!--<div class="card-footer"  style="background-color: #003566;">  FALTA LOS ICONOS QUE NO SE COMO VAN-->
-                <!--<a title="numero de me gustas" href="#" id="Rnmegustas" class="card-link">-->
-                    <!--<i title="R numero de me gustas" class="fa fa-gittip"> -->
-                        <!--<label for="Rnmegustas">XX</label>-->
-                    <!--</i>-->
-                <!--</a>-->
-                <!--<a title="numero de comentarios" href="crearcomentario.html" id="Rncoments" class="card-link">-->
-                    <!--<i title="R numero de comentarios" class="fa fa-comment"> -->
-                        <!--<label for="Rncoments">XX</label>-->
-                    <!--</i>-->
-                <!--</a>-->
-                <!--<a title="numero de reposts" href="#" id="Rnreposts" class="card-link">-->
-                    <!--<i title="R numero de repost"class="fa fa-mail-forward"> -->
-                        <!--<label for="Rnreposts">XX</label>-->
-                    <!--</i>-->
-                <!--</a>-->
-            <!--</div>-->
-
-        </form>
-    </div>
-</div>
-
-
-
-
-
-    </div>
-
-
-
-
-    
-
 
     <!-- NOTIFICACIONES -->
     <div class="col-md-3">
@@ -369,6 +302,7 @@
 <script src="scripts/server.js"></script>
 <script src="scripts/renderers/headerRenderer.js"></script>
 <script src="scripts/renderers/sidebarRenderer.js"></script>
+<script src="scripts/renderers/commentsRenderer.js"></script>
 <script src="scripts/likeManager.js"></script>
 <script src="scripts/repostManager.js"></script>
 <script src="scripts/detailedPost.js"></script>
