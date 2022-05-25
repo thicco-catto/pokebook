@@ -53,9 +53,21 @@ async function renderPost(post) {
         </div>
     </div>
     <div class="card-footer"  style="background-color: #003566;">
-        <a title="numero de me gustas" href="#" class="card-link"><i class="fa fa-gittip"> <label>XX</label></i></a>
-        <a title="numero de comentarios" href="crearcomentario.html" class="card-link"><i class="fa fa-comment"> <label>XX</label></i></a>
-        <a title="numero de reposts" href="#" class="card-link"><i class="fa fa-mail-forward"> <label>XX</label></i></a>
+        <a title="numero de me gustas" href="#" class="card-link">
+            <i title="numero de me gustas" class="fa fa-gittip"> 
+                <label>XX</label><!---NUMERO->
+            </i>
+        </a>
+        <a title="numero de comentarios" href="crearcomentario.html" class="card-link">
+            <i title="numero de comentarios" class="fa fa-comment"> 
+                <label>XX</label>
+            </i>
+        </a>
+        <a title="numero de reposts" href="#" class="card-link">
+            <i title="numero de repost"class="fa fa-mail-forward"> 
+                <label>XX</label>
+            </i>
+        </a>
     </div>
 </div>
 	`;
