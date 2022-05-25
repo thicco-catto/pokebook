@@ -40,5 +40,18 @@ async function onLoad(event){
     const postLikes = await GetLikesPerPost(post.id);
     const numLikes = postLikes.size;
     likesMsg.textContent = numLikes;
+
+    document.getElementById("ncomments").href = `crearcomentario.html?user=${user}&post=${postId}`;
+    const comments = await GetCommentsPerPost(post.id);
+    document.getElementById("comments-number").textContent = comments.size;
+
+    const repostButton = document.getElementById("nreposts");
+    repostButton.classList.add(`repostbutton-${post.id}`);
+    repostButton.onclick = onRepost
+    const repostsMsg = repostButton.children[0].children[0];
+    repostsMsg.id = `repostnum-${post.id}`;
+    const postReposts = await GetRepostsPerPost(post.id);
+    const numReposts = postReposts.size;
+    repostsMsg.textContent = numReposts;
 }
 addEventListener("DOMContentLoaded", onLoad);
