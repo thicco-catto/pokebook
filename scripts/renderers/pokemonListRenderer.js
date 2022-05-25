@@ -158,16 +158,19 @@ function fillTable(pokemonList) {
 
 async function onLoad(event) {
     isLoading = true;
+    console.log("hola");
 
     const interval = {
         offset: 0,
         limit: 898,
     }
     const pokemonListRaw = await P.getPokemonsList(interval);
+    console.log("vamos");
 
     for (let i = 0; i < pokemonListRaw.count; i++) {
         if (pokemonListRaw.results[i] === undefined) { continue; }
         const pokemon = await P.getPokemonByName(pokemonListRaw.results[i].name);
+        console.log(i);
 
         let type2 = undefined;
         if (pokemon.types[1] !== undefined) { type2 = pokemon.types[1].type.name; }
