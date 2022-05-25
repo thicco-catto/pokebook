@@ -55,7 +55,7 @@ async function renderPost(post) {
     <div class="card-footer"  style="background-color: #003566;">
         <a title="numero de me gustas" href="#" class="card-link">
             <i title="numero de me gustas" class="fa fa-gittip"> 
-                <label>XX</label><!---NUMERO->
+                <label>XX</label>
             </i>
         </a>
         <a title="numero de comentarios" href="crearcomentario.html" class="card-link">
