@@ -37,19 +37,19 @@
            <label for="Email" class="normal">Email:</label>
            
            <div class="center"><input type="email" id="Email" name="UserEmail" class="inputContainer" required/></div>
-           <p style="color:red ; margin-left:20%">email mal ⚠</p>
+           <p id="email-error" style="color:red ; margin-left:20% ; visibility: hidden;">email mal ⚠</p>
            
            <label for="Nick" class="normal">Nick: </label>
            <div class="center"><input type="text" id="Nick" name="UserNick" class="inputContainer"required /></div>
-           <p style="color:red ; margin-left:20%">nick mal ⚠</p>
+           <p id="nick-error" style="color:red ; margin-left:20% ; visibility: hidden;">Este nick ya esta registrado ⚠</p>
            
            <label for="Password" class="normal">Contraseña:</label>
            <div class="center"><input type="password" id="Password" name="Password"class="inputContainer" required/></div>
-           <p style="color:red ; margin-left:20%">Contraseña mal ⚠</p>
+           <p id="password-error" style="color:red ; margin-left:20% ; visibility: hidden;">Contraseña mal ⚠</p>
            
            <label for="PasswordConfirm" class="normal">Confirmar contraseña:</label>
            <div class="center"><input type="password" id="PasswordConfirm" name="PasswordConfirm" class="inputContainer" required/></div>
-           <p style="color:red ; margin-left:20%">No coincide con la contraseña ⚠</p>
+           <p id="password-repeat-error" style="color:red ; margin-left:20% ; visibility: hidden;">Las contraseñas no coinciden ⚠</p>
            
            <label for ="Birthday" class="normal">Fecha de nacimiento:</label>
            <div class="center"><input type="date" id="Birthday" name="Birthday"class="inputContainer" required/></div>
@@ -57,7 +57,7 @@
         
             <br> 
           <label for ="Terms" class="Terms mb-1 normal"> <input type="checkbox" id="Terms" name="Terms" />Estoy de acuerdo con los <a href="download/Terminos y Condiciones.pdf" download="download/TerminosyCondiciones.pdf">términos y condiciones</a>.</label>
-          <p style="color:red ;margin-left: 20%;">Debe de aceptar los términos y condiones para poder registrarte ⚠</p>
+          <p id="tos-error" style="color:red ;margin-left: 20% ; visibility: hidden;">Debe de aceptar los términos y condiones para poder registrarte ⚠</p>
           
           <div class="btnContinue">
             <br>
