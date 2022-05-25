@@ -32,17 +32,10 @@ p.small{
   font-size: small;
 }
 
-p.normal {
-  align-items: center;
-  margin-left: 20%;
-  font-family: 'Lato', sans-serif;
-  font-weight: bold;
-  color: white;
-  font-size: large;
-}
+
 label.normal {
   align-items: center;
-  margin-left: 20%;
+  margin-left: 25%;
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   color: white;
@@ -74,17 +67,6 @@ body {
     background-color: #001D3D;
 }
 
-div.center {
-    
-    text-align: center;
-  
-  }
-
-  #Email,.inputContainer{
-    width:60%;
-    height:30px;
-  }
-
   .AreaLogin{
     border-radius: 25px;
     background-color: #001D3D;
@@ -96,6 +78,13 @@ div.center {
 
 .camposFormulario{
   padding: 5%;
+}
+
+.inputCont{
+  align-items: center;
+  margin-left: 25%;
+  width: 50%;
+  height: 25px;
 }
 
 p.smallText{
