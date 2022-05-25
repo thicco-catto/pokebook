@@ -84,3 +84,35 @@ function GetPostsByUser(nick){
         )
     );
 }
+
+function GetLikesPerPost(post){
+    return new Promise(resolve =>
+        db.collection(`posts/${post}/likes`).get().then((querySnapshot) =>
+            resolve(querySnapshot)
+        )  
+    );
+}
+
+function GetUserLikeForPost(post, user){
+    return new Promise(resolve =>
+        db.collection(`posts/${post}/likes`).doc(user).get().then((doc) =>
+            resolve(doc)
+        )  
+    );
+}
+
+function AddLikeToPost(post, user){
+    return new Promise(resolve =>
+        db.collection(`posts/${post}/likes`).doc(user).set({}).then(() =>
+            resolve()
+        )  
+    );
+}
+
+function RemoveLikeFromPost(post, user){
+    return new Promise(resolve =>
+        db.collection(`posts/${post}/likes`).doc(user).delete().then(() =>
+            resolve()
+        )  
+    );
+}

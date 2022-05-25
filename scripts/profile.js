@@ -25,7 +25,6 @@ async function onLoad(event){
     const posts = await GetPostsByUser(userNick);
 
     let postArray = [];
-    console.log(posts.size);
     posts.forEach(post => {
         postArray.push(post);
     });

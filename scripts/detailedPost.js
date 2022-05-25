@@ -31,5 +31,14 @@ async function onLoad(event){
         let pokemonHTML = parseHTML(pokemonStr);
         pokemonTeamDiv.appendChild(pokemonHTML);
     }
+
+    const likeButton = document.getElementById("nmegustas");
+    likeButton.classList.add(`likebutton-${post.id}`);
+    likeButton.onclick = onLike
+    const likesMsg = likeButton.children[0].children[0];
+    likesMsg.id = `likenum-${post.id}`;
+    const postLikes = await GetLikesPerPost(post.id);
+    const numLikes = postLikes.size;
+    likesMsg.textContent = numLikes;
 }
 addEventListener("DOMContentLoaded", onLoad);

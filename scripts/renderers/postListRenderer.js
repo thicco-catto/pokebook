@@ -8,4 +8,11 @@ async function renderPosts(posts){
         postDiv.appendChild(postHTML);
         postsDiv.appendChild(postDiv);
     }
+
+    const likebuttons = document.getElementsByClassName("likebutton");
+
+    for (let i = 0; i < likebuttons.length; i++) {
+        const button = likebuttons[i];
+        button.onclick = onLike;
+    }
 }
