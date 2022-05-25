@@ -32,6 +32,14 @@ p.small{
   font-size: small;
 }
 
+label.normalRegistro {
+  align-items: center;
+  margin-left: 20%;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: large;
+}
 
 label.normal {
   align-items: center;
@@ -41,6 +49,7 @@ label.normal {
   color: white;
   font-size: large;
 }
+
 .Terms{
     align-items: center;
     text-align: center;
@@ -75,6 +84,16 @@ body {
     margin-top: 10%;
     height: 400px;
 }
+
+div.center{
+  text-align: center;
+}
+
+#Email,.inputContainer{
+  width:60%;
+  height:30px;
+}
+
 
 .camposFormulario{
   padding: 5%;
