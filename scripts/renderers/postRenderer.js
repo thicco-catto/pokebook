@@ -18,7 +18,7 @@ async function renderPost(post) {
         <div class="d-flex justify-content-between align-items-center" >
             <div class="d-flex justify-content-between align-items-center" >
                 <div class="mr-2">
-                    <img class="rounded-circle" width="45" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <img class="rounded-circle" width="45" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="imagen de perfil">
                 </div>
                 <div class="ml-2">
                 <a href="Perfil.html?user=${user}&userProfile=${post.data().op}">
@@ -53,9 +53,9 @@ async function renderPost(post) {
         </div>
     </div>
     <div class="card-footer"  style="background-color: #003566;">
-        <a href="#" class="card-link"><i class="fa fa-gittip"> <label>XX</label></i></a>
-        <a href="crearcomentario.html" class="card-link"><i class="fa fa-comment"> <label>XX</label></i></a>
-        <a href="#" class="card-link"><i class="fa fa-mail-forward"> <label>XX</label></i></a>
+        <a title="numero de me gustas" href="#" class="card-link"><i class="fa fa-gittip"> <label>XX</label></i></a>
+        <a title="numero de comentarios" href="crearcomentario.html" class="card-link"><i class="fa fa-comment"> <label>XX</label></i></a>
+        <a title="numero de reposts" href="#" class="card-link"><i class="fa fa-mail-forward"> <label>XX</label></i></a>
     </div>
 </div>
 	`;
