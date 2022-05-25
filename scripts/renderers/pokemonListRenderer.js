@@ -158,14 +158,16 @@ function fillTable(pokemonList) {
 
 async function onLoad(event) {
     isLoading = true;
-    console.log("hola");
+    
+    const loadingMsg = document.getElementById("loading-msg");
 
     const interval = {
         offset: 0,
         limit: 898,
     }
     const pokemonListRaw = await P.getPokemonsList(interval);
-    console.log("vamos");
+
+    loadingMsg.textContent = `Cargando ${0}/898`;
 
     for (let i = 0; i < pokemonListRaw.count; i++) {
         if (pokemonListRaw.results[i] === undefined) { continue; }
@@ -180,6 +182,8 @@ async function onLoad(event) {
         const pokemonClass = new Pokemon(i, pokemon.sprites.front_default, pokemon.name, pokemon.types[0].type.name, type2, generation);
 
         pokemonList.push(pokemonClass);
+
+        loadingMsg.textContent = `Cargando ${i+1}/898`;
     }
 
     document.getElementById("loading-gif").style.visibility = "hidden";

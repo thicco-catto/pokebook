@@ -4,7 +4,6 @@ async function onLoad(event){
     let postArray = [];
     console.log(posts.size);
     posts.forEach(post => {
-        console.log(post);
         postArray.push(post);
     });
 
