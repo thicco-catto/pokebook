@@ -15,6 +15,9 @@ async function renderPost(post) {
     const postLikes = await GetLikesPerPost(post.id);
     const numLikes = postLikes.size;
 
+    const postReposts = await GetRepostsPerPost(post.id);
+    const numReposts = postReposts.size;
+
     let html = `
 	<div class="card gedf-card">
     <div class="new-card-header" style="background-color: #003566;">
@@ -66,9 +69,9 @@ async function renderPost(post) {
                 <label for="ncoments">XX</label>
             </i>
         </a>
-        <a title="numero de reposts" href="#" id="nreposts" class="card-link">
+        <a title="numero de reposts" href="#" id="nreposts" class="card-link repostbutton repostbutton-${post.id}">
             <i title="numero de repost"class="fa fa-mail-forward"> 
-                <label for="nreposts">XX</label>
+                <label id="repostnum-${post.id}" for="nreposts">${numReposts}</label>
             </i>
         </a>
     </div>

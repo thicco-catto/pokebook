@@ -116,3 +116,35 @@ function RemoveLikeFromPost(post, user){
         )  
     );
 }
+
+function GetRepostsPerPost(post){
+    return new Promise(resolve =>
+        db.collection(`posts/${post}/reposts`).get().then((querySnapshot) =>
+            resolve(querySnapshot)
+        )  
+    );
+}
+
+function GetUserRepostForPost(post, user){
+    return new Promise(resolve =>
+        db.collection(`posts/${post}/reposts`).doc(user).get().then((doc) =>
+            resolve(doc)
+        )  
+    );
+}
+
+function AddRepostToPost(post, user){
+    return new Promise(resolve =>
+        db.collection(`posts/${post}/reposts`).doc(user).set({}).then(() =>
+            resolve()
+        )  
+    );
+}
+
+function RemoveRepostFromPost(post, user){
+    return new Promise(resolve =>
+        db.collection(`posts/${post}/reposts`).doc(user).delete().then(() =>
+            resolve()
+        )  
+    );
+}

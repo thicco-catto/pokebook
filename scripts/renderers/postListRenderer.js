@@ -15,4 +15,11 @@ async function renderPosts(posts){
         const button = likebuttons[i];
         button.onclick = onLike;
     }
+
+    const repostbuttons = document.getElementsByClassName("repostbutton");
+
+    for (let i = 0; i < repostbuttons.length; i++) {
+        const button = repostbuttons[i];
+        button.onclick = onRepost;
+    }
 }
