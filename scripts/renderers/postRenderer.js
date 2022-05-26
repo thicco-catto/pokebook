@@ -2,7 +2,9 @@ async function renderPost(post) {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
-    const user = urlParams.get("user");
+    const userNick = urlParams.get("user");
+
+    const postOp = await GetUserByNick(post.data().op);
 
     let pokemonImgs = "";
 
@@ -27,10 +29,10 @@ async function renderPost(post) {
         <div class="d-flex justify-content-between align-items-center" >
             <div class="d-flex justify-content-between align-items-center" >
                 <div class="mr-2">
-                    <img class="rounded-circle" width="45" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="imagen de perfil">
+                    <img class="rounded-circle" width="45" src="${postOp.data().picture}" alt="imagen de perfil">
                 </div>
                 <div class="ml-2">
-                <a href="Perfil.html?user=${user}&userProfile=${post.data().op}">
+                <a href="Perfil.html?user=${userNick}&userProfile=${post.data().op}">
                     <div style="color: white;" class="h5 m-0">@${post.data().op}</div>
                     </a>
                 </div>
@@ -50,7 +52,7 @@ async function renderPost(post) {
 
     </div>
     <div class="card-body" style="background-color: #003566;">
-        <a class="card-link" href="postgrande.html?user=${user}&post=${post.id}">  <!-- link a comentario -->
+        <a class="card-link" href="postgrande.html?user=${userNick}&post=${post.id}">  <!-- link a comentario -->
             <h5 class="card-title">${post.data().title}</h5>
         </a>
 
@@ -67,7 +69,7 @@ async function renderPost(post) {
                 <label id="likenum-${post.id}" for="nmegustas">${numLikes}</label>
             </i>
         </a>
-        <a title="numero de comentarios" href="crearcomentario.html?user=${user}&post=${post.id}" id="ncoments" class="card-link">
+        <a title="numero de comentarios" href="crearcomentario.html?user=${userNick}&post=${post.id}" id="ncoments" class="card-link">
             <i title="numero de comentarios" class="fa fa-comment"> 
                 <label for="ncoments">${numComments}</label>
             </i>

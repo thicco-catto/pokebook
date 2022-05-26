@@ -32,7 +32,8 @@ function AddUser(nick, password, email, dob) {
             {
                 password: password,
                 email: email,
-                dob: dob
+                dob: dob,
+                picture: "https://bootdey.com/img/Content/avatar/avatar1.png"
             }
         ).then(() => resolve());
     });
