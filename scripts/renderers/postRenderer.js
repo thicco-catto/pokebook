@@ -52,9 +52,9 @@ async function renderPost(post) {
 
     </div>
     <div class="card-body" style="background-color: #003566;">
-        <a class="card-link" href="postgrande.html?user=${userNick}&post=${post.id}">  <!-- link a comentario -->
+        <a class="card-link"  style="text-decoration:none" href="postgrande.html?user=${userNick}&post=${post.id}">  <!-- link a comentario -->
             <h5 class="card-title">${post.data().title}</h5>
-        </a>
+        
 
 
         <div class="container">
@@ -62,6 +62,7 @@ async function renderPost(post) {
                 ${pokemonImgs}
             </div>
         </div>
+        </a>
     </div>
     <div class="card-footer"  style="background-color: #003566;">
         <a title="numero de me gustas" id="nmegustas" style="text-decoration:none" class="card-link likebutton likebutton-${post.id}">
