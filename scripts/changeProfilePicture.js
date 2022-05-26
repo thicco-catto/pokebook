@@ -14,5 +14,6 @@ async function OnSubmitPicture(event){
 
     const user = urlParams.get("user");
     await ChangeProfilePicture(user, document.getElementById("fotoperfil").value);
+    window.location.href = `Perfil.html?user=${user}&userProfile=${user}`
 }
 document.getElementById("update-profile-picture").onsubmit = OnSubmitPicture;
