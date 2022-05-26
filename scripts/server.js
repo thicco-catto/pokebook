@@ -50,6 +50,80 @@ function ChangeProfilePicture(nick, picture){
 }
 
 //-----------
+//Followers
+//-----------
+
+function AddFollowed(userFollower, userFollowed){
+    return new Promise(resolve =>{
+        db.collection(`users/${userFollower}/follows`).doc(userFollowed).set({}).then(() =>
+            resolve()
+        )
+    });
+}
+
+function AddFollower(userFollower, userFollowed){
+    return new Promise(resolve =>{
+        db.collection(`users/${userFollowed}/followers`).doc(userFollower).set({}).then(() =>
+            resolve()
+        )
+    });
+}
+
+async function FollowUser(userFollower, userFollowed){
+    await AddFollowed(userFollower, userFollowed);
+    await AddFollower(userFollower, userFollowed);
+
+    return true;
+}
+
+function RemoveFollowed(userFollower, userFollowed){
+    return new Promise(resolve =>{
+        db.collection(`users/${userFollower}/follows`).doc(userFollowed).delete().then(() =>
+            resolve()
+        )
+    });
+}
+
+function RemoveFollower(userFollower, userFollowed){
+    return new Promise(resolve =>{
+        db.collection(`users/${userFollowed}/followers`).doc(userFollower).delete().then(() =>
+            resolve()
+        )
+    });
+}
+
+async function UnfollowUser(userFollower, userFollowed){
+    await RemoveFollowed(userFollower, userFollowed);
+    await RemoveFollower(userFollower, userFollowed);
+
+    return true;
+}
+
+function GetUserFollowers(user){
+    return new Promise(resolve =>{
+        db.collection(`users/${user}/followers`).get().then((querySnapshot) =>
+            resolve(querySnapshot)
+        )
+    }); 
+}
+
+function GetUserFollowed(user){
+    return new Promise(resolve =>{
+        db.collection(`users/${user}/follows`).get().then((querySnapshot) =>
+            resolve(querySnapshot)
+        )
+    }); 
+}
+
+function GetUserFollowsUser(userFollower, userFollowed){
+    return new Promise(resolve =>{
+        db.collection(`users/${userFollowed}/followers`).doc(userFollower).get().then((doc) =>
+            resolve(doc)
+        )
+    }); 
+}
+
+//-----------
 //Posts
 //-----------
 

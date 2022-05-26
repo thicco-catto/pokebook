@@ -20,9 +20,19 @@ async function onLoad(event){
         followButton.textContent = "Editar";
         followButton.onclick = () => window.location.href = `ajustes.html?user=${selfUserNick}\#profilepic`;
     }else{
-        followButton.textContent = "Seguir";
-        followButton.onclick = () => console.log(userNick + " follow");
+        const isUserFollowed = await GetUserFollowsUser(selfUserNick, userNick);
+        if(isUserFollowed.exists){
+            followButton.textContent = "Dejar de seguir";
+        }else{
+            followButton.textContent = "Seguir";
+        }
+        followButton.onclick = OnFollow;
     }
+
+    const followers = await GetUserFollowers(userNick);
+    const followed = await GetUserFollowed(userNick);
+    document.getElementById("followers-num").textContent = followers.size;
+    document.getElementById("followed-num").textContent = followed.size;
 
     const posts = await GetPostsByUser(userNick);
 
