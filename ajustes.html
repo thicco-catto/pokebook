@@ -99,6 +99,8 @@
 
 <body>
     
+  <div id="header"></div>
+  
   <div class="container gedf-wrapper">
     <div class="row">
       <div id="sidebar" class="col-md-3">
@@ -106,7 +108,6 @@
 
 
          <!-- ESCRITORIO -->
-        
             <!-- AJUSTES -->
             <div class="col-md-6">
                 <div class="d-none d-sm-block d-md-block">
@@ -149,26 +150,26 @@
                 <div class="tab-pane" id="profilepic">
                   <h6>FOTO DE PERFIL</h6>
                   <hr>
-                  <form>
+                  <form id="update-profile-picture">
                     <div class="form-group">
                       <label for="fotoperfil">Url</label>
                       <input type="text" class="form-control" id="fotoperfil" aria-describedby="fotoperfilhelp" placeholder="Introduce la url de tu nueva foto de perfil">
                     </div>
                     <br>
-                    <button class="btn btn-light" type="button">Enviar foto</button>
+                    <button id="send-picture" class="btn btn-light" type="button">Enviar foto</button>
                     <hr>
                     <div class="form-group">
                       <label class="d-block text-light">Nueva foto de perfil</label>
                       <p class="text-muted font-size-sm">Aqui tienes una vista previa de como se verá la nueva foto</p>
                     </div>
                     <div>
-                      <img src="img/ordenador/abra.jpg"
+                      <img id="picture-preview" src="img/ordenador/abra.jpg"
                       alt="Generic placeholder image" class="img-fluid"
                       style="width: 180px;height: 180px; border-radius: 10px;">
                       
                     </div>
                     <br>
-                    <button class="btn btn-info" type="button">Guardar foto</button>
+                    <button class="btn btn-info" type="submit">Guardar foto</button>
                   </form>
                 </div>
                 <br><br>
@@ -275,8 +276,13 @@
 
 <!-- NUEVO ENLACE A LIBRERÍAS JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+<script src="scripts/server.js"></script>
 <script src="scripts/parseHTML.js"></script>
+<script src="scripts/renderers/headerRenderer.js"></script>
 <script src="scripts/renderers/sidebarRenderer.js"></script>
+<script src="scripts/changeProfilePicture.js"></script>
 
 </body>
 

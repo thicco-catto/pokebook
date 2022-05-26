@@ -39,6 +39,16 @@ function AddUser(nick, password, email, dob) {
     });
 }
 
+function ChangeProfilePicture(nick, picture){
+    return new Promise(resolve =>{
+        db.collection("users").doc(nick).update(
+            {
+                picture: picture
+            }
+        ).then(() => resolve());
+    });
+}
+
 //-----------
 //Posts
 //-----------
