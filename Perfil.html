@@ -128,7 +128,7 @@
             <div class="col">
               <br>
               <h3 id="user-nick">Username</h3>
-              <h4 id="user-email">Email</h4>
+              <h4 class="small" id="user-email">Email</h4>
               <div class="row row-cols-2">
                 <div class="px-3">
                   <p class="small mb-0" style="color: #A8A8A8;">Seguidores</p><!--No lo pilla-->
@@ -142,8 +142,10 @@
               </div>
               <div class="row row-cols-1">
                 
-                <div class="col" style="margin-left:20% ;">
-                  <button id="follow-button"  class="btn btn-primary btn-outline-light mb-2"> Seguir </button>
+                <div class="col buttons-container" style="margin-left:20% ;">
+                  <a>
+                    <button id="follow-button"  class="btn btn-primary btn-outline-light mb-2" > Seguir </button>
+                  </a>
                 </div>
                 
               
@@ -151,14 +153,14 @@
             </div>
                 
           </div>
-          <div class="col">
+          <div class="col buttons-container">
             <div class="row row-cols-2">
               <div class="col text-center mb-1">
-                <button class="btn btn-primary btn-lg active">Posts </button>
+                <button id="posts-button" class="btn btn-primary btn-lg active">Posts </button>
               </div>
               
               <div class="col text-center mb-1">
-                <button class="btn btn-primary btn-outline-light"> Likes </button>
+                <button id="likes-button" class="btn btn-primary btn-outline-light"> Likes </button>
               </div>
             </div>
           </div>       
