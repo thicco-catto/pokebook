@@ -32,7 +32,18 @@ function AddUser(nick, password, email, dob) {
             {
                 password: password,
                 email: email,
-                dob: dob
+                dob: dob,
+                picture: "https://bootdey.com/img/Content/avatar/avatar1.png"
+            }
+        ).then(() => resolve());
+    });
+}
+
+function ChangeProfilePicture(nick, picture){
+    return new Promise(resolve =>{
+        db.collection("users").doc(nick).update(
+            {
+                picture: picture
             }
         ).then(() => resolve());
     });

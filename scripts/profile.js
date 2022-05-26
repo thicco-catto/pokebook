@@ -7,6 +7,8 @@ async function onLoad(event){
 
     const user = await GetUserByNick(userNick);
 
+    document.getElementById("profile-pic").src = user.data().picture;
+
     const nickText = document.getElementById("user-nick");
     nickText.textContent = user.id;
 
@@ -16,7 +18,7 @@ async function onLoad(event){
     const followButton = document.getElementById("follow-button");
     if(selfUserNick === userNick){
         followButton.textContent = "Editar";
-        followButton.onclick = () => console.log(selfUserNick + " SAME");
+        followButton.onclick = () => window.location.href = `ajustes.html?user=${nick}\#profilepic`;
     }else{
         followButton.textContent = "Seguir";
         followButton.onclick = () => console.log(userNick + " follow");
