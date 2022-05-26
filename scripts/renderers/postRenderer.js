@@ -29,7 +29,8 @@ async function renderPost(post) {
         <div class="d-flex justify-content-between align-items-center" >
             <div class="d-flex justify-content-between align-items-center" >
                 <div class="mr-2">
-                    <img class="rounded-circle" width="45" src="${postOp.data().picture}" alt="imagen de perfil">
+                    <img id="profile-pic" src="${postOp.data().picture}" alt="imagen de perfil" class="img-fluid" style="width: 45px; border-radius: 10px;">
+                    <!--<img class="rounded-circle" width="45" src="${postOp.data().picture}" alt="imagen de perfil">-->
                 </div>
                 <div class="ml-2">
                 <a href="Perfil.html?user=${userNick}&userProfile=${post.data().op}">
