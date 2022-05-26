@@ -40,7 +40,7 @@ async function onLoad(event){
                 <a class="btn btn-outline-light" href="notificaciones.html?user=${userNick}" role="button"  style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img alt="notificaciones" width="30" height="30" src="img/utilidades/notificaciones.png"> Notificaciones
                   </a> <br> <br>
-                <a class="btn btn-outline-light" href="#" role="button"  style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-outline-light" href="ajuster.html?user=${userNick}" role="button"  style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img alt="ajustes" width="30" height="30" src="img/utilidades/conf.png"> Ajustes
                 </a> <br> <br>
                 <a class="btn btn-warning" href="crear_post.html?user=${userNick}" role="button"  data-toggle="dropdown" style='width:100%;' aria-haspopup="true" aria-expanded="false">
