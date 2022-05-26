@@ -18,7 +18,7 @@ async function onLoad(event){
     const followButton = document.getElementById("follow-button");
     if(selfUserNick === userNick){
         followButton.textContent = "Editar";
-        followButton.onclick = () => window.location.href = `ajustes.html?user=${nick}\#profilepic`;
+        followButton.onclick = () => window.location.href = `ajustes.html?user=${selfUserNick}\#profilepic`;
     }else{
         followButton.textContent = "Seguir";
         followButton.onclick = () => console.log(userNick + " follow");
