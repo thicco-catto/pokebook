@@ -132,7 +132,7 @@
         
             <!-- AJUSTES -->
             <div class="col-md-9">
-                <div class="d-none d-sm-none d-md-block">
+                <div class="d-none d-sm-block d-md-block">
                 <div>
                     <div class="section-title text-center">
                         <h3>AJUSTES</h3>
@@ -143,13 +143,14 @@
                   <div class="list-group" style="background-color: #003566;">
                   
                     <a href="#account" class="list-group-item list-group-item-action">Cuenta</a>
+                    <a href="#profilepic" class="list-group-item list-group-item-action">Foto perfil</a>
                     <a href="#security" class="list-group-item list-group-item-action">Seguridad</a>
                     <a href="#notification" class="list-group-item list-group-item-action">Notificaciones</a>
                   </div>
                 </div>
                 </div>
-                <br><br><br><br>
-                <br><br><br><br>
+                
+                <br><br>
 
                 <div class="tab-pane" id="account">
                   <h6>CUENTA</h6>
@@ -168,7 +169,33 @@
                     <button class="btn btn-danger" type="button">Eliminar cuenta</button>
                   </form>
                 </div>
-                <br><br><br><br>
+                <br><br>
+                <div class="tab-pane" id="profilepic">
+                  <h6>FOTO DE PERFIL</h6>
+                  <hr>
+                  <form>
+                    <div class="form-group">
+                      <label for="fotoperfil">Url</label>
+                      <input type="text" class="form-control" id="fotoperfil" aria-describedby="fotoperfilhelp" placeholder="Introduce la url de tu nueva foto de perfil">
+                    </div>
+                    <br>
+                    <button class="btn btn-light" type="button">Enviar foto</button>
+                    <hr>
+                    <div class="form-group">
+                      <label class="d-block text-light">Nueva foto de perfil</label>
+                      <p class="text-muted font-size-sm">Aqui tienes una vista previa de como se verá la nueva foto</p>
+                    </div>
+                    <div>
+                      <img src="img/ordenador/abra.jpg"
+                      alt="Generic placeholder image" class="img-fluid"
+                      style="width: 180px;height: 180px; border-radius: 10px;">
+                      
+                    </div>
+                    <br>
+                    <button class="btn btn-info" type="button">Guardar foto</button>
+                  </form>
+                </div>
+                <br><br>
                 <div class="tab-pane" id="security">
                   <h6>SEGURIDAD</h6>
                   <hr>
@@ -189,7 +216,7 @@
                   
                   <form>
                 </div>
-                <br><br><br><br>
+                <br><br>
                 <div class="tab-pane" id="notification">
                   <h6>NOTIFICACIONES</h6>
                   <hr>
@@ -248,9 +275,6 @@
                     </div>
                   </form>
                 </div>
-
-
-
             </div>
     
     </div>
