@@ -2,7 +2,8 @@ async function renderComment(comment, user){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
-    const selfUser = urlParams.get("user");
+    const selfUserNick = urlParams.get("user");
+    const commentOp = await GetUserByNick(comment.data().op);
 
     commentStr = `
         <div class="card gedf-card">
@@ -10,10 +11,10 @@ async function renderComment(comment, user){
                     <p> En respuesta a @${user}:</p>
                 <div class="d-flex align-items-center" >
                     <div class="mr-2">
-                        <img class="rounded-circle" width="45" src="img/profilepic/wanditaa.png" alt="foto de perfil">
+                        <img class="rounded-circle" width="45" src="${commentOp.data().picture}" alt="foto de perfil">
                     </div>
                     <div class="ml-2">
-                    <a href="Perfil.html?user=${selfUser}&userProfile=${comment.data().op}">
+                    <a href="Perfil.html?user=${selfUserNick}&userProfile=${comment.data().op}">
                         <div style="color: white;" class="h5 m-0">@${comment.data().op}</div>
                         </a>
                     </div>

@@ -7,6 +7,9 @@ async function onLoad(event){
     const postId = urlParams.get("post");
     const post = await GetPostById(postId);
 
+    const opUser = await GetUserByNick(post.data().op);
+    document.getElementById("op-profile-picture").src = opUser.data().picture;
+
     const opProfileLink = document.getElementById("profile-link");
     opProfileLink.href = `Perfil.html?user=${user}&userProfile=${post.data().op}`;
 

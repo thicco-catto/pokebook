@@ -7,6 +7,8 @@ async function onLoad(event){
 
     const user = await GetUserByNick(userNick);
 
+    document.getElementById("profile-pic").src = user.data().picture;
+
     const nickText = document.getElementById("user-nick");
     nickText.textContent = user.id;
 
@@ -16,11 +18,21 @@ async function onLoad(event){
     const followButton = document.getElementById("follow-button");
     if(selfUserNick === userNick){
         followButton.textContent = "Editar";
-        followButton.onclick = () => console.log(selfUserNick + " SAME");
+        followButton.onclick = () => window.location.href = `ajustes.html?user=${selfUserNick}\#profilepic`;
     }else{
-        followButton.textContent = "Seguir";
-        followButton.onclick = () => console.log(userNick + " follow");
+        const isUserFollowed = await GetUserFollowsUser(selfUserNick, userNick);
+        if(isUserFollowed.exists){
+            followButton.textContent = "Dejar de seguir";
+        }else{
+            followButton.textContent = "Seguir";
+        }
+        followButton.onclick = OnFollow;
     }
+
+    const followers = await GetUserFollowers(userNick);
+    const followed = await GetUserFollowed(userNick);
+    document.getElementById("followers-num").textContent = followers.size;
+    document.getElementById("followed-num").textContent = followed.size;
 
     const posts = await GetPostsByUser(userNick);
 

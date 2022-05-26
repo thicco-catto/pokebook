@@ -120,7 +120,7 @@
           <div class ="row row-cols-2 ">
             <div class="col">
               <div class="" style="padding: 5%;">
-                <img src="img/ordenador/abra.jpg"
+                <img id="profile-pic" src="img/ordenador/abra.jpg"
                   alt="Generic placeholder image" class="img-fluid"
                   style="width: 180px;height: 180px; border-radius: 10px;">
               </div>
@@ -132,18 +132,18 @@
               <div class="row row-cols-2">
                 <div class="px-3">
                   <p class="small mb-0" style="color: #A8A8A8;">Seguidores</p><!--No lo pilla-->
-                  <p class="mb-0">XXX</p>
+                  <p id="followers-num" class="mb-0">XXX</p>
                 </div>
                 <div>
-                  <p class="small mb-0" style="color: #A8A8A8;">Seguidores</p><!--No lo pilla-->
-                  <p class="mb-0">XXX</p>
+                  <p class="small mb-0" style="color: #A8A8A8;">Seguidos</p><!--No lo pilla-->
+                  <p id="followed-num" class="mb-0">XXX</p>
                 </div>
                 
               </div>
               <div class="row row-cols-1">
                 
                 <div class="col" style="margin-left:20% ;">
-                  <button id="follow-button" class="btn btn-primary btn-outline-light mb-2"> Seguir </button>
+                  <button id="follow-button"  class="btn btn-primary btn-outline-light mb-2"> Seguir </button>
                 </div>
                 
               
@@ -196,6 +196,7 @@
     <script src="scripts/server.js"></script>
     <script src="scripts/parseHTML.js"></script>
     <script src="scripts/likeManager.js"></script>
+    <script src="scripts/followManager.js"></script>
     <script src="scripts/repostManager.js"></script>
     <script src="scripts/renderers/postRenderer.js"></script>
     <script src="scripts/renderers/postListRenderer.js"></script>
