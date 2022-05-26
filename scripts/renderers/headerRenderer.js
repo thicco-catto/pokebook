@@ -35,7 +35,7 @@ async function onLoad(event){
                     <img alt="pagina principa" width="30" height="30" src="img/utilidades/home.png"> Home
                   </a> <br> <br>
                   <a class="btn btn-outline-light" href="Perfil.html?user=${userNick}&userProfile=${userNick}" role="button"  style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img alt="mi perfil" width="30" height="30" src="img/utilidades/perfil.png"> Mi perfil
+                    <img alt="mi perfil"  style="width: 45px;height: 45px; border-radius: 10px;" src="${user.data().picture}"> Mi perfil
                   </a> <br> <br>
                 <a class="btn btn-outline-light" href="notificaciones.html?user=${userNick}" role="button"  style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img alt="notificaciones" width="30" height="30" src="img/utilidades/notificaciones.png"> Notificaciones
@@ -50,7 +50,7 @@ async function onLoad(event){
 
             <div class="d-none d-sm-none d-md-block">
                 <a href="Perfil.html?user=${userNick}&userProfile=${userNick}" class="nav-link active" aria-current="page" style="color: white;">Mi perfil
-                    <img alt="imagen perfil" width="30" height="30" src="${user.data().picture}">
+                    <img alt="imagen" perfil" style="width: 45px;height: 45px; border-radius: 10px;" src="${user.data().picture}">
                 </a>
             </div>
         </div>
