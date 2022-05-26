@@ -1,3 +1,56 @@
+let isLikePosts = false;
+
+async function onNormalPosts(event){
+    if(!isLikePosts){ return; }
+}
+
+async function RenderLikePosts(){
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const userNick = urlParams.get("userProfile");
+
+    isLoadingPostList = true;
+    shouldStopLoading = false;
+    isFinishedWithPost = false;
+
+    isLikePosts = true;
+
+    document.getElementById("posts").innerHTML = "";
+
+    const postIds = await GetLikedPostsByUser(userNick);
+    let postIdArray = [];
+
+    postIds.forEach(post => {
+        postIdArray.push(post);
+    });
+
+    let postsArray = [];
+    for (let i = 0; i < postIdArray.length; i++) {
+        const postId = postIdArray[i];
+        const post = await GetPostById(postId.id);
+        postsArray.push(post);
+    }
+
+    renderPosts(postsArray);
+}
+
+async function onLikePosts(event){
+    if(isLikePosts){ return; }
+
+    if(isLoadingPostList){
+        shouldStopLoading = true;
+
+        if(!isFinishedWithPost){
+            window.setTimeout(onLikePosts, 100);
+        }else{
+            RenderLikePosts();
+        }
+    }else{
+        RenderLikePosts();
+    }
+}
+
 async function onLoad(event){
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -34,6 +87,9 @@ async function onLoad(event){
     document.getElementById("followers-num").textContent = followers.size;
     document.getElementById("followed-num").textContent = followed.size;
 
+    document.getElementById("posts-button").onclick = onNormalPosts;
+    document.getElementById("likes-button").onclick = onLikePosts;
+
     const posts = await GetPostsByUser(userNick);
 
     let postArray = [];
@@ -41,6 +97,6 @@ async function onLoad(event){
         postArray.push(post);
     });
 
-    renderPosts(postArray)
+    renderPosts(postArray);
 }
 addEventListener("DOMContentLoaded", onLoad);

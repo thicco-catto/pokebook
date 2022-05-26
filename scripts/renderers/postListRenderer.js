@@ -1,13 +1,25 @@
+let isLoadingPostList = true;
+let shouldStopLoading = false;
+let isFinishedWithPost = false;
+
 async function renderPosts(posts){
     const postsDiv = document.getElementById("posts");
 
     for(const i in posts){
+        isLoadingPostList = true;
         const post = posts[i];
         let postDiv = parseHTML(`<div class="post"></div><br><br>`);
         let postHTML = await renderPost(post);
         postDiv.appendChild(postHTML);
         postsDiv.appendChild(postDiv);
+
+        if(shouldStopLoading){
+            isFinishedWithPost = true;
+            return;
+        }
     }
+
+    isLoadingPostList = false;
 
     const likebuttons = document.getElementsByClassName("likebutton");
 

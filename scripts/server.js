@@ -178,6 +178,14 @@ function GetPostsByUser(nick){
     );
 }
 
+function GetLikedPostsByUser(nick){
+    return new Promise(resolve =>
+        db.collection(`users/${nick}/likes`).get().then((querySnapshot) =>
+            resolve(querySnapshot)
+        )
+    );
+}
+
 //-----------
 //Likes
 //-----------
@@ -198,9 +206,34 @@ function GetUserLikeForPost(post, user){
     );
 }
 
+function AddLikeToUser(post, user){
+    console.log(post + ", " + user);
+    return new Promise(resolve =>
+        db.collection(`users/${user}/likes`).doc(post.toString()).set({}).then(() =>
+            resolve()
+        )  
+    );
+}
+
 function AddLikeToPost(post, user){
     return new Promise(resolve =>
         db.collection(`posts/${post}/likes`).doc(user).set({}).then(() =>
+            resolve()
+        )  
+    );
+}
+
+async function LikePost(post, user){
+    await AddLikeToUser(post, user);
+    await AddLikeToPost(post, user);
+
+    return true;
+}
+
+function RemoveLikeFromUser(post, user){
+    console.log(post + ", " + user);
+    return new Promise(resolve =>
+        db.collection(`users/${user}/likes`).doc(post.toString()).delete().then(() =>
             resolve()
         )  
     );
@@ -212,6 +245,13 @@ function RemoveLikeFromPost(post, user){
             resolve()
         )  
     );
+}
+
+async function UnlikePost(post, user){
+    await RemoveLikeFromUser(post, user);
+    await RemoveLikeFromPost(post, user);
+
+    return true;
 }
 
 //-----------
