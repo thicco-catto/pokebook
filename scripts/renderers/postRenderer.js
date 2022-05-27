@@ -77,19 +77,19 @@ async function renderPost(post, repostUser) {
         </a>
     </div>
     <div class="card-footer"  style="background-color: #003566;">
-        <a title="numero de me gustas" id="nmegustas" style="text-decoration:none" class="card-link likebutton likebutton-${post.id}">
-            <i title="numero de me gustas" class="fa fa-gittip">
-                <label id="likenum-${post.id}" for="nmegustas">${numLikes}</label>
-            </i>
+        <a title="Me gustas" id="nmegustas" style="text-decoration:none" class="card-link likebutton likebutton-${post.id}">
+            <img id="nmgustas" alt="nmegustas" width="15" height="15" src="img/utilidades/corazonvacio.png">
+            <label id="likenum-${post.id}" for="nmegustas">${numLikes}</label>
         </a>
-        <a title="numero de comentarios" style="text-decoration:none"  href="crearcomentario.html?user=${userNick}&post=${post.id}" id="ncoments" class="card-link">
-            <i title="numero de comentarios" class="fa fa-comment"> 
-                <label for="ncoments">${numComments}</label>
-            </i>
+        <a title="Comentarios" style="text-decoration:none"  href="crearcomentario.html?user=${userNick}&post=${post.id}" id="ncoments" class="card-link">
+            
+            <img id="ncoments" alt="ncomentarios" width="15" height="15" src="img/utilidades/comentariovacio.png">
+            <label for="ncoments">${numComments}</label>
+            
         </a>
-        <a title="numero de reposts" id="nreposts" style="text-decoration:none" class="card-link repostbutton repostbutton-${post.id}">
-            <i title="numero de repost"class="fa fa-mail-forward"> 
-                <label id="repostnum-${post.id}" for="nreposts">${numReposts}</label>
+        <a title="Reposts" id="nreposts" style="text-decoration:none" class="card-link repostbutton repostbutton-${post.id}">
+            <img id="repostnum" alt="nrepost" width="17" height="17" src="img/utilidades/retweetrelleno.png ">
+            <label id="repostnum-${post.id}" for="nreposts">${numReposts}</label>
             </i>
         </a>
     </div>
