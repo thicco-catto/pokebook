@@ -1,4 +1,4 @@
-async function renderPost(post) {
+async function renderPost(post, repostUser) {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
@@ -23,9 +23,21 @@ async function renderPost(post) {
     const postReposts = await GetRepostsPerPost(post.id);
     const numReposts = postReposts.size;
 
+    let repost = "";
+    if(repostUser !== null){
+        repost = `
+        <div class="new-card-header small" style="background-color: #003566;">
+        <a href=Perfil.html?user=${userNick}&userProfile=${repostUser.user}>
+            <label title="Reposteado por Username" style="color:lightgray;">Reposteado por ${repostUser.user}</label>
+        </a>
+        </div>
+        `;
+    }
+
     let html = `
 	<div class="card gedf-card">
     <div class="new-card-header" style="background-color: #003566;">
+    ${repost};
         <div class="d-flex justify-content-between align-items-center" >
             <div class="d-flex justify-content-between align-items-center" >
                 <div class="mr-2">

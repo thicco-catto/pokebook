@@ -259,6 +259,13 @@ async function UnlikePost(post, user){
 //Reposts
 //-----------
 
+function GetRepostsPerUser(user){
+    return new Promise(resolve =>
+        db.collection(`users/${user}/reposts`).get().then((querySnapshot) =>
+            resolve(querySnapshot)
+        )  
+    );
+}
 
 function GetRepostsPerPost(post){
     return new Promise(resolve =>
@@ -276,9 +283,32 @@ function GetUserRepostForPost(post, user){
     );
 }
 
+function AddRepostToUser(post, user){
+    return new Promise(resolve =>
+        db.collection(`users/${user}/reposts`).doc(post.toString()).set({}).then(() =>
+            resolve()
+        )  
+    );
+}
+
 function AddRepostToPost(post, user){
     return new Promise(resolve =>
         db.collection(`posts/${post}/reposts`).doc(user).set({}).then(() =>
+            resolve()
+        )  
+    );
+}
+
+async function RepostPost(post, user){
+    await AddRepostToUser(post, user);
+    await AddRepostToPost(post, user);
+
+    return true;
+}
+
+function RemoveRepostFromUser(post, user){
+    return new Promise(resolve =>
+        db.collection(`users/${user}/reposts`).doc(post.toString()).delete().then(() =>
             resolve()
         )  
     );
@@ -290,6 +320,13 @@ function RemoveRepostFromPost(post, user){
             resolve()
         )  
     );
+}
+
+async function UnrepostPost(post, user){
+    await RemoveRepostFromUser(post, user);
+    await RemoveRepostFromPost(post, user);
+
+    return true;
 }
 
 //-----------

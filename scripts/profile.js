@@ -141,8 +141,27 @@ async function onLoad(event){
         postArray.push(post);
     });
 
+    let repostIds = [];
+    let reposts = await GetRepostsPerUser(userNick);
+    for (let i = 0; i < reposts.size; i++) {
+        const repostPostId = reposts.docs[i];
+
+        let isIncluded = false;
+        postArray.forEach(x => {
+            if(x.id === repostPostId.id){
+                isIncluded = true;
+            }
+        });
+
+        if(isIncluded){ continue; }
+
+        const post = await GetPostById(repostPostId.id);
+        repostIds.push(new repostAndUser(repostPostId.id, userNick));
+        postArray.push(post);
+    }
+
     postArray.sort((a, b) => b.data().postDate - a.data().postDate);
 
-    renderPosts(postArray);
+    renderPosts(postArray, repostIds);
 }
 addEventListener("DOMContentLoaded", onLoad);

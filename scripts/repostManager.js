@@ -31,11 +31,11 @@ async function onRepost(event){
     const prevLike = await GetUserRepostForPost(postId, user);
     
     if(prevLike.exists){
-        //Delete like
-        await RemoveRepostFromPost(postId, user);
+        //Delete repost
+        await UnrepostPost(postId, user);
     }else{
-        //Add like
-        await AddRepostToPost(postId, user);
+        //Add repost
+        await RepostPost(postId, user);
     }
 
     const newLikeNum = await GetRepostsPerPost(postId);
