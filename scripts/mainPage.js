@@ -23,7 +23,7 @@ async function onLoad(event){
         const repostPosts = await GetRepostsPerUser(user.id);
 
         for (let o = 0; o < repostPosts.size; o++) {
-            const repostPostId = repostPosts.docs[i];
+            const repostPostId = repostPosts.docs[o];
 
             let isIncluded = false;
             postArray.forEach(x => {
