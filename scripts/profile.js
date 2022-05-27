@@ -23,6 +23,8 @@ async function RenderNormalPosts(){
         postArray.push(post);
     });
 
+    postArray.sort((a, b) => b.data().postDate - a.data().postDate);
+
     renderPosts(postArray);
 }
 
@@ -65,14 +67,16 @@ async function RenderLikePosts(){
         postIdArray.push(post);
     });
 
-    let postsArray = [];
+    let postArray = [];
     for (let i = 0; i < postIdArray.length; i++) {
         const postId = postIdArray[i];
         const post = await GetPostById(postId.id);
-        postsArray.push(post);
+        postArray.push(post);
     }
 
-    renderPosts(postsArray);
+    postArray.sort((a, b) => b.data().postDate - a.data().postDate);
+
+    renderPosts(postArray);
 }
 
 async function onLikePosts(event){
@@ -136,6 +140,8 @@ async function onLoad(event){
     posts.forEach(post => {
         postArray.push(post);
     });
+
+    postArray.sort((a, b) => b.data().postDate - a.data().postDate);
 
     renderPosts(postArray);
 }

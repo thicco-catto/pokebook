@@ -12,6 +12,8 @@ async function onLoad(event){
         postArray.push(post);
     });
 
+    postArray.sort((a, b) => b.data().postDate - a.data().postDate);
+
     await renderPosts(postArray);
 }
 addEventListener("DOMContentLoaded", onLoad);

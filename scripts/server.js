@@ -156,7 +156,8 @@ function AddPost(id, user, title, description, pokemon){
                 op: user,
                 title: title,
                 description: description,
-                pokemon: pokemon
+                pokemon: pokemon,
+                postDate: Date.now()
             }
         ).then(() => resolve());
     });
