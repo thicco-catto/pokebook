@@ -5,6 +5,7 @@ async function renderPost(post) {
     const userNick = urlParams.get("user");
 
     const postOp = await GetUserByNick(post.data().op);
+    console.log(postOp);
 
     let pokemonImgs = "";
 
