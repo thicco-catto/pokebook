@@ -17,21 +17,15 @@ async function renderPosts(posts){
             isFinishedWithPost = true;
             return;
         }
+
+        const likeButtons = document.getElementsByClassName("likebutton");
+        const likeButton = likeButtons[i];
+        likeButton.onclick = onLike;
+
+        const repostButtons = document.getElementsByClassName("repostbutton");
+        const repostButton = repostButtons[i];
+        repostButton.onclick = onRepost;
     }
 
     isLoadingPostList = false;
-
-    const likebuttons = document.getElementsByClassName("likebutton");
-
-    for (let i = 0; i < likebuttons.length; i++) {
-        const button = likebuttons[i];
-        button.onclick = onLike;
-    }
-
-    const repostbuttons = document.getElementsByClassName("repostbutton");
-
-    for (let i = 0; i < repostbuttons.length; i++) {
-        const button = repostbuttons[i];
-        button.onclick = onRepost;
-    }
 }
