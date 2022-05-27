@@ -1,4 +1,4 @@
-async function renderPost(post) {
+async function renderPost(post, repostUser) {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
@@ -23,13 +23,25 @@ async function renderPost(post) {
     const postReposts = await GetRepostsPerPost(post.id);
     const numReposts = postReposts.size;
 
+    let repost = "";
+    if(repostUser !== null){
+        repost = `
+        <div class="new-card-header small" style="background-color: #003566;">
+        <a href=Perfil.html?user=${userNick}&userProfile=${repostUser.user}>
+            <label title="Reposteado por Username" style="color:lightgray;">Reposteado por ${repostUser.user}</label>
+        </a>
+        </div>
+        `;
+    }
+
     let html = `
 	<div class="card gedf-card">
     <div class="new-card-header" style="background-color: #003566;">
+    ${repost};
         <div class="d-flex justify-content-between align-items-center" >
             <div class="d-flex justify-content-between align-items-center" >
                 <div class="mr-2">
-                    <img class="rounded-circle" width="45" src="${postOp.data().picture}" alt="imagen de perfil">
+                    <img src="${postOp.data().picture}" alt="imagen de perfil" class="img-fluid" style="width: 45px;height: 45px; border-radius: 10px;">
                 </div>
                 <div class="ml-2">
                 <a href="Perfil.html?user=${userNick}&userProfile=${post.data().op}">
@@ -52,9 +64,9 @@ async function renderPost(post) {
 
     </div>
     <div class="card-body" style="background-color: #003566;">
-        <a class="card-link" href="postgrande.html?user=${userNick}&post=${post.id}">  <!-- link a comentario -->
+        <a class="card-link"  style="text-decoration:none" href="postgrande.html?user=${userNick}&post=${post.id}">  <!-- link a comentario -->
             <h5 class="card-title">${post.data().title}</h5>
-        </a>
+        
 
 
         <div class="container">
@@ -62,19 +74,20 @@ async function renderPost(post) {
                 ${pokemonImgs}
             </div>
         </div>
+        </a>
     </div>
     <div class="card-footer"  style="background-color: #003566;">
-        <a title="numero de me gustas" id="nmegustas" class="card-link likebutton likebutton-${post.id}">
+        <a title="numero de me gustas" id="nmegustas" style="text-decoration:none" class="card-link likebutton likebutton-${post.id}">
             <i title="numero de me gustas" class="fa fa-gittip">
                 <label id="likenum-${post.id}" for="nmegustas">${numLikes}</label>
             </i>
         </a>
-        <a title="numero de comentarios" href="crearcomentario.html?user=${userNick}&post=${post.id}" id="ncoments" class="card-link">
+        <a title="numero de comentarios" style="text-decoration:none"  href="crearcomentario.html?user=${userNick}&post=${post.id}" id="ncoments" class="card-link">
             <i title="numero de comentarios" class="fa fa-comment"> 
                 <label for="ncoments">${numComments}</label>
             </i>
         </a>
-        <a title="numero de reposts" id="nreposts" class="card-link repostbutton repostbutton-${post.id}">
+        <a title="numero de reposts" id="nreposts" style="text-decoration:none" class="card-link repostbutton repostbutton-${post.id}">
             <i title="numero de repost"class="fa fa-mail-forward"> 
                 <label id="repostnum-${post.id}" for="nreposts">${numReposts}</label>
             </i>

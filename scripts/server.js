@@ -156,7 +156,8 @@ function AddPost(id, user, title, description, pokemon){
                 op: user,
                 title: title,
                 description: description,
-                pokemon: pokemon
+                pokemon: pokemon,
+                postDate: Date.now()
             }
         ).then(() => resolve());
     });
@@ -173,6 +174,14 @@ function GetPostById(id){
 function GetPostsByUser(nick){
     return new Promise(resolve =>
         db.collection("posts").where("op", "==", nick).get().then((querySnapshot) =>
+            resolve(querySnapshot)
+        )
+    );
+}
+
+function GetLikedPostsByUser(nick){
+    return new Promise(resolve =>
+        db.collection(`users/${nick}/likes`).get().then((querySnapshot) =>
             resolve(querySnapshot)
         )
     );
@@ -198,9 +207,34 @@ function GetUserLikeForPost(post, user){
     );
 }
 
+function AddLikeToUser(post, user){
+    console.log(post + ", " + user);
+    return new Promise(resolve =>
+        db.collection(`users/${user}/likes`).doc(post.toString()).set({}).then(() =>
+            resolve()
+        )  
+    );
+}
+
 function AddLikeToPost(post, user){
     return new Promise(resolve =>
         db.collection(`posts/${post}/likes`).doc(user).set({}).then(() =>
+            resolve()
+        )  
+    );
+}
+
+async function LikePost(post, user){
+    await AddLikeToUser(post, user);
+    await AddLikeToPost(post, user);
+
+    return true;
+}
+
+function RemoveLikeFromUser(post, user){
+    console.log(post + ", " + user);
+    return new Promise(resolve =>
+        db.collection(`users/${user}/likes`).doc(post.toString()).delete().then(() =>
             resolve()
         )  
     );
@@ -214,10 +248,24 @@ function RemoveLikeFromPost(post, user){
     );
 }
 
+async function UnlikePost(post, user){
+    await RemoveLikeFromUser(post, user);
+    await RemoveLikeFromPost(post, user);
+
+    return true;
+}
+
 //-----------
 //Reposts
 //-----------
 
+function GetRepostsPerUser(user){
+    return new Promise(resolve =>
+        db.collection(`users/${user}/reposts`).get().then((querySnapshot) =>
+            resolve(querySnapshot)
+        )  
+    );
+}
 
 function GetRepostsPerPost(post){
     return new Promise(resolve =>
@@ -235,9 +283,32 @@ function GetUserRepostForPost(post, user){
     );
 }
 
+function AddRepostToUser(post, user){
+    return new Promise(resolve =>
+        db.collection(`users/${user}/reposts`).doc(post.toString()).set({}).then(() =>
+            resolve()
+        )  
+    );
+}
+
 function AddRepostToPost(post, user){
     return new Promise(resolve =>
         db.collection(`posts/${post}/reposts`).doc(user).set({}).then(() =>
+            resolve()
+        )  
+    );
+}
+
+async function RepostPost(post, user){
+    await AddRepostToUser(post, user);
+    await AddRepostToPost(post, user);
+
+    return true;
+}
+
+function RemoveRepostFromUser(post, user){
+    return new Promise(resolve =>
+        db.collection(`users/${user}/reposts`).doc(post.toString()).delete().then(() =>
             resolve()
         )  
     );
@@ -249,6 +320,13 @@ function RemoveRepostFromPost(post, user){
             resolve()
         )  
     );
+}
+
+async function UnrepostPost(post, user){
+    await RemoveRepostFromUser(post, user);
+    await RemoveRepostFromPost(post, user);
+
+    return true;
 }
 
 //-----------

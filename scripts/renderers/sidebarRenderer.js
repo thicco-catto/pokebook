@@ -18,7 +18,7 @@ async function onLoad(event){
                 <img alt="ajustes" width="30" height="30" src="img/utilidades/conf.png"> Ajustes
             </a><br> <br>
             <a class="btn btn-outline-light" href="Perfil.html?user=${userNick}&userProfile=${userNick}" role="button"  style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <img alt="perfil" width="30" height="30" src="${user.data().picture}"> Perfil
+                <img alt="perfil" style="width: 30px;height: 30px; border-radius: 10px;" src="${user.data().picture}"> Perfil
             </a> <br> <br>
             <div class="d-block d-sm-block d-md-none">
                 <a class="btn btn-outline-light" href="#" role="button" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

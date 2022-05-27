@@ -32,10 +32,10 @@ async function onLike(event){
     
     if(prevLike.exists){
         //Delete like
-        await RemoveLikeFromPost(postId, user);
+        await UnlikePost(postId, user);
     }else{
         //Add like
-        await AddLikeToPost(postId, user);
+        await LikePost(postId, user);
     }
 
     const newLikeNum = await GetLikesPerPost(postId);

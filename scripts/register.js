@@ -1,7 +1,8 @@
 async function SubmitRegister(event) {
     event.preventDefault();
 
-    const nick = document.getElementById("Nick").value;
+    let nick = document.getElementById("Nick").value;
+    nick = nick.trim();
     const email = document.getElementById("Email").value;
     const password = document.getElementById("Password").value;
     const password2 = document.getElementById("PasswordConfirm").value;

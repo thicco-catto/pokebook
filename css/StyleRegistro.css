@@ -23,6 +23,7 @@
   
 
 
+
 p.small{
   align-items: flex-end;
   margin-left: 40%;
@@ -210,4 +211,18 @@ margin-top: 1%;
   width: 40%;
   margin-top: 10%;
   height: 300px;
+}
+
+.padre {
+  background: yellow;
+  height: 150px;
+  /*IMPORTANTE*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hijo {
+  background: red;
+  width: 120px;
 }
