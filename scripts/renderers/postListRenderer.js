@@ -23,7 +23,6 @@ async function renderPosts(posts, repostIds = []) {
                 repostUser = x;
             }
         });
-        console.log(repostIds);
 
         let postHTML = await renderPost(post, repostUser);
         postDiv.appendChild(postHTML);
