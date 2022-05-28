@@ -29,13 +29,13 @@ async function onLoad(event){
                 </div>  
             </form>
 
-            <div class="d-block d-sm-block d-md-none">
+            <div class="d-block d-sm-block d-md-none"> <!-- MOVIL -->
                 <br>
                 <a class="btn btn-outline-light" href="inicio.html?user=${userNick}" role="button" id="dropdownMenuLink" style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img alt="pagina principa" width="30" height="30" src="img/utilidades/home.png"> Home
                   </a> <br> <br>
                   <a class="btn btn-outline-light" href="Perfil.html?user=${userNick}&userProfile=${userNick}" role="button"  style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img alt="mi perfil"  style="width: 45px;height: 45px; border-radius: 10px;" src="${user.data().picture}"> Mi perfil
+                    <img alt="mi perfil"  style="width: 30px;height: 30px; border-radius: 10px;" src="${user.data().picture}"> Mi perfil
                   </a> <br> <br>
                 <a class="btn btn-outline-light" href="notificaciones.html?user=${userNick}" role="button"  style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img alt="notificaciones" width="30" height="30" src="img/utilidades/notificaciones.png"> Notificaciones
@@ -49,9 +49,17 @@ async function onLoad(event){
             </div>
 
             <div class="d-none d-sm-none d-md-block">
-                <a href="Perfil.html?user=${userNick}&userProfile=${userNick}" class="nav-link active" aria-current="page" style="color: white;">Mi perfil
+                <div class="btn-group dropstart">
+                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownCenterBtn" data-bs-toggle="dropdown" aria-expanded="false">
                     <img alt="imagen" perfil" style="width: 45px;height: 45px; border-radius: 10px;" src="${user.data().picture}">
-                </a>
+                    </button>
+                    
+                    <ul class="dropdown-menu" aria-labelledby="dropdownCenterBtn">
+                        <li><a class="dropdown-item" href="Perfil.html?user=${userNick}&userProfile=${userNick}">Mi perfil</a></li>
+                        <li><a class="dropdown-item" href="index.html">Cerrar sesion</a></li>
+                    </ul>
+                </div>
+                
             </div>
         </div>
     </div>
