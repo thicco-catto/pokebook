@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link href="css/stylePerfil.css" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokebook: Incio</title>
+    <link rel="shortcut icon" href="favicon.png" />
+    <!-- NUEVO LINK AL CSS -->
+    <link href="css/style.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #001D3D;
+    }
+
+    h1, h2, h3, h4, h5, h6, p, a{
+        color: white;
+    }
+
+    .h7 {
+        font-size: 0.8rem;
+        color: white;
+    }
+
+    .gedf-wrapper {
+        margin-top: 0.97rem;
+    }
+
+  @media (min-width: 992px) {
+      .gedf-main {
+          padding-left: 4rem;
+          padding-right: 4rem;
+      }
+      .gedf-card {
+          margin-bottom: 2.77rem;
+      }
+    }
+
+  /**Reset Bootstrap*/
+  .dropdown-toggle::after {
+      content: none;
+      display: none;
+  }
+
+  .new-card-header {
+    padding: 0.5rem 1rem;
+    margin-bottom: 0;
+    background-color: rgba(0, 0, 0, 0.03);
+    }
+
+    .new-card {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #003566;
+        background-clip: border-box;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 0.25rem;
+    }
+
+    .boton-crear {
+      position: fixed;
+      right: 3%;
+      bottom: 10px;
+      background-color: #FFC300;
+      padding: 7px;
+      display: none;
+      border-radius: 1.5rem;
+    }
+    
+    .boton-crear a {
+      color: #fff;
+    }
+  </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(window).scroll(function() {
+
+        var position =$(this).scrollTop();
+        // Si el usuario baja el scroll muestro el div que contiene el enlace botón
+        if (position > 01) {
+           $(".boton-crear").fadeIn('slow');
+         } else {
+         $(".boton-crear").fadeOut('slow');
+        }
+       });
+  </script>
+
+</head>
+<body>
+  
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+    crossorigin="anonymous"> 
+    <div id="header"></div>
+
+    <!-- PANEL -->
+<div class="container gedf-wrapper">
+    <div class="row">
+      <div id="sidebar" class="col-md-3">
+      </div>
+      <div class="col-md-6 gedf-main">
+        <!--PERFIl-->
+      
+      <div class="card gedf-card">
+        <div class="new-card-header" style="background-color: #003566;">
+        
+            <div class="d-flex justify-content-between align-items-center" >
+                <div class="d-flex justify-content-between align-items-center" >
+                    <div class="mr-2 mx-2">
+                        <img src="img/profilepic/wanditaa.png" alt="imagen de perfil" class="img-fluid" style="width: 45px;height: 45px; border-radius: 10px;">
+                    </div>
+                    <div class="ml-2">
+                    <a href="Perfil.html?user=${userNick}&userProfile=${post.data().op}">
+                        <div style="color: white;" class="h5 m-0">Username</div>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    
+                </div>
+            </div>
+    
+        </div>
+    
+        
+    </div>
+
+      <div id="posts"></div>      
+    </div>
+
+    <!-- NOTIFICACIONES -->
+    <div class="col-md-3">
+      <div class="d-none d-sm-none d-md-block">
+          <div class="card gedf-card" style="background-color: #003566; border: 1px solid rgb(255, 255, 255);">
+              <div class="card-body">
+                  <a href="notificaciones.html"><h5 class="card-title">NOTIFICACIONES</h5></a>
+                  <p class="card-text"><a href="Perfil.html" role="button">@SergioCopia</a> <a href="postgrande.html">ha dado like</a></p>
+                  <p class="card-text"><a href="Perfil.html" role="button">@SergioCopia</a> <a href="postgrande.html">ha comentado</a></p>
+                  <p class="card-text"><a href="Perfil.html" role="button">@SergioCopia</a> <a href="postgrande.html">ha hecho repost</a></p>
+              </div>
+          </div>
+      </div>
+  </div>
+      
+  </div>
+</div>
+</div>
+
+    <!-- NUEVO ENLACE A LIBRERÍAS JS -->
+    <script src="https://unpkg.com/pokeapi-js-wrapper/dist/index.js"></script>
+    <script>
+        const P = new Pokedex.Pokedex()
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="scripts/server.js"></script>
+    <script src="scripts/parseHTML.js"></script>
+    <script src="scripts/likeManager.js"></script>
+    <script src="scripts/followManager.js"></script>
+    <script src="scripts/repostManager.js"></script>
+    <script src="scripts/renderers/postRenderer.js"></script>
+    <script src="scripts/renderers/postListRenderer.js"></script>
+    <script src="scripts/renderers/headerRenderer.js"></script>
+    <script src="scripts/renderers/sidebarRenderer.js"></script>
+    <script src="scripts/profile.js"></script>
+
+<!-- BOTON CREAR POST -->
+<div id="stop" class="boton-crear">
+  <a id="new-post-mini" href="crear_post.html"><img alt="Brand" width="40" height="40" src="img/utilidades/add (2).png"></a>
+</div>
+
+</body>
+
+</html>
