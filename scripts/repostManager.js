@@ -6,10 +6,7 @@ async function onRepost(event){
     isLoadingRepost = true;
     let htmlElement = event.target;
 
-    if(htmlElement.tagName === "LABEL"){
-        htmlElement = htmlElement.parentElement;
-    }
-    if(htmlElement.tagName === "I"){
+    if(htmlElement.tagName === "LABEL" || htmlElement.tagName === "IMG"){
         htmlElement = htmlElement.parentElement;
     }
 

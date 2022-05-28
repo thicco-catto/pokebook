@@ -111,56 +111,33 @@
       </div>
       <div class="col-md-6 gedf-main">
         <!--PERFIl-->
-        <div class="new-card" style="border-radius: 4px; background-color: #003566;" >
-          <div class ="row row-cols-2 ">
-            <div class="col">
-              <div class="" style="padding: 5%;">
-                <img id="profile-pic" src="img/ordenador/abra.jpg"
-                  alt="Generic placeholder image" class="img-fluid"
-                  style="width: 180px;height: 180px; border-radius: 10px;">
-              </div>
-            </div>
-            <div class="col">
-              <br>
-              <h3 id="user-nick">Username</h3>
-              <h4 class="small" id="user-email">Email</h4>
-              <div class="row row-cols-2">
-                <div class="px-3">
-                  <p class="small mb-0" style="color: #A8A8A8;">Seguidores</p><!--No lo pilla-->
-                  <p id="followers-num" class="mb-0">XXX</p>
+      
+      <div class="card gedf-card">
+        <div class="new-card-header" style="background-color: #003566;">
+            <a href="Perfil.html?user=${userNick}&userProfile=${post.data().op}">
+            <div class="d-flex justify-content-between align-items-center" >
+               
+                <div class="d-flex justify-content-between align-items-center" >
+                    <div class="mr-2 mx-2">
+                        <img src="img/profilepic/wanditaa.png" alt="imagen de perfil" class="img-fluid" style="width: 45px;height: 45px; border-radius: 10px;">
+                    </div>
+                    <div class="ml-2">
+                    
+                        <div style="color: white;" class="h5 m-0">Username</div>
+                        
+                    </div>
                 </div>
+          
                 <div>
-                  <p class="small mb-0" style="color: #A8A8A8;">Seguidos</p><!--No lo pilla-->
-                  <p id="followed-num" class="mb-0">XXX</p>
+                </a>  
                 </div>
-                
-              </div>
-              <div class="row row-cols-1 buttons-container text-center">
-                
-                
-                  <a>
-                    <button id="follow-button"  class="btn btn-primary btn-outline-light mb-2" > Seguir </button>
-                  </a>
-                
-                
-              
-              </div>
             </div>
-                
-          </div>
-          <div class="col buttons-container">
-            <div class="row row-cols-2">
-              <div class="col text-center mb-1">
-                <button id="posts-button" class="btn btn-primary">Posts </button>
-              </div>
-              
-              <div class="col text-center mb-1">
-                <button id="likes-button" class="btn btn-primary btn-outline-light"> Likes </button>
-              </div>
-            </div>
-          </div>       
+    
         </div>
-      <br>
+    
+        
+    </div>
+
       <div id="posts"></div>      
     </div>
 
@@ -181,7 +158,6 @@
 
     <!-- NUEVO ENLACE A LIBRERÍAS JS -->
     <script src="https://unpkg.com/pokeapi-js-wrapper/dist/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const P = new Pokedex.Pokedex()
     </script>
@@ -190,23 +166,9 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="scripts/server.js"></script>
     <script src="scripts/parseHTML.js"></script>
-    <script src="scripts/likeManager.js"></script>
-    <script src="scripts/followManager.js"></script>
-    <script src="scripts/repostManager.js"></script>
-    <script src="scripts/renderers/postRenderer.js"></script>
-    <script src="scripts/renderers/postListRenderer.js"></script>
     <script src="scripts/renderers/headerRenderer.js"></script>
     <script src="scripts/renderers/sidebarRenderer.js"></script>
     <script src="scripts/renderers/notificationsRenderer.js"></script>
-    <script src="scripts/profile.js"></script>
-
-<!-- BOTON CREAR POST -->
-<div id="stop" class="boton-crear">
-  <a id="new-post-mini" href="crear_post.html"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="black" class="bi bi-plus-circle" viewBox="0 0 16 16">
-      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
-      <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
-      </svg></a>
-</div>
 
 </body>
 

@@ -38,7 +38,7 @@ async function onLoad(event){
     const likeButton = document.getElementById("nmegustas");
     likeButton.classList.add(`likebutton-${post.id}`);
     likeButton.onclick = onLike
-    const likesMsg = likeButton.children[0].children[0];
+    const likesMsg = likeButton.children[1];
     likesMsg.id = `likenum-${post.id}`;
     const postLikes = await GetLikesPerPost(post.id);
     const numLikes = postLikes.size;
@@ -51,7 +51,7 @@ async function onLoad(event){
     const repostButton = document.getElementById("nreposts");
     repostButton.classList.add(`repostbutton-${post.id}`);
     repostButton.onclick = onRepost
-    const repostsMsg = repostButton.children[0].children[0];
+    const repostsMsg = repostButton.children[1];
     repostsMsg.id = `repostnum-${post.id}`;
     const postReposts = await GetRepostsPerPost(post.id);
     const numReposts = postReposts.size;

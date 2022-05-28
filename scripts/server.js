@@ -188,6 +188,29 @@ function GetLikedPostsByUser(nick){
 }
 
 //-----------
+//Notifications
+//-----------
+
+function GetNotificationsByUser(user){
+    return new Promise(resolve =>
+        db.collection(`users/${user}/notifications`).orderBy("postDate", "desc").get().then((querySnapshot) =>
+            resolve(querySnapshot)
+        )  
+    );
+}
+
+function AddNotification(reciever, type, post, user){
+    return new Promise(resolve =>
+        db.collection(`users/${reciever}/notifications`).add({
+            type: type,
+            post: post,
+            user: user,
+            postDate: Date.now()
+        }).then(() => resolve())
+    );
+}
+
+//-----------
 //Likes
 //-----------
 
@@ -227,6 +250,8 @@ function AddLikeToPost(post, user){
 async function LikePost(post, user){
     await AddLikeToUser(post, user);
     await AddLikeToPost(post, user);
+    const postid = await GetPostById(post);
+    await AddNotification(postid.data().op, "like", post, user);
 
     return true;
 }
@@ -302,6 +327,8 @@ function AddRepostToPost(post, user){
 async function RepostPost(post, user){
     await AddRepostToUser(post, user);
     await AddRepostToPost(post, user);
+    const postid = await GetPostById(post);
+    await AddNotification(postid.data().op, "repost", post, user);
 
     return true;
 }
@@ -341,7 +368,10 @@ function GetCommentsPerPost(post){
     );
 }
 
-function AddCommentToPost(post, user, comment){
+async function AddCommentToPost(post, user, comment){
+    const postid = await GetPostById(post);
+    await AddNotification(postid.data().op, "comment", post, user);
+
     return new Promise(resolve =>
         db.collection(`posts/${post}/comments`).add({
             op : user,
