@@ -68,19 +68,19 @@
         border-radius: 0.25rem;
     }
 
-    .boton-subir {
-        position: fixed;
-        right: 3%;
-        bottom: 10px;
-        background-color: #ffffff;
-        padding: 10px;
-        display: none;
-        border-radius: 0.25rem;
-      }
-      
-      .boton-subir a {
-        color: #fff;
-      }
+    .boton-crear {
+      position: fixed;
+      right: 3%;
+      bottom: 10px;
+      background-color: #FFC300;
+      padding: 7px;
+      display: none;
+      border-radius: 1.5rem;
+    }
+    
+    .boton-crear a {
+      color: #fff;
+    }
   </style>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -88,12 +88,11 @@
     $(window).scroll(function() {
 
         var position =$(this).scrollTop();
-       
-        // Si el usuario baja el scroll muestro el div qeu contiene el enlace botón
-        if (position > 300) {
-           $(".boton-subir").fadeIn('slow');
+        // Si el usuario baja el scroll muestro el div que contiene el enlace botón
+        if (position > 01) {
+           $(".boton-crear").fadeIn('slow');
          } else {
-         $(".boton-subir").fadeOut('slow');
+         $(".boton-crear").fadeOut('slow');
         }
        });
   </script>
@@ -103,10 +102,6 @@
   
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
     crossorigin="anonymous"> 
-
-    
-
-
     <div id="header"></div>
 
     <!-- PANEL -->
@@ -206,9 +201,9 @@
     <script src="scripts/renderers/sidebarRenderer.js"></script>
     <script src="scripts/profile.js"></script>
 
-<!-- BOTON SUBIR -->
-<div id="stop" class="boton-subir">
-    <a href="#top"><img alt="Brand" width="30" height="30" src="img/utilidades/up-arrow.png"></a>
+<!-- BOTON CREAR POST -->
+<div id="stop" class="boton-crear">
+  <a id="new-post-mini" href="crear_post.html"><img alt="Brand" width="40" height="40" src="img/utilidades/add (2).png"></a>
 </div>
 
 </body>
