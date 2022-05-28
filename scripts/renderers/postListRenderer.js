@@ -15,7 +15,7 @@ async function renderPosts(posts, repostIds = []) {
     for (const i in posts) {
         isLoadingPostList = true;
         const post = posts[i];
-        let postDiv = parseHTML(`<div class="post"></div><br><br>`);
+        let postDiv = parseHTML(`<div class="post"></div><br>`);
 
         let repostUser = null
         repostIds.forEach(x => {
