@@ -20,11 +20,10 @@ async function onLoad(event){
             <div class="d-none d-sm-none d-md-block">
                 <a href="inicio.html?user=${userNick}" class="nav-link active" aria-current="page" style="color: white;">Home</a>
             </div>
-            <form class="d-flex">
+            <form class="d-flex justify-content-between">
                 <br>
                 <div class="input-group">
-                <br>
-                    <input title="buscador de personas" type="text" class="form-control" placeholder="Buscar usuario">
+                    <input style="width: 350px;" title="buscador de personas" type="text" class="form-control" placeholder="Buscar usuario">
                     <button type="button" class="btn btn-secondary"><i class="bi-search"></i></button>
                 </div>  
             </form>
@@ -66,7 +65,7 @@ async function onLoad(event){
 
             <div class="d-none d-sm-none d-md-block">
                 <div class="btn-group dropstart">
-                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownCenterBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                    <button style="background-color:#001D3D; border:none" class="btn btn-primary dropdown-toggle" type="button" id="dropdownCenterBtn" data-bs-toggle="dropdown" aria-expanded="false">
                     <img alt="imagen" perfil" style="width: 45px;height: 45px; border-radius: 10px;" src="${user.data().picture}">
                     </button>
                     
