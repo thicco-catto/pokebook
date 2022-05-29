@@ -10,23 +10,24 @@ async function onLoad(event){
     const navbarStr = `
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #003566;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="inicio.html?user=${userNick}" style="color: white;"> <h1 style="font-size: 20px; padding: 10px 0 0 0;">PokeBook
-            <img alt="logo" width="30" height="30" src="img/utilidades/logo.png"> </h1>
-        </a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" style="color: white;">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <span class="navbar-toggler-icon"></span>
+    </button>
         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-            <div class="d-none d-sm-none d-md-block">
-                <a href="inicio.html?user=${userNick}" class="nav-link active" aria-current="page" style="color: white;">Home</a>
+            <div style="padding: 15px 0px 0px 0px; height: 55px;" class="d-none d-sm-none d-md-block">
+                <a class="navbar-brand" href="inicio.html?user=${userNick}" style="color: white;"> <h1 style="font-size: 17px;">PokeBook
+                <img alt="logo" width="30" height="30" src="img/utilidades/logo.png"> </h1>
+                </a>
             </div>
-            <form class="d-flex justify-content-between">
-                <br>
-                <div class="input-group">
-                    <input style="width: 350px;" title="buscador de personas" type="text" class="form-control" placeholder="Buscar usuario">
+            <div class="d-flex justify-content-center">
+            <form>
+                <div style="width:100%;" class="input-group">
+                    <input style="width: auto;" title="buscador de personas" type="text" class="form-control" placeholder="Buscar usuario">
                     <button type="button" class="btn btn-secondary"><i class="bi-search"></i></button>
                 </div>  
             </form>
+            <br>
+            </div>
 
             <div class="d-block d-sm-block d-md-none"> <!-- MOVIL -->
                 <br>
@@ -49,7 +50,7 @@ async function onLoad(event){
                     <path d="M7.068.727c.243-.97 1.62-.97 1.864 0l.071.286a.96.96 0 0 0 1.622.434l.205-.211c.695-.719 1.888-.03 1.613.931l-.08.284a.96.96 0 0 0 1.187 1.187l.283-.081c.96-.275 1.65.918.931 1.613l-.211.205a.96.96 0 0 0 .434 1.622l.286.071c.97.243.97 1.62 0 1.864l-.286.071a.96.96 0 0 0-.434 1.622l.211.205c.719.695.03 1.888-.931 1.613l-.284-.08a.96.96 0 0 0-1.187 1.187l.081.283c.275.96-.918 1.65-1.613.931l-.205-.211a.96.96 0 0 0-1.622.434l-.071.286c-.243.97-1.62.97-1.864 0l-.071-.286a.96.96 0 0 0-1.622-.434l-.205.211c-.695.719-1.888.03-1.613-.931l.08-.284a.96.96 0 0 0-1.186-1.187l-.284.081c-.96.275-1.65-.918-.931-1.613l.211-.205a.96.96 0 0 0-.434-1.622l-.286-.071c-.97-.243-.97-1.62 0-1.864l.286-.071a.96.96 0 0 0 .434-1.622l-.211-.205c-.719-.695-.03-1.888.931-1.613l.284.08a.96.96 0 0 0 1.187-1.186l-.081-.284c-.275-.96.918-1.65 1.613-.931l.205.211a.96.96 0 0 0 1.622-.434l.071-.286zM12.973 8.5H8.25l-2.834 3.779A4.998 4.998 0 0 0 12.973 8.5zm0-1a4.998 4.998 0 0 0-7.557-3.779l2.834 3.78h4.723zM5.048 3.967c-.03.021-.058.043-.087.065l.087-.065zm-.431.355A4.984 4.984 0 0 0 3.002 8c0 1.455.622 2.765 1.615 3.678L7.375 8 4.617 4.322zm.344 7.646.087.065-.087-.065z"/>
                     </svg> Ajustes
                 </a> <br> <br>
-                <a class="btn btn-outline-light" href="ajustes.html?user=${userNick}" role="button"  style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="btn btn-outline-light" href="index.html" role="button"  style='width:100%;' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
                     <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
@@ -62,11 +63,11 @@ async function onLoad(event){
               </svg> Nuevo Post
                   </a> <br> <br>
             </div>
-
+        
             <div class="d-none d-sm-none d-md-block">
-                <div class="btn-group dropstart">
-                    <button style="background-color:#001D3D; border:none" class="btn btn-primary dropdown-toggle" type="button" id="dropdownCenterBtn" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img alt="imagen" perfil" style="width: 45px;height: 45px; border-radius: 10px;" src="${user.data().picture}">
+                <div style="padding: 0px 15px 0px 0px;" class="btn-group dropstart">
+                    <button style="background-color:#001D3D; border:none;" class="btn btn-primary dropdown-toggle" type="button" id="dropdownCenterBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img alt="imagen" perfil" style="width: 47px;height: 47px; border-radius: 10px;" src="${user.data().picture}">
                     </button>
                     
                     <ul class="dropdown-menu" aria-labelledby="dropdownCenterBtn">
@@ -74,11 +75,10 @@ async function onLoad(event){
                         <li><a class="dropdown-item" href="index.html">Cerrar sesion</a></li>
                     </ul>
                 </div>
-                
             </div>
         </div>
     </div>
-</nav>
+    </nav>
     `;
 
     let navbar = parseHTML(navbarStr);
