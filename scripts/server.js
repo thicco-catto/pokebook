@@ -187,6 +187,14 @@ function GetLikedPostsByUser(nick){
     );
 }
 
+function DeletePost(id){
+    return new Promise(resolve =>
+        db.collection("posts").doc(id.toString()).delete().then(() =>
+            resolve()
+        )
+    );
+}
+
 //-----------
 //Notifications
 //-----------
@@ -199,14 +207,30 @@ function GetNotificationsByUser(user){
     );
 }
 
+function GetNotificationsByPost(user, post){
+    return new Promise(resolve =>
+        db.collection(`users/${user}/notifications`).where("post", "==", parseInt(post)).get().then((querySnapshot) =>
+            resolve(querySnapshot)
+        )  
+    );
+}
+
 function AddNotification(reciever, type, post, user){
     return new Promise(resolve =>
         db.collection(`users/${reciever}/notifications`).add({
             type: type,
-            post: post,
+            post: parseInt(post),
             user: user,
             postDate: Date.now()
         }).then(() => resolve())
+    );
+}
+
+function DeleteNotification(user, notif){
+    return new Promise(resolve =>
+        db.collection(`users/${user}/notifications`).doc(notif).delete().then(() =>
+            resolve()
+        )
     );
 }
 

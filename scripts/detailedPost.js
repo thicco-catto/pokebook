@@ -60,7 +60,7 @@ async function onLoad(event){
     if(prevComment.size > 0){
         commentsImg.src = "img/utilidades/comentariorelleno.png";
     }else{
-        commentsImg.src = "img/utilidades/comentariorevacio.png";
+        commentsImg.src = "img/utilidades/comentariovacio.png";
     }
 
     const repostButton = document.getElementById("nreposts");

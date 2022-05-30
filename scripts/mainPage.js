@@ -5,10 +5,15 @@ async function onLoad(event){
     const selfUser = urlParams.get("user");
     document.getElementById("new-post-mini").href = `crear_post.html?user=${selfUser}`
 
-    const followedUsers = await GetUserFollowed(selfUser);
     const postArray = [];
     const repostIds = [];
 
+    let userPosts = await GetPostsByUser(selfUser);
+    userPosts.forEach(post => {
+        postArray.push(post);
+    });
+
+    const followedUsers = await GetUserFollowed(selfUser);
     for (let i = 0; i < followedUsers.size; i++) {
         const user = followedUsers.docs[i];
         const posts = await GetPostsByUser(user.id);
