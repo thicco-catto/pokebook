@@ -187,6 +187,14 @@ function GetLikedPostsByUser(nick){
     );
 }
 
+function DeletePost(id){
+    return new Promise(resolve =>
+        db.collection("posts").doc(id.toString()).delete().then(() =>
+            resolve()
+        )
+    );
+}
+
 //-----------
 //Notifications
 //-----------
@@ -199,14 +207,30 @@ function GetNotificationsByUser(user){
     );
 }
 
+function GetNotificationsByPost(user, post){
+    return new Promise(resolve =>
+        db.collection(`users/${user}/notifications`).where("post", "==", parseInt(post)).get().then((querySnapshot) =>
+            resolve(querySnapshot)
+        )  
+    );
+}
+
 function AddNotification(reciever, type, post, user){
     return new Promise(resolve =>
         db.collection(`users/${reciever}/notifications`).add({
             type: type,
-            post: post,
+            post: parseInt(post),
             user: user,
             postDate: Date.now()
         }).then(() => resolve())
+    );
+}
+
+function DeleteNotification(user, notif){
+    return new Promise(resolve =>
+        db.collection(`users/${user}/notifications`).doc(notif).delete().then(() =>
+            resolve()
+        )
     );
 }
 
@@ -231,7 +255,6 @@ function GetUserLikeForPost(post, user){
 }
 
 function AddLikeToUser(post, user){
-    console.log(post + ", " + user);
     return new Promise(resolve =>
         db.collection(`users/${user}/likes`).doc(post.toString()).set({}).then(() =>
             resolve()
@@ -257,7 +280,6 @@ async function LikePost(post, user){
 }
 
 function RemoveLikeFromUser(post, user){
-    console.log(post + ", " + user);
     return new Promise(resolve =>
         db.collection(`users/${user}/likes`).doc(post.toString()).delete().then(() =>
             resolve()
@@ -378,6 +400,14 @@ async function AddCommentToPost(post, user, comment){
             text : comment
         }).then(() =>
             resolve()
+        )  
+    );
+}
+
+function GetUserCommentForPost(post, user){
+    return new Promise(resolve =>
+        db.collection(`posts/${post}/comments`).where("op", "==", user).get().then((querySnapshot) =>
+            resolve(querySnapshot)
         )  
     );
 }

@@ -38,6 +38,14 @@ async function onLoad(event){
     const likeButton = document.getElementById("nmegustas");
     likeButton.classList.add(`likebutton-${post.id}`);
     likeButton.onclick = onLike
+    const likesImg = likeButton.children[0];
+    likesImg.id = `likeimg-${post.id}`;
+    const prevLike = await GetUserLikeForPost(post.id, user);
+    if(prevLike.exists){
+        likesImg.src = "img/utilidades/corazonrelleno.png";
+    }else{
+        likesImg.src = "img/utilidades/corazonvacio.png";
+    }
     const likesMsg = likeButton.children[1];
     likesMsg.id = `likenum-${post.id}`;
     const postLikes = await GetLikesPerPost(post.id);
@@ -47,10 +55,25 @@ async function onLoad(event){
     document.getElementById("ncomments").href = `crearcomentario.html?user=${user}&post=${postId}`;
     const comments = await GetCommentsPerPost(post.id);
     document.getElementById("comments-number").textContent = comments.size;
+    const commentsImg = document.getElementById("comments-img");
+    const prevComment = await GetUserCommentForPost(post.id, user);
+    if(prevComment.size > 0){
+        commentsImg.src = "img/utilidades/comentariorelleno.png";
+    }else{
+        commentsImg.src = "img/utilidades/comentariovacio.png";
+    }
 
     const repostButton = document.getElementById("nreposts");
     repostButton.classList.add(`repostbutton-${post.id}`);
     repostButton.onclick = onRepost
+    const repostsImg = repostButton.children[0];
+    repostsImg.id = `repostimg-${post.id}`;
+    const prevRepost = await GetUserRepostForPost(post.id, user);
+    if(prevRepost.exists){
+        repostsImg.src = "img/utilidades/retweetrelleno.png";
+    }else{
+        repostsImg.src = "img/utilidades/retweetvacio.png";
+    }
     const repostsMsg = repostButton.children[1];
     repostsMsg.id = `repostnum-${post.id}`;
     const postReposts = await GetRepostsPerPost(post.id);
