@@ -55,6 +55,13 @@ async function onLoad(event){
     document.getElementById("ncomments").href = `crearcomentario.html?user=${user}&post=${postId}`;
     const comments = await GetCommentsPerPost(post.id);
     document.getElementById("comments-number").textContent = comments.size;
+    const commentsImg = document.getElementById("comments-img");
+    const prevComment = await GetUserCommentForPost(post.id, user);
+    if(prevComment.size > 0){
+        commentsImg.src = "img/utilidades/comentariorelleno.png";
+    }else{
+        commentsImg.src = "img/utilidades/comentariorevacio.png";
+    }
 
     const repostButton = document.getElementById("nreposts");
     repostButton.classList.add(`repostbutton-${post.id}`);

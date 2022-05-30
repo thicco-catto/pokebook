@@ -379,3 +379,11 @@ async function AddCommentToPost(post, user, comment){
         )  
     );
 }
+
+function GetUserCommentForPost(post, user){
+    return new Promise(resolve =>
+        db.collection(`posts/${post}/comments`).where("op", "==", user).get().then((querySnapshot) =>
+            resolve(querySnapshot)
+        )  
+    );
+}

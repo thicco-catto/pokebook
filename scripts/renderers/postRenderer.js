@@ -24,6 +24,11 @@ async function renderPost(post, repostUser) {
 
     const postComments = await GetCommentsPerPost(post.id);
     const numComments = postComments.size;
+    let commentImg = "vacio";
+    const prevComment = await GetUserCommentForPost(post.id, userNick);
+    if(prevComment.size > 0){
+        commentImg = "relleno";
+    }
 
     const postReposts = await GetRepostsPerPost(post.id);
     const numReposts = postReposts.size;
@@ -88,7 +93,7 @@ async function renderPost(post, repostUser) {
         </a>
         <a title="Comentarios" style="text-decoration:none"  href="crearcomentario.html?user=${userNick}&post=${post.id}" id="ncoments" class="card-link">
             
-            <img id="ncoments" alt="ncomentarios" width="15" height="15" src="img/utilidades/comentariovacio.png">
+            <img id="ncoments" alt="ncomentarios" width="15" height="15" src="img/utilidades/comentario${commentImg}.png">
             <label for="ncoments">${numComments}</label>
             
         </a>
