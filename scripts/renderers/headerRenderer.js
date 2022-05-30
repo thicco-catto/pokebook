@@ -20,10 +20,10 @@ async function onLoad(event){
                 </a>
             </div>
             <div class="d-flex justify-content-center">
-            <form>
+            <form id="user-search-form">
                 <div style="width:100%;" class="input-group">
-                    <input style="width: auto;" title="buscador de personas" type="text" class="form-control" placeholder="Buscar usuario">
-                    <button type="button" class="btn btn-secondary"><i class="bi-search"></i></button>
+                    <input id="user-search-text" style="width: auto;" title="buscador de personas" type="text" class="form-control" placeholder="Buscar usuario">
+                    <button type="submit" class="btn btn-secondary"><i class="bi-search"></i></button>
                 </div>  
             </form>
             <br>
@@ -83,5 +83,8 @@ async function onLoad(event){
 
     let navbar = parseHTML(navbarStr);
     headerDiv.appendChild(navbar);
+
+    const form = document.getElementById("user-search-form");
+    form.addEventListener("submit", onSubmit);
 }
 addEventListener("DOMContentLoaded", onLoad);
