@@ -26,17 +26,21 @@ async function onLike(event){
     const user = urlParams.get("user");
 
     const prevLike = await GetUserLikeForPost(postId, user);
+    let likeImg = "";
     
     if(prevLike.exists){
         //Delete like
         await UnlikePost(postId, user);
+        likeImg = "img/utilidades/corazonvacio.png";
     }else{
         //Add like
         await LikePost(postId, user);
+        likeImg = "img/utilidades/corazonrelleno.png";
     }
 
     const newLikeNum = await GetLikesPerPost(postId);
     document.getElementById(`likenum-${postId}`).textContent = newLikeNum.size;
+    document.getElementById(`likeimg-${postId}`).src = likeImg;
 
     isLoadingLike = false;
 }

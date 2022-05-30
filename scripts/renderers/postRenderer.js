@@ -16,12 +16,22 @@ async function renderPost(post, repostUser) {
 
     const postLikes = await GetLikesPerPost(post.id);
     const numLikes = postLikes.size;
+    let likeImg = "vacio";
+    const prevLike = await GetUserLikeForPost(post.id, userNick);
+    if(prevLike.exists){
+        likeImg = "relleno";
+    }
 
     const postComments = await GetCommentsPerPost(post.id);
     const numComments = postComments.size;
 
     const postReposts = await GetRepostsPerPost(post.id);
     const numReposts = postReposts.size;
+    let repostImg = "vacio";
+    const prevRepost = await GetUserRepostForPost(post.id, userNick);
+    if(prevRepost.exists){
+        repostImg = "relleno";
+    }
 
     let repost = "";
     if(repostUser !== null){
@@ -73,7 +83,7 @@ async function renderPost(post, repostUser) {
     </div>
     <div class="card-footer"  style="background-color: #003566;">
         <a title="Me gustas" id="nmegustas" style="text-decoration:none" class="card-link likebutton likebutton-${post.id}">
-            <img id="nmgustas" alt="nmegustas" width="15" height="15" src="img/utilidades/corazonvacio.png">
+            <img id="likeimg-${post.id}" alt="nmegustas" width="15" height="15" src="img/utilidades/corazon${likeImg}.png">
             <label id="likenum-${post.id}" for="nmegustas">${numLikes}</label>
         </a>
         <a title="Comentarios" style="text-decoration:none"  href="crearcomentario.html?user=${userNick}&post=${post.id}" id="ncoments" class="card-link">
@@ -83,7 +93,7 @@ async function renderPost(post, repostUser) {
             
         </a>
         <a title="Reposts" id="nreposts" style="text-decoration:none" class="card-link repostbutton repostbutton-${post.id}">
-            <img id="repostnum" alt="nrepost" width="17" height="17" src="img/utilidades/retweetrelleno.png ">
+            <img id="repostimg-${post.id}" alt="nrepost" width="17" height="17" src="img/utilidades/retweet${repostImg}.png">
             <label id="repostnum-${post.id}" for="nreposts">${numReposts}</label>
             </i>
         </a>

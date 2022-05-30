@@ -231,7 +231,6 @@ function GetUserLikeForPost(post, user){
 }
 
 function AddLikeToUser(post, user){
-    console.log(post + ", " + user);
     return new Promise(resolve =>
         db.collection(`users/${user}/likes`).doc(post.toString()).set({}).then(() =>
             resolve()
@@ -257,7 +256,6 @@ async function LikePost(post, user){
 }
 
 function RemoveLikeFromUser(post, user){
-    console.log(post + ", " + user);
     return new Promise(resolve =>
         db.collection(`users/${user}/likes`).doc(post.toString()).delete().then(() =>
             resolve()
