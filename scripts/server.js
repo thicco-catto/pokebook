@@ -18,6 +18,14 @@ const db = firebase.firestore();
 //User
 //-----------
 
+function GetUsers(){
+    return new Promise(resolve =>
+        db.collection("users").get().then((querySnapshot) =>
+            resolve(querySnapshot)
+        )
+    );
+}
+
 function GetUserByNick(nick) {
     return new Promise(resolve =>
         db.collection("users").doc(nick).get().then((doc) =>
