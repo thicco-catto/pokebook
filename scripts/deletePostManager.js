@@ -1,4 +1,5 @@
 async function onDeletePost(event){
+    if(!confirm("¿Estas seguro de que quieres borrar este post?")){ return; }
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
@@ -43,5 +44,10 @@ async function onDeletePost(event){
 
     await DeletePost(postId);
 
-    window.location.href = `inicio.html?user=${userNick}`;
+    let url = window.location.href;
+    if (window.location.href.indexOf("postgrande") > -1) {
+        window.location.href = `Perfil.html?user=${userNick}&userProfile=${userNick}`;
+    }else{
+        window.location.href = url;
+    }
 }

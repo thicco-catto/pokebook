@@ -12,11 +12,12 @@ async function onLoad(event){
 
     const notifications = await GetNotificationsByUser(selfUserNick);
 
-    for (let i = 0; i < notifications.size || i < 10; i++) {
+    for (let i = 0; i < notifications.size || i < 5; i++) {
         const notification = notifications.docs[i];
         if(notification === undefined){ continue; }
 
         let msg = "";
+        let link = `postgrande.html?user=${selfUserNick}&post=${notification.data().post}`
 
         if(notification.data().type === "like"){
             msg = "ha dado like a tu post";
@@ -24,10 +25,15 @@ async function onLoad(event){
             msg = "ha dado repost a tu post";
         }else if(notification.data().type === "comment"){
             msg = "ha comentado en tu post";
+        }else if(notification.data().type === "follow"){
+            msg = "te ha empezado a seguir";
+            link = `Perfil.html?user=${selfUserNick}&userProfile=${notification.data().user}`;
+        }else{
+            msg = `ERROR = ${notification.data().type}`
         }
 
         let notificationHTML = parseHTML(`
-        <p class="card-text"><a href="Perfil.html?user=${selfUserNick}&userProfile=${notification.data().user}" role="button">@${notification.data().user}</a> <a href="postgrande.html?user=${selfUserNick}&post=${notification.data().post}">${msg}</a></p>
+        <p class="card-text"><a href="Perfil.html?user=${selfUserNick}&userProfile=${notification.data().user}" role="button">@${notification.data().user}</a> <a href="${link}">${msg}</a></p>
         `);
 
         notificationsDiv.appendChild(notificationHTML);

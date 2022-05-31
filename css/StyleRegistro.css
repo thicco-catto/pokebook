@@ -83,7 +83,7 @@ body {
     margin: auto;
     width: 40%;
     margin-top: 10%;
-    height: 400px;
+    height: 415px;
 }
 
 div.center{
@@ -98,6 +98,7 @@ div.center{
 
 .camposFormulario{
   padding: 5%;
+  font-family: 'Lato', sans-serif;
 }
 
 .inputCont{
@@ -124,6 +125,7 @@ p.smallText{
   color: #000;
   background-color: #ffc107;
   border-color: #ffc107;
+  font-family: 'Lato', sans-serif;
 }
 
 .btnContinue {
@@ -144,6 +146,7 @@ margin-top: 1%;
 
     p.smallText{
       transform: translate(-217%);
+      font-family: 'Lato', sans-serif;
     }
   }
 
@@ -159,6 +162,7 @@ margin-top: 1%;
 
   p.smallText{
     transform: translate(-205%);
+    font-family: 'Lato', sans-serif;
   }
 }
 
@@ -195,6 +199,7 @@ margin-top: 1%;
 
 .text-reset{
   color: rgb(170, 170, 170);
+  font-family: 'Lato', sans-serif;
 }
 
 .text-reset:hover{
@@ -210,7 +215,7 @@ margin-top: 1%;
   margin: auto;
   width: 40%;
   margin-top: 10%;
-  height: 300px;
+  height: 320px;
 }
 
 .padre {
@@ -229,4 +234,12 @@ margin-top: 1%;
 
 .center2 {
   color: white;
+}
+
+.btnContinue2 {
+  font-family: 'Lato', sans-serif;
+}
+
+.cuerpoLogin {
+  background-color: #003566;
 }

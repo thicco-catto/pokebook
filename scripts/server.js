@@ -80,6 +80,7 @@ function AddFollower(userFollower, userFollowed){
 async function FollowUser(userFollower, userFollowed){
     await AddFollowed(userFollower, userFollowed);
     await AddFollower(userFollower, userFollowed);
+    await AddNotification(userFollowed, "follow", 0, userFollower)
 
     return true;
 }
