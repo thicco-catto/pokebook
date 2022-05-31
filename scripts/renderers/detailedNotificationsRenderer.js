@@ -58,6 +58,9 @@ async function onLoad(){
             descriptionLink.textContent = "ha dado repost a tu post";
         }else if(notification.data().type === "comment"){
             descriptionLink.textContent = "ha comentado en tu post";
+        }else if(notification.data().type === "follow"){
+            descriptionLink.textContent = "te ha empezado a seguir";
+            descriptionLink.href = `Perfil.html?user=${selfUserNick}&userProfile=${notification.data().user}`;
         }else{
             descriptionLink.textContent = `ERROR: ${notification.type}`
         }
