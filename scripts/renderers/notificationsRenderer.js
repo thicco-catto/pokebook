@@ -12,7 +12,7 @@ async function onLoad(event){
 
     const notifications = await GetNotificationsByUser(selfUserNick);
 
-    for (let i = 0; i < notifications.size || i < 10; i++) {
+    for (let i = 0; i < notifications.size || i < 5; i++) {
         const notification = notifications.docs[i];
         if(notification === undefined){ continue; }
 

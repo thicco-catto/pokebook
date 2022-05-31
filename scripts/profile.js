@@ -139,8 +139,10 @@ async function onLoad(event){
         const isUserFollowed = await GetUserFollowsUser(selfUserNick, userNick);
         if(isUserFollowed.exists){
             followButton.textContent = "Dejar de seguir";
+            followButton.classList.add("btn-danger");
         }else{
             followButton.textContent = "Seguir";
+            followButton.classList.add("btn-primary");
         }
         followButton.onclick = OnFollow;
     }
