@@ -136,12 +136,12 @@
                   <form>
                     <div class="form-group">
                       <label for="username">Nombre de usuario</label>
-                      <input type="text" class="form-control" id="username" aria-describedby="usernameHelp">
+                      <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" required>
                       <small id="usernameHelp" class="form-text text-muted">Al cambiar tu nombre de usuario, tu antiguo nombre de usuario estará disponible para todo aquel que lo demande.</small>
                     </div>
                     <br>
                     <div>
-                      <button class="btn btn-info" type="button">Camnbiar nombre</button>
+                      <button class="btn btn-info" type="button">Cambiar nombre</button>
                     </div>
                     <hr>
                     <div class="form-group">
@@ -158,7 +158,7 @@
                   <form id="update-profile-picture">
                     <div class="form-group">
                       <label for="fotoperfil">Url</label>
-                      <input type="text" class="form-control" id="fotoperfil" aria-describedby="fotoperfilhelp">
+                      <input type="text" class="form-control" id="fotoperfil" aria-describedby="fotoperfilhelp" required>
                     </div>
                     <br>
                     <button id="send-picture" class="btn btn-light" type="button">Enviar foto</button>
@@ -186,13 +186,13 @@
                       <label class="d-block">Cambiar contraseña</label>
                       <br>
                       <label class="d-block">Antigua contraseña</label>
-                      <input type="text" class="form-control">
+                      <input type="text" class="form-control" required>
                       <br>
                       <label class="d-block">Nueva contraseña</label>
-                      <input type="text" class="form-control mt-1">
+                      <input type="text" class="form-control mt-1" required>
                       <br>
                       <label class="d-block">Repetir nueva contraseña</label>
-                      <input type="text" class="form-control mt-1">
+                      <input type="text" class="form-control mt-1" required>
                     </div>
                   </form>
                   <br>
