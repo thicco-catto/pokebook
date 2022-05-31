@@ -11,7 +11,7 @@ async function renderComment(comment, user){
                     <p> En respuesta a @${user}:</p>
                 <div class="d-flex align-items-center" >
                     <div class="mr-2">
-                        <img class="rounded-circle" width="45" src="${commentOp.data().picture}" alt="foto de perfil">
+                        <img class="rounded-circle" style="width: 45px;height: 45px; border-radius: 10px;" src="${commentOp.data().picture}" alt="foto de perfil">
                     </div>
                     <div class="ml-2">
                     <a href="Perfil.html?user=${selfUserNick}&userProfile=${comment.data().op}">

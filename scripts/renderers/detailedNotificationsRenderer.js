@@ -37,7 +37,7 @@ async function onLoad(){
         let imgCell = newRow.insertCell();
         let imgHTML = parseHTML(`
         <div class="mr-2">
-            <img class="rounded-circle" width="45" src="${notificationUser.data().picture}" alt="">
+            <img class="rounded-circle" style="width: 45px;height: 45px; border-radius: 10px;" src="${notificationUser.data().picture}" alt="">
         </div>
         `);
         imgCell.appendChild(imgHTML);
