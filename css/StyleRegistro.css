@@ -124,6 +124,7 @@ p.smallText{
   color: #000;
   background-color: #ffc107;
   border-color: #ffc107;
+  font-family: 'Lato', sans-serif;
 }
 
 .btnContinue {
@@ -144,6 +145,7 @@ margin-top: 1%;
 
     p.smallText{
       transform: translate(-217%);
+      font-family: 'Lato', sans-serif;
     }
   }
 
@@ -159,6 +161,7 @@ margin-top: 1%;
 
   p.smallText{
     transform: translate(-205%);
+    font-family: 'Lato', sans-serif;
   }
 }
 
@@ -195,6 +198,7 @@ margin-top: 1%;
 
 .text-reset{
   color: rgb(170, 170, 170);
+  font-family: 'Lato', sans-serif;
 }
 
 .text-reset:hover{
