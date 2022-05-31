@@ -83,7 +83,7 @@ body {
     margin: auto;
     width: 40%;
     margin-top: 10%;
-    height: 400px;
+    height: 415px;
 }
 
 div.center{
@@ -98,6 +98,7 @@ div.center{
 
 .camposFormulario{
   padding: 5%;
+  font-family: 'Lato', sans-serif;
 }
 
 .inputCont{
@@ -214,7 +215,7 @@ margin-top: 1%;
   margin: auto;
   width: 40%;
   margin-top: 10%;
-  height: 300px;
+  height: 320px;
 }
 
 .padre {
@@ -233,4 +234,12 @@ margin-top: 1%;
 
 .center2 {
   color: white;
+}
+
+.btnContinue2 {
+  font-family: 'Lato', sans-serif;
+}
+
+.cuerpoLogin {
+  background-color: #003566;
 }
