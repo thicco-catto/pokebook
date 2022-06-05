@@ -22,7 +22,7 @@ async function onLoad(event){
             <div class="d-flex justify-content-center">
             <form id="user-search-form">
                 <div style="width:100%;" class="input-group">
-                    <input id="user-search-text" style="width: auto;" title="buscador de personas" type="text" class="form-control" placeholder="Buscar usuario">
+                    <input id="user-search-text" style="width: auto;" title="buscador de personas" type="text" class="form-control" maxlength="25" placeholder="Buscar usuario">
                     <button type="submit" class="btn btn-secondary"><i class="bi-search"></i></button>
                 </div>  
             </form>
