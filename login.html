@@ -8,7 +8,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     </head>
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #003566; padding-left : 2%;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html" style="color: white;"> PokeBook
+                <img alt="Brand" width="30" height="30" src="img/utilidades/logo.png">
+            </a>
+            
+        </div>
+      </nav> 
 
 <div class="container">
     <div class="Header">
@@ -19,26 +34,28 @@
     </div>
     <div class="AreaLogin">
 
-        <body>
+        <body class="cuerpoLogin">
         <div class="camposFormulario">
         <h1>Iniciar sesión</h1>
         <form id="login-form" class="components">
           
-           
-             <label for="Nick" class="normal">Nick:</label>
+           <br>
+            
+             <label for="Nick" class="normal">Nick</label>
              <br>
-             <input type="text" id="Nick" name="UserEmail" class="inputCont" required/>
+             <input type="text" id="Nick" name="UserEmail" class="inputCont" maxlength="25" required/>
             
              <br><br>
             
-             <label for="Password" class="normal">Contraseña:</label>
+             <label for="Password" class="normal">Contraseña</label>
              <br>
-             <input type="password" id="Password" name="Password"class="inputCont" required/>     
+             <input type="password" id="Password" name="Password"class="inputCont" maxlength="100" required/>     
              <p id="login-error" style="color:red ; margin-left:20% ; visibility: hidden;">Nick o contraseña incorrectas ⚠</p>    
 
                 <div class="btnContinue">
                     <input class="boton-continuar" type="submit" value="Continuar"></input>
                </div>
+               <br>
             <p class="text-muted">
             <a href="olvidoContraseña.html" class="text-reset">¿Has olvidado tu contraseña?</a>
             </p>

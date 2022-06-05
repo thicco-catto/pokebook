@@ -26,17 +26,21 @@ async function onRepost(event){
     const user = urlParams.get("user");
 
     const prevLike = await GetUserRepostForPost(postId, user);
-    
+    let repostImg = "";
+
     if(prevLike.exists){
         //Delete repost
         await UnrepostPost(postId, user);
+        repostImg = "img/utilidades/retweetvacio.png";
     }else{
         //Add repost
         await RepostPost(postId, user);
+        repostImg = "img/utilidades/retweetrelleno.png";
     }
 
     const newLikeNum = await GetRepostsPerPost(postId);
     document.getElementById(`repostnum-${postId}`).textContent = newLikeNum.size;
+    document.getElementById(`repostimg-${postId}`).src = repostImg;
 
     isLoadingRepost = false;
 }

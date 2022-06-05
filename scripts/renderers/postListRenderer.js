@@ -12,6 +12,7 @@ let isFinishedWithPost = false;
 async function renderPosts(posts, repostIds = []) {
     const postsDiv = document.getElementById("posts");
 
+    let deleteButtonsNum = 0;
     for (const i in posts) {
         isLoadingPostList = true;
         const post = posts[i];
@@ -40,6 +41,12 @@ async function renderPosts(posts, repostIds = []) {
         const repostButtons = document.getElementsByClassName("repostbutton");
         const repostButton = repostButtons[i];
         repostButton.onclick = onRepost;
+
+        const deleteButtons = document.getElementsByClassName("deletebutton");
+        if(deleteButtons.length > deleteButtonsNum){
+            deleteButtons[deleteButtonsNum].onclick = onDeletePost;
+            deleteButtonsNum++;
+        }
     }
 
     isLoadingPostList = false;

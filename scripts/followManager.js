@@ -16,9 +16,13 @@ async function OnFollow(event){
     if(isUserFollowed.exists){
         await UnfollowUser(selfUserNick, userNick);
         followButton.textContent = "Seguir";
+        followButton.classList.add("btn-primary");
+        followButton.classList.remove("btn-danger");
     }else{
         await FollowUser(selfUserNick, userNick);
         followButton.textContent = "Dejar de seguir";
+        followButton.classList.remove("btn-primary");
+        followButton.classList.add("btn-danger");
     }
     
     const followers = await GetUserFollowers(userNick);
