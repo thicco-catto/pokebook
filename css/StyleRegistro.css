@@ -243,3 +243,9 @@ margin-top: 1%;
 .cuerpoLogin {
   background-color: #003566;
 }
+
+.textoCamposObligatorios {
+  color: white;
+  padding-left: 20%;
+  font-family: 'Lato', sans-serif;
+}

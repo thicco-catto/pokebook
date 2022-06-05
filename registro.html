@@ -34,28 +34,28 @@
       <form id="register-form">
         
          
-           <label for="Email" class="normalRegistro">Email:</label>
+           <label for="Email" class="normalRegistro">Email *</label>
            
            <div class="center"><input type="email" id="Email" name="UserEmail" class="inputContainer" maxlength="320" required/></div>
            <p id="email-error" style="color:red ; margin-left:20% ; visibility: hidden;">email mal ⚠</p>
            
-           <label for="Nick" class="normalRegistro">Nick: </label>
+           <label for="Nick" class="normalRegistro">Nick * </label>
            <div class="center"><input type="text" id="Nick" name="UserNick" class="inputContainer" maxlength="25" required /></div>
            <p id="nick-error" style="color:red ; margin-left:20% ; visibility: hidden;">Este nick ya esta registrado ⚠</p>
            
-           <label for="Password" class="normalRegistro">Contraseña:</label>
+           <label for="Password" class="normalRegistro">Contraseña *</label>
            <div class="center"><input type="password" id="Password" name="Password"class="inputContainer" maxlength="100" required/></div>
            <p id="password-error" style="color:red ; margin-left:20% ; visibility: hidden;">Contraseña mal ⚠</p>
            
-           <label for="PasswordConfirm" class="normalRegistro">Confirmar contraseña:</label>
+           <label for="PasswordConfirm" class="normalRegistro">Confirmar contraseña *</label>
            <div class="center"><input type="password" id="PasswordConfirm" name="PasswordConfirm" class="inputContainer" maxlength="100" required/></div>
            <p id="password-repeat-error" style="color:red ; margin-left:20% ; visibility: hidden;">Las contraseñas no coinciden ⚠</p>
            
-           <label for ="Birthday" class="normalRegistro">Fecha de nacimiento:</label>
+           <label for ="Birthday" class="normalRegistro">Fecha de nacimiento *</label>
            <div class="center"><input type="date" id="Birthday" name="Birthday"class="inputContainer" required/></div>
            <br> 
-        
-            <br> 
+           <i class = "textoCamposObligatorios">* campos obligatorios</i>
+            <br> <br>
             <div class="row row-cols-3">
               <div class="col-md-3"></div>
                <div class="col-md-6  center"> <label for ="Terms" class="Terms mb-1"> <input type="checkbox" id="Terms" name="Terms" />Estoy de acuerdo con los <a href="download/Terminos y Condiciones.pdf" target="_top"  download="download/TerminosyCondiciones.pdf">términos y condiciones</a>.</label>
