@@ -148,7 +148,7 @@
                     </div>
                     <hr>
                     <div class="form-group">
-                      <label class="d-block text-danger">Eliminar cuenta</label>
+                      <h4 class="d-block" style="color: red;">Eliminar cuenta</h4>
                       <p class="t1 font-size-sm">Una vez elimines la cuenta, no hay vuelta atrás. Por favor, asegúrese antes de hacerlo.</p>
                     </div>
                     <button class="btn btn-danger" type="button">Eliminar cuenta</button>
@@ -167,7 +167,7 @@
                     <button id="send-picture" class="btn btn-light" type="button">Enviar foto</button>
                     <hr>
                     <div class="form-group">
-                      <label class="d-block text-light">Nueva foto de perfil</label>
+                      <h4 class="d-block text-light">Nueva foto de perfil</h4>
                       <p class="t1 font-size-sm">Aqui tienes una vista previa de como se verá la nueva foto.</p>
                     </div>
                     <div>
@@ -186,28 +186,27 @@
                   <hr>
                   <form>
                     <div class="form-group">
-                      <label class="d-block">Cambiar contraseña</label>
+                      <h4 class="d-block">Cambiar contraseña</h4>
                       <br>
-                      <label class="d-block">Antigua contraseña</label>
-                      <input type="text" class="form-control" required>
+                      <label for="antiguacontraseña"  class="d-block">Antigua contraseña</label>
+                      <input id="antiguacontraseña" type="text" class="form-control" required>
                       <br>
-                      <label class="d-block">Nueva contraseña</label>
-                      <input type="text" class="form-control mt-1" required>
+                      <label for="nuevacontraseña" class="d-block">Nueva contraseña</label>
+                      <input id="nuevacontraseña" type="text" class="form-control mt-1" required>
                       <br>
-                      <label class="d-block">Repetir nueva contraseña</label>
-                      <input type="text" class="form-control mt-1" required>
+                      <label for ="repetirnuevacontraseña" class="d-block">Repetir nueva contraseña</label>
+                      <input id ="repetirnuevacontraseña" type="text" class="form-control mt-1" required>
                     </div>
-                  </form>
-                  <br>
-                  <form>
+                    <br>
                     <div class="form-group">                      
                       <button class="btn btn-info" type="button">Confirmar nueva contraseña</button>
                     </div>
                   </form>
+                </div> 
                   
-                  <form>
-                </div>
                 <br><br>
+
+
                 <div class="tab-pane" id="notification">
                   <h6>NOTIFICACIONES</h6>
                   <hr>
@@ -226,8 +225,8 @@
                     </div>
                     <div class="form-group mb-0">
                       <br>
-                      <label class="d-block">Notificaciones</label>
-                      <ul class="list-group list-group-sm">
+                      <label for="noti" class="d-block">Notificaciones</label>
+                      <ul id = "noti" class="list-group list-group-sm">
                         <li class="list-group-item has-icon">
                           Comentarios
                           <div class="custom-control custom-control-nolabel custom-switch ml-auto">
@@ -257,16 +256,18 @@
                           </div>
                         </li>
                         <br>
-                        <form>
+                        
                           <div class="form-group">                      
                             <button class="btn btn-info" type="button">Confirmar cambios</button>
                           </div>
-                        </form>
+                        
                       </ul>
                     </div>
                   </form>
                 </div>
+
                 <br><br>
+                
                 <div class="tab-pane" id="help">
                   <h6>AYUDA</h6>
                   <hr>
@@ -291,10 +292,7 @@
   <footer class="py-3 my-4">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
       <li class="nav-item"><a href="inicio.html?user=${user}" class="nav-link px-2"><p>Home</p></a></li>
-      <li class="nav-item"><a href="" class="nav-link px-2"><p>Features</p></a></li>
-      <li class="nav-item"><a href="" class="nav-link px-2"><p>Pricing</p></a></li>
       <li class="nav-item"><a href="ayuda.html"  target="_blank" class="nav-link px-2"><p>Ayuda</p></a></li>
-      <li class="nav-item"><a href="" class="nav-link px-2"><p>About</p></a></li>
     </ul>
     <p class="text-center text-muted"><p>© 2022 PokeBook, Inc</p></p>
   </footer>
