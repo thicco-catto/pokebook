@@ -115,8 +115,10 @@ function fillTable(pokemonList) {
         let newRow = tableBody.insertRow()
 
         let inputCell = newRow.insertCell()
-        let plusButton = parseHTML(`<button id="${pokemon.id}" style="width: auto;border-radius: 1.5rem;background-color: #003566; border: #003566;" type="button" class="btn btn-light btn-sm"><img id="${pokemon.id}" alt="Brand" width="15" height="15" src="img/utilidades/add.png"></button>`);
-        let minusButton = parseHTML(`<button id="${pokemon.id}" style="width: auto;border-radius: 1.5rem;background-color: #003566; border: #003566;" type="button" class="btn btn-light btn-sm"><img id="${pokemon.id}" alt="Brand" width="15" height="15" src="img/utilidades/del.png"></button>`);
+        let plusButton = parseHTML(`<button id="${pokemon.id}" style="width: auto;border-radius: 1.5rem;background-color: #003566; border: #003566;" type="button" class="btn btn-light btn-sm">
+        <img id="${pokemon.id}" alt="Brand" width="15" height="15" src="img/utilidades/add.png"></button>`);
+        let minusButton = parseHTML(`<button id="${pokemon.id}" style="width: auto;border-radius: 1.5rem;background-color: #003566; border: #003566;" type="button" class="btn btn-light btn-sm">
+        <img id="${pokemon.id}" alt="Brand" width="15" height="15" src="img/utilidades/del.png"></button>`);
         plusButton.onclick = addPokemon;
         minusButton.onclick = removePokemon;
         let input = parseHTML(`<div></div>`);
@@ -245,8 +247,7 @@ function onFilterSubmit(event) {
     fillTable(filteredPokemonList);
 }
 
-const filterForm = document.getElementById("filter-form");
-filterForm.addEventListener("submit", onFilterSubmit);
+document.getElementById("filter-submit").onclick = onFilterSubmit;
 
 async function onTeamSubmit(event){
     event.preventDefault();
