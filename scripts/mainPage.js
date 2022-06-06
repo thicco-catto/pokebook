@@ -45,6 +45,8 @@ async function onLoad(event){
         }
     }
 
+    document.getElementById("loading-msg").remove();
+
     if(postArray.length === 0){
         const testPost = parseHTML(`
         <div class="card gedf-card" style="margin: 15px;">
