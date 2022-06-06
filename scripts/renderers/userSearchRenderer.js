@@ -19,7 +19,7 @@ async function onLoad(){
         }
 
         const htmlStr = `
-        <div class="card gedf-card">
+        <div class="card gedf-card user-result">
 						<div class="new-card-header" style="background-color: #003566;">
 							<a href="Perfil.html?user=${selfUserNick}&userProfile=${user.id}">
 								<div class="d-flex justify-content-between align-items-center">
@@ -41,6 +41,12 @@ async function onLoad(){
         `;
 
         searchResultsDiv.appendChild(parseHTML(htmlStr));
+    }
+
+    if(document.getElementsByClassName("user-result").length === 0){
+        document.getElementById("loading-msg").textContent = "No se encontraron usuarios";
+    }else{
+        document.getElementById("loading-msg").textContent = "Resultados:";
     }
 }
 
