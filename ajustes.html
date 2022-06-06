@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ES">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -154,7 +154,9 @@
                     <button class="btn btn-danger" type="button">Eliminar cuenta</button>
                   </form>
                 </div>
+
                 <br><br>
+
                 <div class="tab-pane" id="profilepic">
                   <h6>FOTO DE PERFIL</h6>
                   <hr>
@@ -180,7 +182,9 @@
                     <button class="btn btn-info" type="submit">Guardar foto</button>
                   </form>
                 </div>
+
                 <br><br>
+
                 <div class="tab-pane" id="security">
                   <h6>SEGURIDAD</h6>
                   <hr>
@@ -212,8 +216,9 @@
                   <hr>
                   <form>
                     <div class="form-group">
-                      <label class="d-block mb-0">Alertas de seguridad</label>
-                      <div class="small t1 mb-3">Recibir notificaciones de alerta de seguridad via email</div>
+                      <fieldset>
+                      <label for="alerts"class="d-block mb-0">Alertas de seguridad</label>
+                      <div id="alerts"class="small t1 mb-3">Recibir notificaciones de alerta de seguridad via email</div>
                       <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="customCheck1" checked="">
                         <label class="custom-control-label" for="customCheck1">Recibir email cada vez que se encuentre una vulnerabilidad</label>
@@ -222,11 +227,13 @@
                         <input type="checkbox" class="custom-control-input" id="customCheck2" checked="">
                         <label class="custom-control-label" for="customCheck2">Recibir email con un breve resumen de vulnerabilidad</label>
                       </div>
+                    </fieldset>
                     </div>
                     <div class="form-group mb-0">
                       <br>
                       <label for="noti" class="d-block">Notificaciones</label>
                       <ul id = "noti" class="list-group list-group-sm">
+                        <fieldset>
                         <li class="list-group-item has-icon">
                           Comentarios
                           <div class="custom-control custom-control-nolabel custom-switch ml-auto">
@@ -256,7 +263,7 @@
                           </div>
                         </li>
                         <br>
-                        
+                      </fieldset>
                           <div class="form-group">                      
                             <button class="btn btn-info" type="button">Confirmar cambios</button>
                           </div>
@@ -267,7 +274,7 @@
                 </div>
 
                 <br><br>
-                
+
                 <div class="tab-pane" id="help">
                   <h6>AYUDA</h6>
                   <hr>
