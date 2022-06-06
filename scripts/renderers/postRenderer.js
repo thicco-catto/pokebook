@@ -59,7 +59,7 @@ async function renderPost(post, repostUser) {
     }
 
     let html = `
-	<div class="card gedf-card">
+	<div class="card gedf-card" style="margin: 15px;">
     <div class="new-card-header" style="background-color: #003566;">
     ${repost}
         <div class="d-flex justify-content-between align-items-center" >
