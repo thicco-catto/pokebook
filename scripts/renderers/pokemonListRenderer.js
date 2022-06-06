@@ -188,8 +188,9 @@ async function onLoad(event) {
         loadingMsg.textContent = `Cargando ${i+1}/898`;
     }
 
-    document.getElementById("loading-gif").style.visibility = "hidden";
-
+    document.getElementById("loading-container").remove();
+    document.getElementById("pokemon-table-container").style.height = "500px";
+    
     console.log("finished loading");
     isLoading = false;
 
