@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -181,16 +181,16 @@
         <div class="card-body" style="background-color: #003566;">
             <form id="team-form" class="form">
 
-                <h5> Título: </h5>
-				<div class="form-group col-md-12">
+                <h5 title="titulo"> Título: </h5>
+				<div title="titulo" class="form-group col-md-12">
                     <input id="Title" type="text" name="titulo" class="form-control" maxlength="50" required="required">
 				</div>
 
                 <br>
 
-                <h5> Descripción: </h5>
+                <h5 title="Descripcion"> Descripción: </h5>
                 <div class="form-group col-md-12">
-					<textarea id="Description" rows="3" name="message" class="form-control" maxlength="320"></textarea>
+					<textarea title="descripcion" id="Description" rows="3" name="message" class="form-control" maxlength="320"></textarea>
 				</div>
 
                 <br>
@@ -199,10 +199,10 @@
                 <!-- FILTROS -->
                 <div class="container">
                     <div class="row">
-                        <h5>Filtros</h5>
-                        <input id="name-filter" style="width: 25%;" type="text" name="pokename" class="form-control" maxlength="50" placeholder="nombre">
+                        <h5 title="filtros">Filtros</h5>
+                        <input title="filtros" id="name-filter" style="width: 25%;" type="text" name="pokename" class="form-control" maxlength="50" placeholder="nombre">
                         
-                        <select id="gen-filter" style="width: auto; height: 20%;" class="form-select" aria-label="Default select example">
+                        <select title="Seleccionar Filtro" id="gen-filter" style="width: auto; height: 20%;" class="form-select" aria-label="Default select example">
                             <option value="" selected>Gen</option>
                             <option value="1">Primera</option>
                             <option value="2">Segunda</option>
@@ -214,7 +214,7 @@
                             <option value="8">Octava</option>
                         </select>
 
-                        <select id="type1-filter" style="width: 20%; height: 25%;" class="form-select" aria-label="Default select example">
+                        <select title="Seleccionar Filtro" id="type1-filter" style="width: 20%; height: 25%;" class="form-select" aria-label="Default select example">
                             <option value="" selected>Tipo 1</option>
                             <option value="normal">Normal</option>
                             <option value="fighting">Lucha</option>
@@ -236,7 +236,7 @@
                             <option value="fairy">Hada</option>
                         </select>
 
-                        <select id="type2-filter" style="width: 20%; height: 25%;" class="form-select" aria-label="Default select example">
+                        <select title="Seleccionar Filtro" id="type2-filter" style="width: 20%; height: 25%;" class="form-select" aria-label="Default select example">
                             <option value="" selected>Tipo 2</option>
                             <option value="normal">Normal</option>
                             <option value="fighting">Lucha</option>
