@@ -59,14 +59,12 @@
             <br> <br>
             <div class="row row-cols-3">
               <div class="col-md-3"></div>
-               <div class="col-md-6  center"> <label for ="Terms" class="Terms mb-1"> <input type="checkbox" id="Terms" name="Terms" />Estoy de acuerdo con los <a href="download/Terminos y Condiciones.pdf" target="_top"  download="download/TerminosyCondiciones.pdf">términos y condiciones</a>.</label>
+               <div class="col-md-6  center"> <label for ="Terms" class="Terms mb-1"> <input type="checkbox" id="Terms" name="Terms requited" required/>Estoy de acuerdo con los <a href="download/Terminos y Condiciones.pdf" target="_top"  download="download/TerminosyCondiciones.pdf">términos y condiciones</a>.</label>
                 <p id="tos-error" style="color:red ; visibility: hidden;">Debe de aceptar los términos y condiones para poder registrarte ⚠</p></div>
-                <div class="col"></div> 
             </div>
           
             <div class="btnContinue">
-              <br>
-              <input class="boton-continuar" type="submit" onclick="clicked(event)" value="Continuar" />
+              <input class="boton-continuar" type="submit" value="Continuar" />
             </div>
            
            <br>
@@ -80,13 +78,6 @@
         <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
         <script src="scripts/server.js"></script>
         <script src="scripts/register.js"></script>
-
-        <script>
-          function clicked(e)
-          {
-              if(!confirm('Registrado con éxito. Bienvenido a Pokebook'))e.preventDefault();
-          }
-      </script>
   </body>
   </div>
   
