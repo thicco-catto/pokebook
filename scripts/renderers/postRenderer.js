@@ -43,7 +43,7 @@ async function renderPost(post, repostUser) {
         repost = `
         <div class="new-card-header small" style="background-color: #003566;">
         <a href=Perfil.html?user=${userNick}&userProfile=${repostUser.user}>
-            <label title="Reposteado por Username" style="color:lightgray;">Reposteado por ${repostUser.user}</label>
+            <p title="Reposteado por Username" style="color:lightgray;">Reposteado por ${repostUser.user}</p>
         </a>
         </div>
         `;
