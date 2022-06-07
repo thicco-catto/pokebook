@@ -85,6 +85,6 @@ async function onLoad(event){
     headerDiv.appendChild(navbar);
 
     const form = document.getElementById("user-search-form");
-    form.addEventListener("submit", onSubmit);
+    form.addEventListener("submit", onSearchSubmit);
 }
 addEventListener("DOMContentLoaded", onLoad);

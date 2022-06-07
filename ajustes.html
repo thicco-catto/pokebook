@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="ES">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -139,22 +139,24 @@
                   <form>
                     <div class="form-group">
                       <label for="username">Nombre de usuario</label>
-                      <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" required>
+                      <input type="text" class="form-control" id="username" aria-describedby="usernameHelp" maxlength="25" required>
                       <small id="usernameHelp" class="t1">Al cambiar tu nombre de usuario, tu antiguo nombre de usuario estará disponible para todo aquel que lo demande.</small>
                     </div>
                     <br>
                     <div>
-                      <button class="btn btn-info" type="button">Cambiar nombre</button>
+                      <input type="submit" class="btn btn-info" value="Cambiar nombre"/>
                     </div>
                     <hr>
                     <div class="form-group">
-                      <label class="d-block text-danger">Eliminar cuenta</label>
+                      <h4 class="d-block" style="color: red;">Eliminar cuenta</h4>
                       <p class="t1 font-size-sm">Una vez elimines la cuenta, no hay vuelta atrás. Por favor, asegúrese antes de hacerlo.</p>
                     </div>
                     <button class="btn btn-danger" type="button">Eliminar cuenta</button>
                   </form>
                 </div>
+
                 <br><br>
+
                 <div class="tab-pane" id="profilepic">
                   <h6>FOTO DE PERFIL</h6>
                   <hr>
@@ -167,7 +169,7 @@
                     <button id="send-picture" class="btn btn-light" type="button">Enviar foto</button>
                     <hr>
                     <div class="form-group">
-                      <label class="d-block text-light">Nueva foto de perfil</label>
+                      <h4 class="d-block text-light">Nueva foto de perfil</h4>
                       <p class="t1 font-size-sm">Aqui tienes una vista previa de como se verá la nueva foto.</p>
                     </div>
                     <div>
@@ -180,41 +182,44 @@
                     <button class="btn btn-info" type="submit">Guardar foto</button>
                   </form>
                 </div>
+
                 <br><br>
+
                 <div class="tab-pane" id="security">
                   <h6>SEGURIDAD</h6>
                   <hr>
                   <form>
                     <div class="form-group">
-                      <label class="d-block">Cambiar contraseña</label>
+                      <p>Aqui puedes cambiar tu contrseña: </p>
+                      <h4 class="d-block">Cambiar contraseña</h4>
                       <br>
-                      <label class="d-block">Antigua contraseña</label>
-                      <input type="text" class="form-control" required>
+                      <label for="antiguacontraseña"  class="d-block">Antigua contraseña</label>
+                      <input id="antiguacontraseña" type="password" class="form-control" maxlength="100" required>
                       <br>
-                      <label class="d-block">Nueva contraseña</label>
-                      <input type="text" class="form-control mt-1" required>
+                      <label for="nuevacontraseña" class="d-block">Nueva contraseña</label>
+                      <input id="nuevacontraseña" type="password" class="form-control mt-1" maxlength="100" required>
                       <br>
-                      <label class="d-block">Repetir nueva contraseña</label>
-                      <input type="text" class="form-control mt-1" required>
+                      <label for ="repetirnuevacontraseña" class="d-block">Repetir nueva contraseña</label>
+                      <input id ="repetirnuevacontraseña" type="password" class="form-control mt-1" maxlength="100" required>
+                    </div>
+                    <br>
+                    <div class="form-group">                                            
+                      <input type="submit" class="btn btn-info" value="Confirmar nueva contraseña"/>
                     </div>
                   </form>
-                  <br>
-                  <form>
-                    <div class="form-group">                      
-                      <button class="btn btn-info" type="button">Confirmar nueva contraseña</button>
-                    </div>
-                  </form>
+                </div> 
                   
-                  <form>
-                </div>
                 <br><br>
+
+
                 <div class="tab-pane" id="notification">
                   <h6>NOTIFICACIONES</h6>
                   <hr>
                   <form>
                     <div class="form-group">
-                      <label class="d-block mb-0">Alertas de seguridad</label>
-                      <div class="small t1 mb-3">Recibir notificaciones de alerta de seguridad via email</div>
+                      <fieldset>
+                      <label for="alerts"class="d-block mb-0">Alertas de seguridad</label>
+                      <div id="alerts"class="small t1 mb-3">Recibir notificaciones de alerta de seguridad via email</div>
                       <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="customCheck1" checked="">
                         <label class="custom-control-label" for="customCheck1">Recibir email cada vez que se encuentre una vulnerabilidad</label>
@@ -223,11 +228,13 @@
                         <input type="checkbox" class="custom-control-input" id="customCheck2" checked="">
                         <label class="custom-control-label" for="customCheck2">Recibir email con un breve resumen de vulnerabilidad</label>
                       </div>
+                    </fieldset>
                     </div>
                     <div class="form-group mb-0">
                       <br>
-                      <label class="d-block">Notificaciones</label>
-                      <ul class="list-group list-group-sm">
+                      <label for="noti" class="d-block">Notificaciones</label>
+                      <ul id = "noti" class="list-group list-group-sm">
+                        <fieldset>
                         <li class="list-group-item has-icon">
                           Comentarios
                           <div class="custom-control custom-control-nolabel custom-switch ml-auto">
@@ -257,16 +264,18 @@
                           </div>
                         </li>
                         <br>
-                        <form>
+                      </fieldset>
                           <div class="form-group">                      
-                            <button class="btn btn-info" type="button">Confirmar cambios</button>
+                            <input type="submit" class="btn btn-info" value="Confirmar cambios"/>
                           </div>
-                        </form>
+                        
                       </ul>
                     </div>
                   </form>
                 </div>
+
                 <br><br>
+
                 <div class="tab-pane" id="help">
                   <h6>AYUDA</h6>
                   <hr>
@@ -291,10 +300,7 @@
   <footer class="py-3 my-4">
     <ul class="nav justify-content-center border-bottom pb-3 mb-3">
       <li class="nav-item"><a href="inicio.html?user=${user}" class="nav-link px-2"><p>Home</p></a></li>
-      <li class="nav-item"><a href="" class="nav-link px-2"><p>Features</p></a></li>
-      <li class="nav-item"><a href="" class="nav-link px-2"><p>Pricing</p></a></li>
       <li class="nav-item"><a href="ayuda.html"  target="_blank" class="nav-link px-2"><p>Ayuda</p></a></li>
-      <li class="nav-item"><a href="" class="nav-link px-2"><p>About</p></a></li>
     </ul>
     <p class="text-center text-muted"><p>© 2022 PokeBook, Inc</p></p>
   </footer>

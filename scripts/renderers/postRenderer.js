@@ -43,7 +43,7 @@ async function renderPost(post, repostUser) {
         repost = `
         <div class="new-card-header small" style="background-color: #003566;">
         <a href=Perfil.html?user=${userNick}&userProfile=${repostUser.user}>
-            <label title="Reposteado por Username" style="color:lightgray;">Reposteado por ${repostUser.user}</label>
+            <p title="Reposteado por Username" style="color:lightgray;">Reposteado por ${repostUser.user}</p>
         </a>
         </div>
         `;
@@ -59,7 +59,7 @@ async function renderPost(post, repostUser) {
     }
 
     let html = `
-	<div class="card gedf-card">
+	<div class="card gedf-card" style="margin: 15px;">
     <div class="new-card-header" style="background-color: #003566;">
     ${repost}
         <div class="d-flex justify-content-between align-items-center" >
@@ -81,7 +81,7 @@ async function renderPost(post, repostUser) {
 
     </div>
     <div class="card-body" style="background-color: #003566;">
-        <a class="card-link"  style="text-decoration:none" href="postgrande.html?user=${userNick}&post=${post.id}">  <!-- link a comentario -->
+        <a title="Vista detallada" class="card-link"  style="text-decoration:none" href="postgrande.html?user=${userNick}&post=${post.id}">  <!-- link a comentario -->
             <h5 class="card-title">${post.data().title}</h5>
         
 
@@ -94,19 +94,19 @@ async function renderPost(post, repostUser) {
         </a>
     </div>
     <div class="card-footer"  style="background-color: #003566;">
-        <a title="Me gustas" id="nmegustas" style="text-decoration:none" class="card-link likebutton likebutton-${post.id}">
+        <a title="Me gustas" id="nmegustas-${post.id}" style="text-decoration:none" class="card-link likebutton likebutton-${post.id}">
             <img id="likeimg-${post.id}" alt="nmegustas" width="15" height="15" src="img/utilidades/corazon${likeImg}.png">
-            <label id="likenum-${post.id}" for="nmegustas">${numLikes}</label>
+            <label id="likenum-${post.id}" for="nmegustas-${post.id}">${numLikes}</label>
         </a>
         <a title="Comentarios" style="text-decoration:none"  href="crearcomentario.html?user=${userNick}&post=${post.id}" id="ncoments" class="card-link">
             
-            <img id="ncoments" alt="ncomentarios" width="15" height="15" src="img/utilidades/comentario${commentImg}.png">
-            <label for="ncoments">${numComments}</label>
+            <img id="ncoments-${post.id}" alt="ncomentarios" width="15" height="15" src="img/utilidades/comentario${commentImg}.png">
+            <label for="ncoments-${post.id}">${numComments}</label>
             
         </a>
-        <a title="Reposts" id="nreposts" style="text-decoration:none" class="card-link repostbutton repostbutton-${post.id}">
+        <a title="Reposts" id="nreposts-${post.id}" style="text-decoration:none" class="card-link repostbutton repostbutton-${post.id}">
             <img id="repostimg-${post.id}" alt="nrepost" width="17" height="17" src="img/utilidades/retweet${repostImg}.png">
-            <label id="repostnum-${post.id}" for="nreposts">${numReposts}</label>
+            <label id="repostnum-${post.id}" for="nreposts-${post.id}">${numReposts}</label>
             </i>
         </a>
     </div>

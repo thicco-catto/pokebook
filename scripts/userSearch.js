@@ -1,4 +1,4 @@
-function onSubmit(event){
+function onSearchSubmit(event){
     event.preventDefault();
 
     const queryString = window.location.search;

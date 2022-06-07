@@ -181,19 +181,115 @@
         <div class="card-body" style="background-color: #003566;">
             <form id="team-form" class="form">
 
-                <label for="titulo"> Título: </label>
-				<div class="form-group col-md-12">
-                    <input id="Title" type="text" name="titulo" class="form-control" required="required">
+                <h5 title="titulo"> Título: </h5>
+				<div title="titulo" class="form-group col-md-12">
+                    <input id="Title" type="text" name="titulo" class="form-control" maxlength="50" required="required">
 				</div>
 
                 <br>
 
-                <label for="titulo"> Descripción: </label>
+                <h5 title="Descripcion"> Descripción: </h5>
                 <div class="form-group col-md-12">
-					<textarea id="Description" rows="3" name="message" class="form-control"></textarea>
+					<textarea title="descripcion" id="Description" rows="3" name="message" class="form-control" maxlength="320"></textarea>
 				</div>
 
                 <br>
+                <p>Ahora es el momento de seleccionar tus pokemon. Ten en cuenta que puedes filtrar por nombre, generación y tipo para ayudarte a encontrar tu equipo perfecto.</p>
+
+                <!-- FILTROS -->
+                <div class="container">
+                    <div class="row">
+                        <h5 title="filtros">Filtros</h5>
+                        <input title="filtros" id="name-filter" style="width: 25%;" type="text" name="pokename" class="form-control" maxlength="50" placeholder="nombre">
+                        
+                        <select title="Seleccionar Filtro" id="gen-filter" style="width: auto; height: 20%;" class="form-select" aria-label="Default select example">
+                            <option value="" selected>Gen</option>
+                            <option value="1">Primera</option>
+                            <option value="2">Segunda</option>
+                            <option value="3">Tercera</option>
+                            <option value="4">Cuarta</option>
+                            <option value="5">Quinta</option>
+                            <option value="6">Sexta</option>
+                            <option value="7">Septima</option>
+                            <option value="8">Octava</option>
+                        </select>
+
+                        <select title="Seleccionar Filtro" id="type1-filter" style="width: 20%; height: 25%;" class="form-select" aria-label="Default select example">
+                            <option value="" selected>Tipo 1</option>
+                            <option value="normal">Normal</option>
+                            <option value="fighting">Lucha</option>
+                            <option value="flying">Volador</option>
+                            <option value="poison">Veneno</option>
+                            <option value="ground">Tierra</option>
+                            <option value="rock">Roca</option>
+                            <option value="bug">Bicho</option>
+                            <option value="ghost">Fantasma</option>
+                            <option value="steel">Acero</option>
+                            <option value="fire">Fuego</option>
+                            <option value="water">Agua</option>
+                            <option value="grass">Planta</option>
+                            <option value="electric">Electrico</option>
+                            <option value="psychic">Psiquico</option>
+                            <option value="ice">Hielo</option>
+                            <option value="dragon">Dragon</option>
+                            <option value="dark">Siniestro</option>
+                            <option value="fairy">Hada</option>
+                        </select>
+
+                        <select title="Seleccionar Filtro" id="type2-filter" style="width: 20%; height: 25%;" class="form-select" aria-label="Default select example">
+                            <option value="" selected>Tipo 2</option>
+                            <option value="normal">Normal</option>
+                            <option value="fighting">Lucha</option>
+                            <option value="flying">Volador</option>
+                            <option value="poison">Veneno</option>
+                            <option value="ground">Tierra</option>
+                            <option value="rock">Roca</option>
+                            <option value="bug">Bicho</option>
+                            <option value="ghost">Fantasma</option>
+                            <option value="steel">Acero</option>
+                            <option value="fire">Fuego</option>
+                            <option value="water">Agua</option>
+                            <option value="grass">Planta</option>
+                            <option value="electric">Electrico</option>
+                            <option value="psychic">Psiquico</option>
+                            <option value="ice">Hielo</option>
+                            <option value="dragon">Dragon</option>
+                            <option value="dark">Siniestro</option>
+                            <option value="fairy">Hada</option>
+                        </select>
+
+                        <button style="width: auto;" id="filter-submit" class="btn btn-primary btn-sm">Filtrar</button>
+                    </div>
+                </div>
+        
+                <!-- TABLA -->
+                <br> <br>
+                <div id="pokemon-table-container" style="width: 100%; font-size: 12px; overflow: auto;">
+                <table style="color:white;" class="table align-middle mb-0" id="pokemonTable">
+                    <div class="d-none d-sm-none d-md-block">
+                    <thead style="color: white;">
+                      <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Pokemon</th>
+                        <th>Tipo 1</th>
+                        <th>Tipo 2</th>
+                      </tr>
+                    </thead>
+                    </div>
+                    <tbody id="pokemonList">
+                        <!-- POKEMON -->
+                    </tbody>
+                </table>
+                </div>
+                <br>
+                
+                <!-- LOADING POKEMOM -->
+                <div id="loading-container" class="text-center">
+                    <img id="loading-gif" alt="Brand" width="60" height="60" src="img/utilidades/loading.gif">
+                    <br> <br>
+                    <h4 id="loading-msg">(Si aparece este mensaje, recargue la pagina)</h4>
+                </div>
                 
                 <!-- EQUIPO POKEMON -->
 
@@ -227,104 +323,6 @@
             </form>
 
                 <br>
-
-                <!-- FILTROS -->
-                <form id="filter-form">
-                    
-                    <div class="container">
-                        <div class="row">
-                            <h5>Filtros</h5>
-                            <input id="name-filter" style="width: 25%;" type="text" name="pokename" class="form-control" placeholder="nombre">
-                            
-                            <select id="gen-filter" style="width: auto; height: 20%;" class="form-select" aria-label="Default select example">
-                                <option value="" selected>Gen</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                                <option value="4">Four</option>
-                                <option value="5">Five</option>
-                                <option value="6">Six</option>
-                                <option value="7">Seven</option>
-                                <option value="8">Eight</option>
-                            </select>
-
-                            <select id="type1-filter" style="width: 20%; height: 25%;" class="form-select" aria-label="Default select example">
-                                <option value="" selected>Tipo 1</option>
-                                <option value="normal">Normal</option>
-                                <option value="fighting">Lucha</option>
-                                <option value="flying">Volador</option>
-                                <option value="poison">Veneno</option>
-                                <option value="ground">Tierra</option>
-                                <option value="rock">Roca</option>
-                                <option value="bug">Bicho</option>
-                                <option value="ghost">Fantasma</option>
-                                <option value="steel">Acero</option>
-                                <option value="fire">Fuego</option>
-                                <option value="water">Agua</option>
-                                <option value="grass">Planta</option>
-                                <option value="electric">Electrico</option>
-                                <option value="psychic">Psiquico</option>
-                                <option value="ice">Hielo</option>
-                                <option value="dragon">Dragon</option>
-                                <option value="dark">Siniestro</option>
-                                <option value="fairy">Hada</option>
-                            </select>
-
-                            <select id="type2-filter" style="width: 20%; height: 25%;" class="form-select" aria-label="Default select example">
-                                <option value="" selected>Tipo 2</option>
-                                <option value="normal">Normal</option>
-                                <option value="fighting">Lucha</option>
-                                <option value="flying">Volador</option>
-                                <option value="poison">Veneno</option>
-                                <option value="ground">Tierra</option>
-                                <option value="rock">Roca</option>
-                                <option value="bug">Bicho</option>
-                                <option value="ghost">Fantasma</option>
-                                <option value="steel">Acero</option>
-                                <option value="fire">Fuego</option>
-                                <option value="water">Agua</option>
-                                <option value="grass">Planta</option>
-                                <option value="electric">Electrico</option>
-                                <option value="psychic">Psiquico</option>
-                                <option value="ice">Hielo</option>
-                                <option value="dragon">Dragon</option>
-                                <option value="dark">Siniestro</option>
-                                <option value="fairy">Hada</option>
-                            </select>
-
-                            <button style="width: auto;" type="submit" class="btn btn-primary btn-sm">Filtrar</button>
-                        </div>
-                    </div>
-                </form>
-        
-                <!-- TABLA -->
-                <br> <br>
-                <div STYLE="width: 100%; font-size: 12px; overflow: auto;">
-                <table style="color:white;" class="table align-middle mb-0" id="pokemonTable">
-                    <div class="d-none d-sm-none d-md-block">
-                    <thead style="color: white;">
-                      <tr>
-                        <th></th>
-                        <th></th>
-                        <th>Pokemon</th>
-                        <th>Tipo 1</th>
-                        <th>Tipo 2</th>
-                      </tr>
-                    </thead>
-                    </div>
-                    <tbody id="pokemonList">
-                        <!-- POKEMON -->
-                    </tbody>
-                </table>
-                </div>
-                <br>
-                
-                <!-- LOADING POKEMOM -->
-                <div class="text-center">
-                    <img id="loading-gif" alt="Brand" width="60" height="60" src="img/utilidades/loading.gif">
-                    <br> <br>
-                    <h4 id="loading-msg">(Si aparece este mensaje, recargue la pagina)</h4>
-                </div>
         </div>
     </div>
     </div>
