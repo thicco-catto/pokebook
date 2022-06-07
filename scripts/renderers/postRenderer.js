@@ -81,7 +81,7 @@ async function renderPost(post, repostUser) {
 
     </div>
     <div class="card-body" style="background-color: #003566;">
-        <a class="card-link"  style="text-decoration:none" href="postgrande.html?user=${userNick}&post=${post.id}">  <!-- link a comentario -->
+        <a title="Vista detallada" class="card-link"  style="text-decoration:none" href="postgrande.html?user=${userNick}&post=${post.id}">  <!-- link a comentario -->
             <h5 class="card-title">${post.data().title}</h5>
         
 
