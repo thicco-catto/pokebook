@@ -44,7 +44,7 @@ async function onLoad(){
 
         let nickCell = newRow.insertCell();
         let nickLink = document.createElement("a");
-        nickLink.href = `Perfil.html?user=${selfUserNick}&profileUser=${notification.data().user}`
+        nickLink.href = `Perfil.html?user=${selfUserNick}&userProfile=${notification.data().user}`
         nickLink.role = `button`;
         nickLink.textContent = `@${notification.data().user}`
         nickCell.appendChild(nickLink);
@@ -60,7 +60,7 @@ async function onLoad(){
             descriptionLink.textContent = "ha comentado en tu post";
         }else if(notification.data().type === "follow"){
             descriptionLink.textContent = "te ha empezado a seguir";
-            descriptionLink.href = `Perfil.html?user=${selfUserNick}&profileUser=${notification.data().user}`;
+            descriptionLink.href = `Perfil.html?user=${selfUserNick}&userProfile=${notification.data().user}`;
         }else{
             descriptionLink.textContent = `ERROR: ${notification.type}`
         }
