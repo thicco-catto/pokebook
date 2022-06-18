@@ -11,6 +11,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
+    .parent {
+        display: grid;
+        grid-template-columns: 1fr 0.2fr 1fr 0.2fr 1fr 0.2fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .div1 { grid-area: 1 / 1 / 2 / 2; }
+    .div2 { grid-area: 1 / 2 / 2 / 3; }
+    .div3 { grid-area: 1 / 3 / 2 / 4; }
+    .div4 { grid-area: 1 / 4 / 2 / 5; }
+    .div5 { grid-area: 1 / 5 / 2 / 6; }
+    .div6 { grid-area: 1 / 6 / 2 / 7; }
+    .div7 { grid-area: 2 / 1 / 3 / 2; }
+    .div8 { grid-area: 2 / 2 / 3 / 3; }
+    .div9 { grid-area: 2 / 3 / 3 / 4; }
+    .div10 { grid-area: 2 / 4 / 3 / 5; }
+    .div11 { grid-area: 2 / 5 / 3 / 6; }
+    .div12 { grid-area: 2 / 6 / 3 / 7; }
+
+
     body {
       background-color: #001D3D;
     }
@@ -294,26 +316,64 @@
                 <!-- EQUIPO POKEMON -->
 
                 <h5>Su equipo pokemon:</h5>
-                <div class="container">
+                <!--<div class="container">
                     <div class="row">
                         <div class="col-6 col-md-4">
-                            <img id="pokemon-team-1" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
+                            <img id="pokemon-team-1" alt="Pokemon1" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img id="pokemon-team-2" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
+                            <img id="pokemon-team-2" alt="Pokemon2" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img id="pokemon-team-3" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
+                            <img id="pokemon-team-3" alt="Pokemon3" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img id="pokemon-team-4" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
+                            <img id="pokemon-team-4" alt="Pokemon4" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img id="pokemon-team-5" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
+                            <img id="pokemon-team-5" alt="Pokemon5" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
                         <div class="col-6 col-md-4">
-                            <img id="pokemon-team-6" alt="Brand" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
+                            <img id="pokemon-team-6" alt="Pokemon6" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
                         </div>
+                    </div>
+                </div>-->
+                <div class="parent">
+                    <div class="div1"> 
+                        <img id="pokemon-team-1" alt="Pokemon1" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
+                    </div>
+                    <div class="div2"> 
+                        <img id="pokemon-team-1" alt="delete1" class="rounded mx-auto d-block" width="20" height="20" src="img/utilidades/del.png">
+                    </div>
+                    <div class="div3">
+                        <img id="pokemon-team-2" alt="Pokemon2" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
+                    </div>
+                    <div class="div4"> 
+                        <img id="pokemon-team-1" alt="delete2" class="rounded mx-auto d-block" width="20" height="20" src="img/utilidades/del.png">
+                    </div>
+                    <div class="div5"> 
+                        <img id="pokemon-team-3" alt="Pokemon3" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
+                    </div>
+                    <div class="div6"> 
+                        <img id="pokemon-team-1" alt="delete3" class="rounded mx-auto d-block" width="20" height="20" src="img/utilidades/del.png">
+                    </div>
+                    <div class="div7">
+                        <img id="pokemon-team-4" alt="Pokemon4" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
+                    </div>
+                    <div class="div8"> 
+                        <img id="pokemon-team-1" alt="delete4" class="rounded mx-auto d-block" width="20" height="20" src="img/utilidades/del.png">
+                    </div>
+                    <div class="div9"> 
+                        <img id="pokemon-team-5" alt="Pokemon5" class="rounded mx-auto d-block" width="80" height="80" src="img/utilidades/pokeballabierta.png">
+                    </div>
+                    <div class="div10"> 
+                        <img id="pokemon-team-1" alt="delete5" class="rounded mx-auto d-block" width="20" height="20" src="img/utilidades/del.png">
+                    </div>
+                    <div class="div11"> 
+                        <img id="pokemon-team-6" alt="Pokemon6" class="rounded mx-auto d-block" width="70" height="70" src="img/utilidades/maspokemon.png">
+                    </div>
+                    <div class="div12"> 
+                        <!--<img id="pokemon-team-1" alt="delete6" class="rounded mx-auto d-block" width="20" height="20" src="img/utilidades/del.png">-->
                     </div>
                 </div>
 
